@@ -2,7 +2,7 @@
 
 ## Currently supported sources
 ### T1
-- [ ] 電子*
+- [x] 電子*
 - [ ] 工商*
 - [x] 經濟 (UDNMoney)
 ### T2
@@ -17,7 +17,30 @@
 - [ ] 中央社
 - [ ] 太報
 ### T5
-- [ ] Mashdigi
+- [x] Mashdigi
 - [x] Cool3c
 - [x] ePrice
+- [x] Sogi
+- [ ] TechOrange*
+- [x] KOCPC
+- [x] TechNews
+- [ ] TechBang
+- [ ] XFastest
 ### T6 財經媒體 
+
+
+## To be supported
+- nextapple
+- cna
+- setn
+- bnext
+- saydigi
+- inside
+- lpcomment
+- techudnc
+- ctimes
+- ctwant
+- cnyes
+- moneydj
+- 2cm
+- investor

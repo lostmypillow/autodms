@@ -1,10 +1,8 @@
-import * as cheerio from "cheerio";
-export function EPRICE(html) {
-  const $ = cheerio.load(html);
+export function EPRICE($) {
   const data = $.extract({
     headline: "h1.title",
   });
-  data["time"] = $("span.date")
+  data["date"] = $("span.date")
     .first()
     .text()
     .replace(/.*?(\d{4}-\d{2}-\d{2}).*/, "$1");

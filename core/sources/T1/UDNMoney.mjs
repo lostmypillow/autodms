@@ -1,9 +1,8 @@
-import * as cheerio from "cheerio";
-export function UDNMoney(html) {
-  const $ = cheerio.load(html);
+
+export function UDNMoney($) {
   const data = $.extract({
     headline: "h1#story_art_title",
-    time: [
+    date: [
       {
         selector: "time.article-body__time",
         value: (el, key) => {

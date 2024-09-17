@@ -1,9 +1,7 @@
-import * as cheerio from "cheerio";
-export function LTNEC(html) {
-  const $ = cheerio.load(html);
+export function LTNEC($) {
   const data = $.extract({
     headline: "div.whitecon.boxTitle.boxText h1",
-    time: [
+    date: [
       {
         selector: "span.time:nth-of-type(1)",
         value: (el, key) => {

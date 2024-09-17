@@ -22,7 +22,15 @@ export function filterContent(inputArray) {
       !item.endsWith("：") &&
       !item.includes("訂閱手機王") &&
       !item.includes("想快速知道") &&
-      !item.includes("資料來源：")
+      !item.includes("資料來源：") &&
+      !item.includes("&nbsp;") &&
+      !item.includes("上傳") &&
+      !item.includes("消息來源") && 
+      !item.includes(".jpg") && 
+      !item.startsWith("(") &&
+      !item.includes("下載附件") &&
+      !item.includes("保存到相冊") &&
+      !item.includes(".png")
   );
   inputArray = inputArray.map((str) => str.replace(/<\/?[^>]+(>|$)/g, ""));
   inputArray = inputArray.map((line) => line.trim());

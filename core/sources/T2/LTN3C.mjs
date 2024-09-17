@@ -1,9 +1,7 @@
-import * as cheerio from "cheerio";
-export function LTN3C(html) {
-  const $ = cheerio.load(html);
+export function LTN3C($) {
   const data = $.extract({
     headline: "div.whitecon.borderline.boxTitle.boxText h1",
-    time: [
+    date: [
       {
         selector: "span.time",
         value: (el, key) => {

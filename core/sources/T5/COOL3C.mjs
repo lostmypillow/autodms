@@ -1,12 +1,10 @@
-import * as cheerio from "cheerio";
-export function COOL3C(html) {
-  const $ = cheerio.load(html);
+export function COOL3C($) {
   let data = {};
   data["title"] = $("li.breadcrumb-item.active")
     .text()
     .trim()
     .replace("\n", "");
-  data["time"] = $("div.created.slacken span")
+  data["date"] = $("div.created.slacken span")
     .eq(1)
     .text()
     .trim()
