@@ -1,6 +1,6 @@
 export function LTNEC($) {
   const data = $.extract({
-    headline: "div.whitecon.boxTitle.boxText h1",
+    title: "div.whitecon.boxTitle.boxText h1",
     date: [
       {
         selector: "span.time:nth-of-type(1)",
@@ -35,6 +35,6 @@ export function LTNEC($) {
       },
     ],
   });
-
+data["source"] = "自由時報"
   return data;
 }

@@ -1,6 +1,6 @@
 export function LTN3C($) {
   const data = $.extract({
-    headline: "div.whitecon.borderline.boxTitle.boxText h1",
+    title: "div.whitecon.borderline.boxTitle.boxText h1",
     date: [
       {
         selector: "span.time",
@@ -29,5 +29,6 @@ export function LTN3C($) {
       },
     ],
   });
+  data["source"] = "自由時報"
   return data;
 }

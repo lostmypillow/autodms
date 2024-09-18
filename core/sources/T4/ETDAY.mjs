@@ -1,9 +1,7 @@
-import * as cheerio from "cheerio";
-export function ETDAY(html) {
-  const $ = cheerio.load(html);
+export function ETDAY($) {
   const data = $.extract({
-    headline: "h1.title",
-    time: [
+    title: "h1.title",
+    date: [
       {
         selector: "time.date",
         value: (el, key) => {

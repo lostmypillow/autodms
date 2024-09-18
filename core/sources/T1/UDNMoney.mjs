@@ -1,7 +1,6 @@
-
 export function UDNMoney($) {
   const data = $.extract({
-    headline: "h1#story_art_title",
+    title: "h1#story_art_title",
     date: [
       {
         selector: "time.article-body__time",
@@ -24,11 +23,17 @@ export function UDNMoney($) {
       {
         selector: "section.article-body__editor p",
         value: (el, key) => {
+          const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
           if (!$(el).text().trim() == "") {
-            return $(el)
+            const sample = $(el)
               .text()
               .replace(/\$\(.*/s, "")
               .trim();
+          
+              if (key < sampleKey) {
+                return sample;
+              }
+            
           }
         },
       },
@@ -37,3 +42,5 @@ export function UDNMoney($) {
   data["source"] = "經濟日報";
   return data;
 }
+
+//minor unresolved additional headlines
