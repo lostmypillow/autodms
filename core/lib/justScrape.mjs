@@ -16,6 +16,7 @@ export function justScrape(link, html) {
       : "";
       scrapedContent["category"] = determineCategory(scrapedContent["title"])
     scrapedContent["url"] = link;
+    scrapedContent['content'] = scrapedContent['content'].join('\n\n')
     return scrapedContent;
   } catch (error) {
     return error;

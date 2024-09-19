@@ -29,5 +29,5 @@ async function getTestLinks() {
   // return await response.text();
   return response;
 }
-
-console.log(await getTestLinks());
+const t = await getTestLinks()
+console.log(await t[0].content);
