@@ -2,6 +2,7 @@
 import { filterContent } from "./filterContent.mjs";
 import { determineCategory } from "./determineCategory.mjs";
 import { determineSource } from "./determineSource.mjs";
+import * as cheerio from 'cheerio'
 export function justScrape(link, html) {
   try {
     const handlerFunction = determineSource(link);
