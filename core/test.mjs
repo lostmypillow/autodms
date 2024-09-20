@@ -18,7 +18,7 @@ const testLinks = [
 
 const buggedLinks = ["https://www.eprice.com.tw/mobile/talk/4523/5811558/1/"];
 const testLink = [
-  "https://www.ettoday.net/news/20240905/2810968.htm",
+  "https://www.ctee.com.tw/news/20240805700832-431207",
 ];
 async function getTestLinks() {
   var response = [];

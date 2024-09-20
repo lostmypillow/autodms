@@ -15,9 +15,12 @@ import { XF } from "../sources/T5/XF.mjs";
 import { TAISOUNDS } from "../sources/T4/TAISOUNDS.mjs";
 import { TECHNEWS } from "../sources/T5/TECHNEWS.mjs";
 import { CNA } from "../sources/T4/CNA.mjs";
-
-function determineSource(link) {
-  if (link.includes("3c.ltn")) {
+import { handleUnsupported } from "../sources/handleUnsupported.mjs";
+export function determineSource(link) {
+  // if (link.includes("3c") == undefined) {
+  //   return handleUnsupported;
+  // } else
+   if (link.includes("3c.ltn")) {
     return LTN3C; // Return the corresponding function
   } else if (link.includes("ec.ltn")) {
     return LTNEC;
@@ -36,23 +39,27 @@ function determineSource(link) {
   } else if (link.includes("sogi")) {
     return SOGI;
   } else if (link.includes("techorange")) {
-    return TECHORANGE
+    return TECHORANGE;
   } else if (link.includes("digitimes")) {
-    return DIGITIMES
+    return DIGITIMES;
   } else if (link.includes("kocpc")) {
-    return KOCPC
+    return KOCPC;
   } else if (link.includes("xfastest")) {
-    return XF
+    return XF;
   } else if (link.includes("taisounds")) {
-    return TAISOUNDS
+    return TAISOUNDS;
   } else if (link.includes("technews")) {
-    return TECHNEWS
+    return TECHNEWS;
   } else if (link.includes("cna")) {
-    return CNA
+    return CNA;
+  } else {
+    return handleUnsupported(link);
   }
 }
 
-export function processHTML(link, html) {
-  const handlerFunction = determineSource(link)
-  return handlerFunction(cheerio.load(html));
-}
+// export function processHTML(link, html) {
+//   const handlerFunction = determineSource(link);
+//   return handlerFunction == handleUnsupported
+//     ? handlerFunction(cheerio.load(html))
+//     : handlerFunction(link);
+// }

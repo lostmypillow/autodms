@@ -2,7 +2,7 @@
 
 ## Currently supported sources
 ### T1
-- [x] 電子時報*
+- [ ] 電子時報*
 - [ ] 工商時報*
 - [x] 經濟日報 (UDNMoney)
 
