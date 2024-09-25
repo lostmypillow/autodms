@@ -1,9 +1,8 @@
-import { fetchAndScrape } from "./lib/fetchAndScrape.mjs";
-import { justScrape } from "./lib/justScrape.mjs";
+import { processHTML } from "./lib/processHTML.mjs";
 export async function dmsScrape(type, link, html) {
   return type == "link"
-    ? await fetchAndScrape(link)
+    ? processHTML(link, await (await fetch(link)).text())
     : type == "html"
-    ? justScrape(link, html)
-    : "Must specify type";
+    ? processHTML(link, html)
+    : { error: "Must specify type", url: link };
 }

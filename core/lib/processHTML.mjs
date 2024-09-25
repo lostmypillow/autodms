@@ -15,13 +15,12 @@ import { XF } from "../sources/T5/XF.mjs";
 import { TAISOUNDS } from "../sources/T4/TAISOUNDS.mjs";
 import { TECHNEWS } from "../sources/T5/TECHNEWS.mjs";
 import { CNA } from "../sources/T4/CNA.mjs";
-import { handleUnsupported } from "../sources/handleUnsupported.mjs";
-export function determineSource(link) {
-  // if (link.includes("3c") == undefined) {
-  //   return handleUnsupported;
-  // } else
-   if (link.includes("3c.ltn")) {
-    return LTN3C; // Return the corresponding function
+import { v4 as uuid } from "uuid";
+import { filterContent } from "./filterContent.mjs";
+import { determineCategory } from "./determineCategory.mjs";
+function determineSource(link) {
+  if (link.includes("3c.ltn")) {
+    return LTN3C; 
   } else if (link.includes("ec.ltn")) {
     return LTNEC;
   } else if (link.includes("money.udn")) {
@@ -53,13 +52,32 @@ export function determineSource(link) {
   } else if (link.includes("cna")) {
     return CNA;
   } else {
-    return handleUnsupported(link);
+    return "unsupported";
   }
 }
 
-// export function processHTML(link, html) {
-//   const handlerFunction = determineSource(link);
-//   return handlerFunction == handleUnsupported
-//     ? handlerFunction(cheerio.load(html))
-//     : handlerFunction(link);
-// }
+export function processHTML(link, html) {
+  const handlerFunction = determineSource(link);
+  let scrapedContent;
+  handlerFunction != "unsupported"
+    ? ((scrapedContent = handlerFunction(cheerio.load(html))),
+      (scrapedContent["content"] = scrapedContent["content"]
+        ? filterContent(scrapedContent["content"]).join("\n\n")
+        : scrapedContent["content"]),
+      (scrapedContent["author"] = Array.isArray(scrapedContent["author"])
+        ? scrapedContent["author"].toString()
+        : scrapedContent["author"]),
+      (scrapedContent["date"] = Array.isArray(scrapedContent["date"])
+        ? scrapedContent["date"].toString()
+        : scrapedContent["date"]),
+      (scrapedContent["category"] = determineCategory(scrapedContent["title"])),
+      (scrapedContent["url"] = link),
+      (scrapedContent["content"] = scrapedContent["content"]))
+    : (scrapedContent = {
+        error: handlerFunction,
+        url: link,
+      });
+
+  scrapedContent["id"] = uuid();
+  return scrapedContent
+}

@@ -1,6 +1,6 @@
 {
   "name": "dms-scrape",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "index.mjs",
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
     "esbuild": "^0.23.1"
   },
   "dependencies": {
-    "cheerio": "^1.0.0"
+    "cheerio": "^1.0.0",
+    "uuid": "^10.0.0"
   }
 }
