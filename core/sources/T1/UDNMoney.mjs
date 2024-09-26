@@ -23,16 +23,16 @@ export function UDNMoney($) {
       {
         selector: "section.article-body__editor p",
         value: (el, key) => {
-          const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
+          // const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
           if (!$(el).text().trim() == "") {
             const sample = $(el)
               .text()
               .replace(/\$\(.*/s, "")
               .trim();
           
-              if (key < sampleKey) {
+              // if (key < sampleKey) {
                 return sample;
-              }
+              // }
             
           }
         },
