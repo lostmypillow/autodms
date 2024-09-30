@@ -1,0 +1,35 @@
+{
+  "name": "wxt-vue-starter",
+  "description": "manifest.json description",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "vue-tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "dependencies": {
+    "@mdi/font": "^7.4.47",
+    "firebase": "10.13.2",
+    "firebase-admin": "^12.5.0",
+    "firebase-functions": "^6.0.1",
+    "vue": "^3.4.34"
+  },
+  "devDependencies": {
+    "@wxt-dev/module-vue": "^1.0.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.5.4",
+    "vite-plugin-vuetify": "^2.0.4",
+    "vue-tsc": "^2.0.29",
+    "vuetify": "^3.7.2",
+    "wxt": "^0.19.1"
+  }
+}
