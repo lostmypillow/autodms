@@ -11,8 +11,8 @@ const toFirebase = ref({
   id: 123,
 });
 function handleClick() {
-  // chrome.runtime.sendMessage({ action: "importFull", data: toFirebase.value });
-  firebaseStore.createDoc(toFirebase.value)
+  browser.runtime.sendMessage({ action: "importFull", data: toFirebase.value });
+
 }
 const navCategories = [
   "Qualcomm相關新聞",
@@ -24,7 +24,7 @@ const navCategories = [
 const isImporting = ref(false);
 const importType = ref("link");
 const dialog = ref(false);
-import {firebaseStore} from './firebaseStore.js'
+
 </script>
 
 <template>
