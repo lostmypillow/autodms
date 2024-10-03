@@ -1,7 +1,6 @@
-export function TECHORANGE($) {
+export function SAYDIGI($) {
   const data = $.extract({
     title: [{ selector: "title", value: (el) => $(el).text().trim() }],
-
     date: [
       {
         selector: "meta[property=article:modified_time]",
@@ -9,18 +8,15 @@ export function TECHORANGE($) {
       },
     ],
     author: [
-      {
-        selector: "meta[name=twitter:data1]",
-        value: (el) => $(el).attr('content'),
-      },
+      { selector: "meta[name=author]", value: (el) => $(el).attr("content") },
     ],
     content: [
       {
-        selector: "div.elementor-widget-container > p",
+        selector: "div.cttt > p",
         value: (el) => $(el).text().trim(),
       },
     ],
   });
-  data["source"] = "科技報橘"
+  data["source"] = "點子生活"
   return data;
 }

@@ -1,18 +1,32 @@
-///////ctee  、綜合外電
-    // https://www.ctee.com.tw/news/20240821700211-439901
-    // https://www.ctee.com.tw/news/20240821701357-430704
-    // case link.includes("ctee"):
-    //   title = $("h1.main-title").text().trim();
-    //   date_source_author = `${$("li.publish-date time")
-    //     .text()
-    //     .replace(/\./g, "-")} / 工商時報 / ${$("span.name").text().trim()}`;
-    //   content = [];
-    //   // content?.push($('blockquote p').text())
-    //   $("article p").each((i, element) => {
-    //     const text = $(element).text().trim();
-    //     if (text) {
-    //       content?.push(text);
-    //     }
-    //   });
-    //   break;
-    //////
+export function CTEE($) {
+  const data = $.extract({
+    title: [{ selector: "h1.main-title", value: (el) => $(el).text().trim() }],
+    date: [
+      {
+        selector: "li.publish-date time",
+        value: (el, key) => {
+          const data = $(el).text().replace(/\./g, "-");
+          return data;
+        },
+      },
+    ],
+    author: [
+        { 
+            selector: "span.name",
+            value: (el) => $(el).text().trim()
+        }],
+    content: [
+      {
+        selector: "article p",
+        value: (el, key) => {
+          // const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
+          if ($(el).text().trim()) {
+            return $(el).text().trim();
+          }
+        },
+      },
+    ],
+  });
+  data["source"] = "工商時報";
+  return data;
+}

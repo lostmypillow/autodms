@@ -1,9 +1,23 @@
+
+
 export function DIGITIMES($) {
-  let data = {};
-  data["title"] = $("h1.news-title").text();
-  data["date"] = $("time").text();
+  const data = $.extract({
+    title: "h1.news-title",
+    date: [{selector: "time", value: (el) => $(el).text().replace(/(\d{4})\/(\d{2})\/(\d{2}) .*/, '$1-$2-$3')}],
+    
+    content: [
+      {
+        selector: "div#newsText.Article.clearfix.txt-20 > p",
+        value: (el, key) => {
+          // const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
+          if ($(el).text().trim().replace(/\t/g, '') != '') {
+            return $(el).text().trim().replace(/\t/g, '').trim();
+          }
+        },
+      },
+    ],
+  });
   data["source"] = "電子時報";
   data["author"] = $("font").first().text();
-  data["content"] = [];
   return data;
 }
