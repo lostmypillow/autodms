@@ -1,54 +1,55 @@
-import { connectFirestoreEmulator } from "firebase/firestore";
-import { getFirestore } from "firebase/firestore";
-import { getApps, initializeApp, getApp } from "firebase/app";
-import { setDoc } from "firebase/firestore";
-import { updateDoc } from "firebase/firestore";
-import { doc } from "firebase/firestore";
-import { getCountFromServer } from "firebase/firestore";
-import { collection } from "firebase/firestore";
-const firebaseConfig = {
-  apiKey: "AIzaSyAgzKXjreJUMqEiUNbzUZLhAoiv3KfS8Uk",
-  authDomain: "compassprdms.firebaseapp.com",
-  projectId: "compassprdms",
-  storageBucket: "compassprdms.appspot.com",
-  messagingSenderId: "189553958868",
-  appId: "1:189553958868:web:38e313ca61559c42d74041",
-};
+import axios from "axios";
 export default defineBackground(() => {
-  const dateInstance = new Date();
-  const currentYear = dateInstance.getFullYear().toString();
-  const currentDate =
-    String(dateInstance.getMonth() + 1).padStart(2, "0") +
-    String(dateInstance.getDate()).padStart(2, "0");
-  const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
-  const db = getFirestore(app);
-  connectFirestoreEmulator(db, "127.0.0.1", 8080);
-  function docRef(category, id) {
-    return doc(db, currentYear + "/" + currentDate + "/" + category + "/" + id);
+  function sendToFunction(url, data) {
+    axios
+      .post(url, data)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
-  // function collectionRef(category) {
-  //   return collection(db, currentYear, currentDate, category);
-  // }
-  async function createDoc(data) {
-    await setDoc(docRef(data.category, data.id), data, { merge: true });
-    console.log(data.category)
-    console.log(data.id)
-    // data["priority"] == undefined
-    //   ? await updateDoc(docRef(data.category, data.id), {
-    //       priority: (
-    //         await getCountFromServer(collectionRef(data.category))
-    //       ).data().count,
-    //     })
-    //   : "";
-  }
-
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === "importFull") {
-      console.log(currentYear, currentDate);
-      console.log("message recieved: ", message.data);
-      createDoc(message.data);
-      console.log("saved to Firestore");
-      return true;
+    if (message.action === "importFromBackground") {
+      const data = message.data;
+      browser.tabs.create({ url: data.url }, (newTab) => {
+        browser.scripting.executeScript({
+          target: { tabId: newTab.id },
+          files: ["content.js"],
+        });
+      });
+    } else if (message.action === "HTMLFromContent") {
+      sendToFunction("/exthtml", {
+        html: message.html,
+        url: message.url,
+      });
+
+      browser.tabs.remove(sender.tab.id);
     }
   });
 });
+
+//   browser.tabs.create({ url: message.url }, (newTab) => {
+//     // Inject the content script into the new tab
+//     browser.scripting.executeScript({
+//         target: { tabId: newTab.id },
+//         files: ['content.js']
+//     });
+
+//     // Set a listener to receive the response from the content script
+//     browser.runtime.onMessage.addListener((request, sender) => {
+//         if (request.action === "sendHTMLFromContent") {
+//             console.log("Received HTML:", request.html);
+//             // You can handle the received HTML here
+
+//             // Optionally, close the tab after receiving the HTML
+//             browser.tabs.remove(sender.tab.id);
+//         }
+//     });
+// });
+// console.log(currentYear, currentDate);
+// console.log("message recieved: ", message.data);
+// createDoc(message.data);
+// console.log("saved to Firestore");
+// return true;
