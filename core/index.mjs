@@ -2,9 +2,9 @@ import { processHTML } from "./lib/processHTML.mjs";
 import { v4 as uuid } from "uuid";
 import * as cheerio from 'cheerio'
 function checkLink(link) {
-  const linksNeedText = ["digitimes", "ctee", "chinatimes", "techorange"];
+  const linksNeedText = ["https://www.digitimes", "https://www.ctee", "https://www.chinatimes", "https://buzzorange.com/techorange"];
   for (const l of linksNeedText) {
-    if (link.includes(l)) {
+    if (link.startsWith(l)) {
       return true;
     } else {
       return false;

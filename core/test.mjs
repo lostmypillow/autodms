@@ -77,6 +77,6 @@ const testLink = [
 // console.log(CNYES(cheerio.load(cnyestest)))
 // console.log(SAYDIGI(cheerio.load(saydigitest)))
 // console.log(await dmsScrape("link", "https://www.compotechasia.com/a/press/2024/0919/58658.html"))
-console.log(await dmsScrape("link", "https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"))
+console.log(await dmsScrape("link", "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"))
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
