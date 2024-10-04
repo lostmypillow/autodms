@@ -1,15 +1,23 @@
 import { processHTML } from "./lib/processHTML.mjs";
 import { v4 as uuid } from "uuid";
-import * as cheerio from 'cheerio'
+import * as cheerio from "cheerio";
 function checkLink(link) {
-  const linksNeedText = ["https://www.digitimes", "https://www.ctee", "https://www.chinatimes", "https://buzzorange.com/techorange"];
+  let resp;
+  const linksNeedText = [
+    "https://www.digitimes",
+    "https://www.ctee",
+    "https://www.chinatimes",
+    "https://buzzorange.com/techorange",
+  ];
   for (const l of linksNeedText) {
     if (link.startsWith(l)) {
-      return true;
+      resp = true;
+      break;
     } else {
-      return false;
+      resp = false;
     }
   }
+  return resp;
 }
 export async function dmsScrape(type, link, html) {
   var data;

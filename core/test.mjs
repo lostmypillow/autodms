@@ -2,7 +2,7 @@ import { dmsScrape } from "./index.mjs";
 import * as cheerio from "cheerio"
 import { cteetest } from "./test/tested/cteetest.js";
 import { DIGITIMES } from "./sources/T1/DIGITIMES.mjs";
-import { digitest } from "./test/tested/digitimes2.js";
+import { digitest } from "./test/tested/digitest.js";
 import { chinatest } from "./test/tested/chinatest.js";
 import { CHINATIMES } from "./sources/T2/CHINATIMES.mjs";
 import { NXTAPPLE } from "./sources/T2/NXTAPPLE.mjs";
@@ -77,6 +77,32 @@ const testLink = [
 // console.log(CNYES(cheerio.load(cnyestest)))
 // console.log(SAYDIGI(cheerio.load(saydigitest)))
 // console.log(await dmsScrape("link", "https://www.compotechasia.com/a/press/2024/0919/58658.html"))
-console.log(await dmsScrape("link", "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"))
+
+//seriosu bug: https://www.xfastest.com/thread-292861-1-1.html
+// bug title: https://www.eprice.com.tw/mobile/talk/6113/5812708/1
+//unwanted content: https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085
+/// undefined: https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT
+// const urls = ["https://www.xfastest.com/thread-292892-1-1.html", "https://www.cool3c.com/article/225948" , "https://tw.nextapple.com/finance/20241002/F46EF42772FDB0898B925982A2D4F7D3" ]
+// for (const url of urls) {
+//   await multscrape(url);
+// }
+
+/// sogi promotion: https://www.sogi.com.tw/articles/samsung_galaxy_tab_s10_ultra/6263080
+// eprice title: https://www.eprice.com.tw/mobile/talk/102/5812686/1
+///bug: https://www.cool3c.com/article/226021
+// multscrape("https://3c.ltn.com.tw/news/59704")
+
+// async function multscrape(url) {
+//   const data = await dmsScrape("link", url);
+//   console.log(data.title);
+//   console.log(data.date + ' / ' + data.source + ' / ' + data.author);
+//   console.log(data.url);
+//   console.log(data.content);
+// }
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
+
+console.log(await dmsScrape("link", "https://www.ctee.com.tw/news/20240805700832-431207"))
+// const link = "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"
+// const check = "https://www.chinatimes"
+// console.log(link.startsWith(check))
