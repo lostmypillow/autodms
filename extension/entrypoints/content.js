@@ -11,7 +11,7 @@ export default defineContentScript({
     tempDiv.innerHTML = fullHTML;
 
     // Remove all <script> and <style> tags
-    var scriptsAndStyles = tempDiv.querySelectorAll("script, style, link");
+    var scriptsAndStyles = tempDiv.querySelectorAll("script, style, link, g, noscript, svg, img, symbol, figure, figcaption, ins");
     scriptsAndStyles.forEach((tag) => tag.remove());
 
     // Send the cleaned HTML back to the background script

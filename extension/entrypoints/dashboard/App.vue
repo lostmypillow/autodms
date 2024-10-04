@@ -12,6 +12,7 @@ import {
   onSnapshot,
   connectFirestoreEmulator,
 } from "firebase/firestore";
+import axios from "axios";
 const firebaseConfig = {
   apiKey: "AIzaSyAgzKXjreJUMqEiUNbzUZLhAoiv3KfS8Uk",
   authDomain: "compassprdms.firebaseapp.com",
@@ -20,19 +21,38 @@ const firebaseConfig = {
   messagingSenderId: "189553958868",
   appId: "1:189553958868:web:38e313ca61559c42d74041",
 };
-
+function sendToFunction(url, data) {
+  axios
+    .post(url, data)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
+}
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 connectFirestoreEmulator(db, "127.0.0.1", 8080);
-// const newDate = new Date();
-// const currentYear = newDate.getFullYear().toString();
-// const currentDate =
-//   String(newDate.getMonth() + 1).padStart(2, "0") +
-//   String(newDate.getDate()).padStart(2, "0");
-// const collectionName = currentYear + currentDate;
-// console.log(collectionName);
-const q = query(collection(db, "news"));
+function getUTCDate() {
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  const month = String(now.getUTCMonth() + 1).padStart(2, "0"); // Months are zero-based
+  const day = String(now.getUTCDate()).padStart(2, "0");
+
+  return `${year}-${month}-${day}`; // YYYY-MM-DD format
+}
+function findObjectIdByUrl(objects, url) {
+  for (let i = 0; i < objects.length; i++) {
+    if (objects[i].url === url) {
+      return objects[i].id;
+    }
+  }
+  return null; // Return null if no object with matching URL is found
+}
+
+const q = query(collection(db, getUTCDate()));
 const unsub = onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     if (change.type === "added") {
@@ -40,16 +60,9 @@ const unsub = onSnapshot(q, (snapshot) => {
       store.data.push(change.doc.data());
       console.log(store.data);
       if (change.doc.data().error) {
-        console.log(
-          "this is an unsupported link, moving to unsupported: " +
-            change.doc.data()
-        );
-      } 
-      // else {
-      //   console.log(
-      //     "this is a supported link, moving to main store: " + change.doc.data()
-      //   );
-      // }
+        console.log("this is an unsupported link, triggering background: ");
+        chrome.runtime.sendMessage({action: 'importFromDash', data: change.doc.data()});
+      }
     }
     if (change.type === "modified") {
       console.log("Modified city: ", change.doc.data());
@@ -60,10 +73,27 @@ const unsub = onSnapshot(q, (snapshot) => {
       console.log(store.data);
     }
     if (change.type === "removed") {
-      console.log("Removed city: ", change.doc.data());
+      const index = store.data.findIndex(
+        (item) => item.id === change.doc.data().id
+      );
+      if (index !== -1) {
+        store.data.splice(index, 1);
+      }
     }
   });
 });
+
+browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "HTMLFromContent") {
+  browser.tabs.remove(sender.tab.id);
+const objectId = findObjectIdByUrl(store.data, message.url);
+
+sendToFunction("http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml", {id: objectId, url: message.url, html:message.html})
+  }
+}) 
+
+
+
 </script>
 <template>
   <v-toolbar :elevation="8">

@@ -10,22 +10,21 @@ export default defineBackground(() => {
         console.log(error);
       });
   }
+  let tempObj
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    if (message.action === "importFromBackground") {
-      const data = message.data;
-      browser.tabs.create({ url: data.url }, (newTab) => {
-        browser.scripting.executeScript({
+    if (message.action === "importFromDash") {
+      tempObj = message.data
+      const url = message.data.url;
+      browser.tabs.create({ url: url })
+      .then((newTab) => {
+        return browser.scripting.executeScript({
           target: { tabId: newTab.id },
-          files: ["content.js"],
+          files: ["content-scripts/content.js"],
         });
+      })
+      .catch((error) => {
+        console.error("Error creating tab or injecting script:", error);
       });
-    } else if (message.action === "HTMLFromContent") {
-      sendToFunction("/exthtml", {
-        html: message.html,
-        url: message.url,
-      });
-
-      browser.tabs.remove(sender.tab.id);
     }
   });
 });
