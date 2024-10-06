@@ -26,7 +26,7 @@ export function CHINATIMES($) {
         value: (el) => $(el).text().replace(/\//g, "-"),
       },
     ],
-    source: [{ selector: "div.source", value: (el) => $(el).text().trim() }],
+    source: { selector: "div.source", value: (el) => $(el).text().trim() },
     author: [{ selector: "div.author", value: (el) => $(el).text().trim() }],
     content: [
       {
