@@ -55,27 +55,34 @@ function findObjectIdByUrl(objects, url) {
 const q = query(collection(db, getUTCDate()));
 const unsub = onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
+    const docData = change.doc.data();
+    if (change.doc.metadata.hasPendingWrites) {
+      console.log("Local change detected, skipping");
+      return; // Skip if the change is a local one
+    }
+
     if (change.type === "added") {
-      console.log("New news content: ", change.doc.data());
-      store.data.push(change.doc.data());
+      console.log("New news content: ", docData);
+      store.data.push(docData);
       console.log(store.data);
-      if (change.doc.data().error) {
+      if (docData.error) {
         console.log("this is an unsupported link, triggering background: ");
-        chrome.runtime.sendMessage({action: 'importFromDash', data: change.doc.data()});
+        chrome.runtime.sendMessage({
+          action: "importFromDash",
+          data: docData,
+        });
       }
     }
     if (change.type === "modified") {
-      console.log("Modified city: ", change.doc.data());
+      console.log("Modified city: ", docData);
       const findIndex = store.data.findIndex(
-        (obj) => obj["id"] === change.doc.data()["id"]
+        (obj) => obj["id"] === docData["id"]
       );
-      store.data[findIndex] = change.doc.data();
+      store.data[findIndex] = docData;
       console.log(store.data);
     }
     if (change.type === "removed") {
-      const index = store.data.findIndex(
-        (item) => item.id === change.doc.data().id
-      );
+      const index = store.data.findIndex((item) => item.id === docData.id);
       if (index !== -1) {
         store.data.splice(index, 1);
       }
@@ -85,15 +92,31 @@ const unsub = onSnapshot(q, (snapshot) => {
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "HTMLFromContent") {
-  browser.tabs.remove(sender.tab.id);
-const objectId = findObjectIdByUrl(store.data, message.url);
+    browser.tabs.remove(sender.tab.id);
+    const objectId = findObjectIdByUrl(store.data, message.url);
 
-sendToFunction("http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml", {id: objectId, url: message.url, html:message.html})
+    sendToFunction("http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml", {
+      id: objectId,
+      url: message.url,
+      html: message.html,
+    });
   }
-}) 
+});
 
-
-
+const computedQ = computed({
+  get() {
+    const qcomm = store.data.filter((x) => (x.category = "qualcomm"));
+    qcomm.sort((a, b) => a.priority - b.priority);
+    return qcomm;
+  },
+});
+function handleEdit(id) {
+store.isDialogOpen = true
+console.log(id)
+const currentDataArr = store.data.filter(x => x.id === id)
+store.currentlyEditing = currentDataArr[0]
+console.log("currently editing: " + store.currentlyEditing)
+}
 </script>
 <template>
   <v-toolbar :elevation="8">
@@ -104,34 +127,38 @@ sendToFunction("http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml", {id: 
     >
   </v-toolbar>
   <editDialog />
-  <div class="flex md:flex-row flex-col w-full md:w-svw h-svh">
-    <v-list class="md:w-1/5 px-4" v-for="i in store.navCategories">
+  <div class="flex md:flex-row flex-col w-full md:w-svw h-svh pt-8 px-4">
+    <!-- <v-list class="md:w-1/5 px-4" v-for="i in store.navCategories">
       <v-list-subheader>
         {{ i }}
       </v-list-subheader>
-      <v-list-item v-for="n in store.mockData" rounded class="mb-4 px-4 py-2">
-        <v-card
-          variant="tonal"
-          rounded="xl"
-          :title="n.priority + '. ' + n.title"
-          :subtitle="n.date + ' / ' + n.source"
-        >
-          <v-card-actions>
-            <priortyUpBtn :priority="n.priority" />
+      <v-list-item  rounded class="mb-4 px-4 py-2"> -->
+    <div class="w-1/5 h-full flex flex-col gap-4 items-center justify-start">
+      <v-card
+        v-for="n in computedQ"
+        variant="tonal"
+        rounded="xl"
+        :title="n.priority + '. ' + n.title"
+        :subtitle="n.date + ' / ' + n.source + ' / ' + n.author"
+      >
+        <v-card-actions>
+          <priortyUpBtn :priority="n.priority" />
 
-            <editBtn />
+          <editBtn     @click="handleEdit(n.id)" />
 
-            <priortyDownBtn
-              :priority="n.priority"
-              :length="store.mockData.length"
-            />
-            <!--     @click="store.swapPriorities(n.category, n.priority, 'down')"
+          <priortyDownBtn
+            :priority="n.priority"
+            :length="store.data.length"
+          />
+          <!--     @click="store.swapPriorities(n.category, n.priority, 'down')"
                -->
 
-            <v-btn class="ml-0">Category</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-list-item>
-    </v-list>
+          <v-btn class="ml-0">Category</v-btn>
+        </v-card-actions>
+      </v-card>
+    </div>
+
+    <!-- </v-list-item>
+    </v-list> -->
   </div>
 </template>
