@@ -36,7 +36,7 @@ export async function dmsScrape(type, link, html) {
       error: "Needs extension",
       url: link,
       id: uuid(),
-      category: "other"
+ 
     };
   } else if (type == "html") {
     data = processHTML(link, html);

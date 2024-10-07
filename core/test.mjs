@@ -102,7 +102,7 @@ const testLink = [
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
 
-console.log(await dmsScrape("html", "https://www.chinatimes.com/realtimenews/20240904005289-260410?chdtv", chinatest))
+console.log(await dmsScrape("link", "https://www.chinatimes.com/realtimenews/20240904005289-260410?chdtv"))
 // const link = "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"
 // const check = "https://www.chinatimes"
 // console.log(link.startsWith(check))
