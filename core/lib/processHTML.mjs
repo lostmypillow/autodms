@@ -42,7 +42,6 @@ export function processHTML(link, html) {
     scrapedContent = {
       error: handlerFunction,
       url: link,
-      category: "other",
     };
   }
 
