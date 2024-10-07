@@ -79,7 +79,7 @@ const unsub = onSnapshot(q, (snapshot) => {
         (obj) => obj["id"] === docData["id"]
       );
       store.data[findIndex] = docData;
-      console.log(store.data);
+      // console.log(store.data);
     }
     if (change.type === "removed") {
       const index = store.data.findIndex((item) => item.id === docData.id);
@@ -111,11 +111,11 @@ const computedQ = computed({
   },
 });
 function handleEdit(id) {
-store.isDialogOpen = true
-console.log(id)
-const currentDataArr = store.data.filter(x => x.id === id)
-store.currentlyEditing = currentDataArr[0]
-console.log("currently editing: " + store.currentlyEditing)
+  store.isDialogOpen = true;
+  console.log(id);
+  const currentDataArr = store.data.filter((x) => x.id === id);
+  store.currentlyEditing = currentDataArr[0];
+  console.log("currently editing: " + store.currentlyEditing);
 }
 </script>
 <template>
@@ -128,37 +128,18 @@ console.log("currently editing: " + store.currentlyEditing)
   </v-toolbar>
   <editDialog />
   <div class="flex md:flex-row flex-col w-full md:w-svw h-svh pt-8 px-4">
-    <!-- <v-list class="md:w-1/5 px-4" v-for="i in store.navCategories">
-      <v-list-subheader>
-        {{ i }}
-      </v-list-subheader>
-      <v-list-item  rounded class="mb-4 px-4 py-2"> -->
     <div class="w-1/5 h-full flex flex-col gap-4 items-center justify-start">
-      <v-card
-        v-for="n in computedQ"
-        variant="tonal"
-        rounded="xl"
-        :title="n.priority + '. ' + n.title"
-        :subtitle="n.date + ' / ' + n.source + ' / ' + n.author"
-      >
-        <v-card-actions>
+      <v-card v-for="n in computedQ" variant="tonal" rounded="xl" :title="n.title" :subtitle="n.date + ' / ' + n.source + ' / ' + n.author">
+   
+        <v-card-actions class="justify-between">
           <priortyUpBtn :priority="n.priority" />
 
-          <editBtn     @click="handleEdit(n.id)" />
+         <span class="text-lg">{{ n.priority }}</span> 
 
-          <priortyDownBtn
-            :priority="n.priority"
-            :length="store.data.length"
-          />
-          <!--     @click="store.swapPriorities(n.category, n.priority, 'down')"
-               -->
-
-          <v-btn class="ml-0">Category</v-btn>
+          <priortyDownBtn :priority="n.priority" :length="store.data.length" />
+          <editBtn @click="handleEdit(n.id)" />
         </v-card-actions>
       </v-card>
     </div>
-
-    <!-- </v-list-item>
-    </v-list> -->
   </div>
 </template>

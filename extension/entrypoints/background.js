@@ -1,15 +1,6 @@
 import axios from "axios";
 export default defineBackground(() => {
-  function sendToFunction(url, data) {
-    axios
-      .post(url, data)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }
+  
   let tempObj
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "importFromDash") {
