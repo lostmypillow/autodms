@@ -1,8 +1,5 @@
 <script setup>
-import priortyUpBtn from "./priorityUpBtn.vue";
-import priortyDownBtn from "./priorityDownBtn.vue";
 import editDialog from "./editDialog.vue";
-import editBtn from "./editBtn.vue";
 import { store } from "./store.js";
 import { initializeApp } from "firebase/app";
 import {
@@ -12,47 +9,22 @@ import {
   onSnapshot,
   connectFirestoreEmulator,
 } from "firebase/firestore";
-import axios from "axios";
-const firebaseConfig = {
+import Cards from "./Cards.vue";
+import ToolBar from "./toolBar.vue";
+import CardContainer from "./CardContainer.vue";
+
+const app = initializeApp({
   apiKey: "AIzaSyAgzKXjreJUMqEiUNbzUZLhAoiv3KfS8Uk",
   authDomain: "compassprdms.firebaseapp.com",
   projectId: "compassprdms",
   storageBucket: "compassprdms.appspot.com",
   messagingSenderId: "189553958868",
   appId: "1:189553958868:web:38e313ca61559c42d74041",
-};
-function sendToFunction(url, data) {
-  axios
-    .post(url, data)
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-}
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+});
 const db = getFirestore(app);
 connectFirestoreEmulator(db, "127.0.0.1", 8080);
-function getUTCDate() {
-  const now = new Date();
-  const year = now.getUTCFullYear();
-  const month = String(now.getUTCMonth() + 1).padStart(2, "0"); // Months are zero-based
-  const day = String(now.getUTCDate()).padStart(2, "0");
 
-  return `${year}-${month}-${day}`; // YYYY-MM-DD format
-}
-function findObjectIdByUrl(objects, url) {
-  for (let i = 0; i < objects.length; i++) {
-    if (objects[i].url === url) {
-      return objects[i].id;
-    }
-  }
-  return null; // Return null if no object with matching URL is found
-}
-
-const q = query(collection(db, getUTCDate()));
+const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     const docData = change.doc.data();
@@ -93,53 +65,24 @@ const unsub = onSnapshot(q, (snapshot) => {
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "HTMLFromContent") {
     browser.tabs.remove(sender.tab.id);
-    const objectId = findObjectIdByUrl(store.data, message.url);
+    const objectId = store.findObjectIdByUrl(message.url);
 
-    sendToFunction("http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml", {
-      id: objectId,
-      url: message.url,
-      html: message.html,
-    });
+    store.sendToFunction(
+      "http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml",
+      {
+        id: objectId,
+        url: message.url,
+        html: message.html,
+      }
+    );
   }
 });
-
-const computedQ = computed({
-  get() {
-    const qcomm = store.data.filter((x) => (x.category = "qualcomm"));
-    qcomm.sort((a, b) => a.priority - b.priority);
-    return qcomm;
-  },
-});
-function handleEdit(id) {
-  store.isDialogOpen = true;
-  console.log(id);
-  const currentDataArr = store.data.filter((x) => x.id === id);
-  store.currentlyEditing = currentDataArr[0];
-  console.log("currently editing: " + store.currentlyEditing);
-}
+const categories = ["qualcomm", "mediatek", "commu", "phone", "other"];
 </script>
 <template>
-  <v-toolbar :elevation="8">
-    <v-toolbar-title>Dashboard</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn variant="tonal" rounded="xl" prepend-icon="mdi-export" class="mr-4"
-      >Export</v-btn
-    >
-  </v-toolbar>
+  <ToolBar />
   <editDialog />
-  <div class="flex md:flex-row flex-col w-full md:w-svw h-svh pt-8 px-4">
-    <div class="w-1/5 h-full flex flex-col gap-4 items-center justify-start">
-      <v-card v-for="n in computedQ" variant="tonal" rounded="xl" :title="n.title" :subtitle="n.date + ' / ' + n.source + ' / ' + n.author">
-   
-        <v-card-actions class="justify-between">
-          <priortyUpBtn :priority="n.priority" />
-
-         <span class="text-lg">{{ n.priority }}</span> 
-
-          <priortyDownBtn :priority="n.priority" :length="store.data.length" />
-          <editBtn @click="handleEdit(n.id)" />
-        </v-card-actions>
-      </v-card>
-    </div>
-  </div>
+  <CardContainer v-for="cat in categories">
+    <Cards :category="cat" />
+  </CardContainer>
 </template>

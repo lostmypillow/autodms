@@ -16,7 +16,7 @@ const sendToFunction = (data) => {
 };
 const count = ref(0);
 function handleClose() {
-  if (savedChangesExist.value) {
+  if (savedChangesExist.value == true) {
     sendToFunction(store.currentlyEditing);
     console.log("sent to function");
   }
@@ -24,16 +24,13 @@ function handleClose() {
   store.isDialogOpen = false;
   savedChangesExist.value = false;
 }
-function handleEdit() {
-  isEditing.value = !isEditing.value;
-  savedChangesExist.value == false ? (savedChangesExist.value = true) : "";
-}
-const isEditing = ref(false);
+
 const savedChangesExist = ref(false);
+const currentStatus = ref("preview");
 </script>
 
 <template>
-  <v-dialog v-model="store.isDialogOpen" persistent>
+  <v-dialog v-model="store.isDialogOpen" persistent class="w-4/5">
     <v-card class="px-8 py-4 w-full flex flex-col gap-4" rounded="xl">
       <div class="flex flex-row w-full items-center justify-between">
         <v-btn
@@ -41,27 +38,27 @@ const savedChangesExist = ref(false);
           prepend-icon="mdi-close"
           @click="handleClose"
           rounded="xl"
-          :disabled="isEditing"
           color="error"
         >
           Close
         </v-btn>
-        <div class="p-4 text-xl text-center">
-          {{ isEditing ? "Editing" : "Previewing" }} News Content
-          <span class="text-xs">{{ store.currentlyEditing.id }}</span>
-        </div>
-
-        <v-btn
-          :prepend-icon="isEditing ? 'mdi-floppy' : 'mdi-pen'"
-          class="font-bold"
-          rounded="xl"
-          :color="isEditing ? 'warning' : ''"
-          @click="handleEdit"
-          >{{ isEditing ? "Save Changes" : "Edit This" }}</v-btn
+        <span class="text-xs text-center"
+          >ID {{ store.currentlyEditing.id }}</span
         >
+        <v-btn-toggle
+          v-model="currentStatus"
+          mandatory
+          rounded="xl"
+          color="primary"
+        >
+          <v-btn value="preview"> Preview </v-btn>
+
+          <v-btn value="edit"> Edit </v-btn>
+        </v-btn-toggle>
+
       </div>
       <!-- Preview -->
-      <div v-if="!isEditing" class="px-4">
+      <!-- <div v-if="currentStatus == 'preview'" class="px-4">
         <p class="text-lg">
           {{ store.currentlyEditing.title }}
           <br />
@@ -78,41 +75,64 @@ const savedChangesExist = ref(false);
           v-html="store.currentlyEditing.content.replace(/\n/g, '<br>')"
           class="text-lg"
         ></p>
-      </div>
+      </div> -->
       <!-- Preview End -->
 
       <!-- Editing -->
-      <div v-else>
-        <v-text-field
+      <!-- <div v-else> -->
+        <div class="flex flex-row">
+          <v-text-field
           class="px-4"
           v-model="store.currentlyEditing.title"
           label="Title"
-          @input="savedChangesExist !== false ? (savedChangesExist = true) : ''"
+          :readonly="currentStatus == 'preview'"
+          @input="savedChangesExist === false ? (savedChangesExist = true) : ''"
         ></v-text-field>
-
+        <v-select
+          class="w-fit grow-0 pr-4"
+          label="Category"
+          :items="[
+            'qualcomm',
+            'mediatek',
+            'commu',
+            'phone',
+            'other',
+          ]"
+        
+          v-model="store.currentlyEditing.category"
+          
+    @update:modelValue="savedChangesExist === false ? (savedChangesExist = true) : ''"
+        
+        ></v-select>
+        <v-btn @click="console.log(store.currentlyEditing.category)">Check</v-btn>
+        </div>
+        
         <div class="flex flex-row">
           <v-text-field
             class="px-4"
             v-model="store.currentlyEditing.date"
             label="Date"
+            :readonly="currentStatus == 'preview'"
             @input="
-              savedChangesExist !== false ? (savedChangesExist = true) : ''
+              savedChangesExist === false ? (savedChangesExist = true) : ''
             "
           ></v-text-field>
           <v-text-field
             class="px-4"
             v-model="store.currentlyEditing.source"
             label="Source"
+            :readonly="currentStatus == 'preview'"
             @input="
-              savedChangesExist !== false ? (savedChangesExist = true) : ''
+              savedChangesExist === false ? (savedChangesExist = true) : ''
             "
           ></v-text-field>
           <v-text-field
             class="px-4"
             v-model="store.currentlyEditing.author"
+            :readonly="currentStatus == 'preview'"
             label="Author"
             @input="
-              savedChangesExist !== false ? (savedChangesExist = true) : ''
+              savedChangesExist === false ? (savedChangesExist = true) : ''
             "
           ></v-text-field>
           <!-- <v-select
@@ -120,12 +140,12 @@ const savedChangesExist = ref(false);
           label="Category"
           :items="[
             'qualcomm',
-            'MediaTek相關新聞',
-            '無線通訊市場',
-            '智慧型手機/消費性電子產品',
-            '其他業界重要訊息',
+            'mediatek',
+            'commu',
+            'phone',
+            'other',
           ]"
-          v-model="currentId"
+          v-model="store.currentlyEditing.category"
           variant="underlined"
         ></v-select> -->
           <!--  @update:model-value="
@@ -140,19 +160,21 @@ const savedChangesExist = ref(false);
           label="URL"
           class="px-4"
           v-model="store.currentlyEditing.url"
-          @input="savedChangesExist !== false ? (savedChangesExist = true) : ''"
+          :readonly="currentStatus == 'preview'"
+          @input="savedChangesExist === false ? (savedChangesExist = true) : ''"
         ></v-text-field>
 
         <v-textarea
           label="Content"
           v-model="store.currentlyEditing.content"
+          :readonly="currentStatus == 'preview'"
           name="input-7-1"
           variant="filled"
           class="mx-4"
           auto-grow
-          @input="savedChangesExist !== false ? (savedChangesExist = true) : ''"
+          @input="savedChangesExist === false ? (savedChangesExist = true) : ''"
         ></v-textarea>
-      </div>
+      <!-- </div> -->
     </v-card>
   </v-dialog>
 </template>
