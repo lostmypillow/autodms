@@ -1,21 +1,21 @@
 import axios from "axios";
 export default defineBackground(() => {
-  
-  let tempObj
+  let tempObj;
   browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.action === "importFromDash") {
-      tempObj = message.data
+      tempObj = message.data;
       const url = message.data.url;
-      browser.tabs.create({ url: url })
-      .then((newTab) => {
-        return browser.scripting.executeScript({
-          target: { tabId: newTab.id },
-          files: ["content-scripts/content.js"],
+      browser.tabs
+        .create({ url: url })
+        .then((newTab) => {
+          browser.scripting.executeScript({
+            target: { tabId: newTab.id },
+            files: ["content-scripts/content.js"],
+          });
+        })
+        .catch((error) => {
+          console.error("Error creating tab or injecting script:", error);
         });
-      })
-      .catch((error) => {
-        console.error("Error creating tab or injecting script:", error);
-      });
     }
   });
 });

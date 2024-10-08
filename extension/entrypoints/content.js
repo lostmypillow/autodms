@@ -1,7 +1,12 @@
 import { browser } from "wxt/browser";
 
 export default defineContentScript({
-  matches: ["https://*/*"],
+  matches: [
+    "https://*.digitimes/*",
+    "https://*.ctee/*",
+    "https://*.chinatimes/*",
+    "https://buzzorange.com/techorange/*"
+  ],
   main() {
     // Get the full HTML of the document
     var fullHTML = document.documentElement.outerHTML;

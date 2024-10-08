@@ -8,7 +8,6 @@ const toFirebase = ref({
   url: "",
   category: "",
   content: "",
-  id: 123,
 });
 function handleClick() {
   browser.runtime.sendMessage({ action: "importFull", data: toFirebase.value });

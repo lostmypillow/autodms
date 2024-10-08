@@ -1,5 +1,12 @@
 import { reactive } from "vue";
 import axios from "axios";
+// const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update";
+// const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc";
+// const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
+const editURL = "https://update-ud47er3zea-de.a.run.app";
+const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app ";
+const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
+
 export const store = reactive({
   count: 0,
   isDialogOpen: false,
@@ -40,16 +47,105 @@ export const store = reactive({
 
     return false;
   },
-  sendToFunction(url, data) {
+  setCurrentlyEditing(id) {
+    this.isDialogOpen = !this.isDialogOpen;
+    this.currentlyEditing = this.data.filter((x) => x.id === id)[0];
+  },
+  sendHTML(data) {
     this.isLoading = true;
     axios
-      .post(url, data)
+      .post(addURL, data)
       .then(function (response) {
         console.log(response);
       })
       .catch(function (error) {
         console.log(error);
       });
+    this.isLoading = false;
+  },
+  sendEdit(type, obj, direction) {
+    this.isLoading = true;
+    if (type == "data") {
+      axios
+        .post(
+          editURL + "?id=" + this.currentlyEditing.id + "&edit=" + type,
+          this.currentlyEditing
+        )
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else if (type == "priority") {
+      const sendObj =
+        direction == "down"
+          ? {
+              sourceID: obj.id,
+              sourceCategory: obj.category,
+              sourcePriority: obj.priority,
+              targetPriority: obj.priority + 1,
+            }
+          : {
+              sourceID: obj.id,
+              sourceCategory: obj.category,
+              sourcePriority: obj.priority,
+              targetPriority: obj.priority - 1,
+            };
+      axios
+        .post(
+          "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=" +
+            obj.id +
+            "&edit=" +
+            type,
+          sendObj
+        )
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else if (type == "select") {
+      axios
+        .post(editURL + "/?id=" + this.currentlyEditing.id + "&edit=" + type, {
+          selected_content: "",
+        })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      this.currentlyEditing = this.data.filter(
+        (x) => x.id === this.currentlyEditing.id
+      )[0];
+    } else if ((type = "unselect")) {
+      axios
+        .post(editURL + "?id=" + this.currentlyEditing.id + "&edit=" + type)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      this.currentlyEditing = this.data.filter(
+        (x) => x.id === this.currentlyEditing.id
+      )[0];
+    }
+    this.isLoading = false;
+  },
+  sendDelete(id) {
+    this.isLoading = true;
+    axios
+      .post(deleteURL + "?id=" + id)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    this.isLoading = false;
   },
   findObjectIdByUrl(url) {
     for (let i = 0; i < this.data.length; i++) {
@@ -67,9 +163,9 @@ export const store = reactive({
 
     return `${year}-${month}-${day}`;
   },
-  getByCategory (category) {
-    const qcomm = this.data.filter((x) => (x.category == category));
+  getByCategory(category) {
+    const qcomm = this.data.filter((x) => x.category == category);
     qcomm.sort((a, b) => a.priority - b.priority);
     return qcomm;
-  }
+  },
 });

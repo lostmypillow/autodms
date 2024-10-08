@@ -1,5 +1,5 @@
 <script setup>
-import editDialog from "./editDialog.vue";
+import EditDialog from "./EditDialog.vue";
 import { store } from "./store.js";
 import { initializeApp } from "firebase/app";
 import {
@@ -9,7 +9,6 @@ import {
   onSnapshot,
   connectFirestoreEmulator,
 } from "firebase/firestore";
-import Cards from "./Cards.vue";
 import ToolBar from "./toolBar.vue";
 import CardContainer from "./CardContainer.vue";
 
@@ -30,7 +29,7 @@ const unsub = onSnapshot(q, (snapshot) => {
     const docData = change.doc.data();
     if (change.doc.metadata.hasPendingWrites) {
       console.log("Local change detected, skipping");
-      return; // Skip if the change is a local one
+      return;
     }
 
     if (change.type === "added") {
@@ -51,7 +50,6 @@ const unsub = onSnapshot(q, (snapshot) => {
         (obj) => obj["id"] === docData["id"]
       );
       store.data[findIndex] = docData;
-      // console.log(store.data);
     }
     if (change.type === "removed") {
       const index = store.data.findIndex((item) => item.id === docData.id);
@@ -65,24 +63,17 @@ const unsub = onSnapshot(q, (snapshot) => {
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "HTMLFromContent") {
     browser.tabs.remove(sender.tab.id);
-    const objectId = store.findObjectIdByUrl(message.url);
-
-    store.sendToFunction(
-      "http://127.0.0.1:5001/compassprdms/asia-east1/addexthtml",
-      {
-        id: objectId,
-        url: message.url,
-        html: message.html,
-      }
-    );
+    store.sendHTML({
+      id: store.findObjectIdByUrl(message.url),
+      url: message.url,
+      html: message.html,
+    });
   }
 });
-const categories = ["qualcomm", "mediatek", "commu", "phone", "other"];
+
 </script>
 <template>
   <ToolBar />
-  <editDialog />
-  <CardContainer v-for="cat in categories">
-    <Cards :category="cat" />
-  </CardContainer>
+  <EditDialog />
+  <CardContainer />
 </template>
