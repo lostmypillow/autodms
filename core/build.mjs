@@ -1,13 +1,13 @@
-import * as esbuild from 'esbuild'
+import * as esbuild from "esbuild";
 
 const sharedConfig = {
-    bundle: true,
-    minify: true,
-    entryPoints: ['src/index.mjs'],
-}
+  bundle: true,
+  minify: true,
+  entryPoints: ["src/index.mjs"],
+};
 await esbuild.build({
-    ...sharedConfig,
-  platform: 'node',
-  outfile: 'dist/index.js',
-})
-
+  ...sharedConfig,
+  format: 'esm',
+  bundle: true,
+  outfile: "dist/index.mjs",
+});
