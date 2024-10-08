@@ -1,4 +1,4 @@
-import { processHTML } from "./lib/processHTML.mjs";
+import { processHTML } from "./processHTML.mjs";
 import { v4 as uuid } from "uuid";
 import * as cheerio from "cheerio";
 function checkLink(link) {

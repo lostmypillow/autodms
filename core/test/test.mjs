@@ -1,25 +1,3 @@
-import { dmsScrape } from "./index.mjs";
-import * as cheerio from "cheerio"
-import { cteetest } from "./test/tested/cteetest.js";
-import { DIGITIMES } from "./sources/T1/DIGITIMES.mjs";
-import { digitest } from "./test/tested/digitest.js";
-import { chinatest } from "./test/tested/chinatest.js";
-import { CHINATIMES } from "./sources/T2/CHINATIMES.mjs";
-import { NXTAPPLE } from "./sources/T2/NXTAPPLE.mjs";
-import { SETN } from "./sources/T3/SETN.mjs";
-import { setntest } from "./test/tested/setntest.js";
-import { techorangetest } from "./test/techrangetest.js";
-import { TECHORANGE } from "./sources/T5/TECHORANGE.mjs";
-import { TECHBANG } from "./sources/T5/TECHBANG.mjs";
-import { techbangtest } from "./test/techbangtest.js";
-import { CNYES } from "./sources/T5/CNYES.mjs";
-import { cnyestest } from "./test/cnyestest.js";
-import { SAYDIGI } from "./sources/T5/SAYDIGI.mjs";
-import { saydigitest } from "./test/saydigitest.js";
-import { COMPOTECHASIA } from "./sources/T5/COMPOTECHASIA.mjs";
-import { compotechtest } from "./test/compotechtest.js";
-import { INSIDE } from "./sources/T5/INSIDE.mjs";
-import { insidetest } from "./test/insidetest.js";
 const testLinks = [
   "https://www.cool3c.com/article/202079",
 

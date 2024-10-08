@@ -1,14 +1,18 @@
 {
   "name": "dms-scrape",
-  "version": "0.4.5",
-  "main": "index.mjs",
+  "version": "0.4.6",
+  "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "test": "node test.mjs"
+    "test": "node test.mjs",
+    "build": "node build.mjs"
   },
-  "author": "",
+  "files": [
+    "dist/*"
+  ],
+  "author": "lostmypillow",
   "license": "ISC",
-  "description": "",
+  "description": "Scraper for CompassPR DMS Scraper",
   "devDependencies": {
     "esbuild": "^0.23.1"
   },
