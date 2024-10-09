@@ -3,9 +3,20 @@ export function determineCategory(title) {
 
   const keywordGroups = [
     // Qualcomm-related keywords
-    [["高通", "Snapdragon", "驍龍"], "Qualcomm相關新聞"],
+    [
+      [
+        "高通",
+        "Snapdragon",
+        "驍龍",
+        "Qualcomm",
+        "Adreno",
+        "Hexagon",
+        "Spectra",
+      ],
+      "Qualcomm相關新聞",
+    ],
 
-    // MediaTek-related keywords
+    // "MediaTek相關新聞"
     [
       [
         "聯發科",
@@ -13,11 +24,15 @@ export function determineCategory(title) {
         "天璣",
         "Dimensity",
         "蔡力行",
+        "Helio",
+        "MiraVision",
+        "NeuroPilot",
+        "AI Processing Unit",
       ],
-      "MediaTek相關新聞",
+      "mediatek",
     ],
 
-    // Wireless communications-related keywords
+    // "無線通訊市場"
     [
       [
         "6G",
@@ -31,14 +46,18 @@ export function determineCategory(title) {
         "台灣大",
         "基地台",
         "5G",
-
         "RF晶片",
         "Wi-Fi",
+        "Sub-6",
+        "毫米波",
+        "NB-IoT",
+        "VoLTE",
+        "衛星通訊",
       ],
-      "無線通訊市場",
+      "commu",
     ],
 
-    // Smartphones, consumer electronics, and other smart devices
+    // "智慧型手機/消費性電子產品"
     [
       [
         "智慧型手機",
@@ -51,17 +70,15 @@ export function determineCategory(title) {
         "Exynos",
         "Samsung",
         "Galaxy",
-        "Pixel",
         "iPad",
         "華為",
         "三星",
         "折疊手機",
-        "Snapdragon 8 Gen",
         "小米",
         "Sony",
         "Nokia",
         "Apple",
-        "華為海思",
+        "華為",
         "vivo",
         "智慧音訊",
         "Xiaomi",
@@ -69,11 +86,17 @@ export function determineCategory(title) {
         "iPhone",
         "Mate",
         "Pixel",
+        "OPPO",
+        "Realme",
+        "Honor",
+        "OnePlus",
+        "車聯網",
+        "智慧家居",
       ],
-      "智慧型手機/消費性電子產品",
+      "phone",
     ],
 
-    // Other important industry news
+    // "其他業界重要訊息"
     [
       [
         "台積電",
@@ -100,8 +123,14 @@ export function determineCategory(title) {
         "晶圓廠",
         "製程",
         "Altera",
+        "ARM",
+        "RISC-V",
+        "台灣IC設計",
+        "英飛凌",
+        "高效能計算",
+        "電子設計自動化",
       ],
-      "其他業界重要訊息",
+      "other",
     ],
   ];
 

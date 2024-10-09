@@ -61,10 +61,10 @@ import { insidetest } from "./insidetest.js";
 // bug title: https://www.eprice.com.tw/mobile/talk/6113/5812708/1
 //unwanted content: https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085
 /// undefined: https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT
-// const urls = ["https://3c.ltn.com.tw/news/59763", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34" ]
-// for (const url of urls) {
-//   await multscrape(url);
-// }
+const urls = ["https://technews.tw/2024/10/09/mediatek-dimensity-9400-ai-features-are-coming-in-droves/", "https://www.xfastest.com/thread-293068-1-1.html", "https://www.kocpc.com.tw/archives/569144", "https://www.cool3c.com/article/226396", "https://ccc.technews.tw/2024/10/09/tws-market-high-end-product", "https://news.cnyes.com/news/id/5736726", "https://technews.tw/2024/10/09/nvidia-mediatek-3nm-ai-pc-cpu" ]
+for (const url of urls) {
+  await multscrape(url);
+}
 // sogi leo
 //xfastest time
 /// sogi promotion: https://www.sogi.com.tw/articles/samsung_galaxy_tab_s10_ultra/6263080
@@ -72,19 +72,19 @@ import { insidetest } from "./insidetest.js";
 ///bug: https://www.cool3c.com/article/226021
 // multscrape("https://3c.ltn.com.tw/news/59704")
 
-// async function multscrape(url) {
-//   const data = await dmsScrape("link", url);
-// // const data = await dmsScrape("html", url, insidetest);
-//   console.log(data.title);
-//   console.log(data.date + ' / ' + data.source + ' / ' + data.author);
-//   console.log(data.url);
-//   console.log(data.content);
-//   console.log()
-// }
+async function multscrape(url) {
+  const data = await dmsScrape("link", url);
+// const data = await dmsScrape("html", url, insidetest);
+  console.log(data.title);
+  console.log(data.date + ' / ' + data.source + ' / ' + data.author);
+  console.log(data.url);
+  console.log(data.content);
+  console.log()
+}
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
 
-console.log(await dmsScrape("link", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34"))
+// console.log(await dmsScrape("link", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34"))
 
 
 // const link = "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"
