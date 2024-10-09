@@ -1,18 +1,46 @@
-export const insidetest = `<!DOCTYPE html>
-<html class="off_canvas js-off_canvas">
+export const insidetest = `
+<meta charset="utf-8">
+<title>台、歐盟6G合作 30家台廠搶進 - 日報 - 工商時報</title>
 
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
-    <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
-    <title>【Meta Connect 2024】最新 VR 頭盔 Quest 3S 來了！300 美元起 - INSIDE</title>
-    <meta name="HandheldFriendly" content="true">
-    <meta name="MobileOptimized" content="width">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:url" itemprop="url" content="https://www.ctee.com.tw/news/20241009700160-439901">
+<meta property="og:title" itemprop="name" content="台、歐盟6G合作 30家台廠搶進">
+<meta property="og:image" itemprop="image" content="https://images.ctee.com.tw/newsphoto/2024-10-09/1024/A14AA14_PictureItem_Clipping_01_5.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="768">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
+<meta property="og:description" itemprop="description" content="台、歐盟6G技術發展合作台、歐盟6G合作向前衝！台、歐盟8日在台共同舉辦「2024臺歐盟6G SNS聯合研討會，並首度宣布台灣技術團隊獲得全球最大歐盟6G實驗網SANDBOX計畫認證，成為歐盟境外第一座6G實驗網，並吸引仁寶、光寶科、明基材、耀登、稜研、現觀科、訊勢等30家台廠投入6G研發，搶先布局...">
+<meta property="fb:app_id" content="964670837863313">
+<meta property="fb:pages" content="128269288214">
+<meta property="article:author" content="https://www.facebook.com/ctee.fans">
+<meta property="article:publisher" content="https://www.facebook.com/ctee.fans">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="工商時報">
 
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="title" itemprop="headline" data-ephemeral="true" content="台、歐盟6G合作 30家台廠搶進">
+<meta name="description" content="台、歐盟6G技術發展合作台、歐盟6G合作向前衝！台、歐盟8日在台共同舉辦「2024臺歐盟6G SNS聯合研討會，並首度宣布台灣技術團隊獲得全球最大歐盟6G實驗網SANDBOX計畫認證，成為歐盟境外第一座6G實驗網，並吸引仁寶、光寶科、明基材、耀登、稜研、現觀科、訊勢等30家台廠投入6G研發，搶先布局...">
+<meta name="keywords" itemprop="keywords" content="">
+<meta name="lastmod" property="article:modified_time" itemprop="dateModified" content="2024-10-09 06:43:10">
+<meta name="pubdate" property="article:published_time" itemprop="datePublished" content="2024-10-09 03:00:00">
+<meta name="source" content="工商時報">
+<meta name="copyright" content="工商時報">
+<meta name="author" itemprop="author" content="工商時報">
+<meta name="publisher" itemprop="publisher" content="工商時報">
+<meta name="medium" content="news">
+<meta name="image" content="https://images.ctee.com.tw/newsphoto/2024-10-09/1024/A14AA14_PictureItem_Clipping_01_5.jpg">
+<meta property="og:image" itemprop="image" content="https://static.ctee.com.tw/img/ctee-logo-main.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="600">
+<meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="article">
+<meta property="fb:app_id" content="964670837863313">
+<meta property="fb:pages" content="128269288214">
+<meta property="article:author" content="https://www.facebook.com/ctee.fans">
+<meta property="article:publisher" content="https://www.facebook.com/ctee.fans">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="工商時報">
 
 
 
@@ -23,56 +51,9 @@ export const insidetest = `<!DOCTYPE html>
 
 
 
-    <meta name="copyright" content="TNL Media Group">
-    <meta name="author" content="Chris">
-    <meta name="description"
-        content="Quest 3S 定價 300 美元起，比 Quest 3 便宜 200 美元，可說是想用更親民的價格搶攻 VR 市場。#XR,Meta,VR,Meta,Quest 3S (meta-announces-300-quest-3s-a-cheaper)">
-    <meta name="keywords" content="XR,Meta,VR,Quest 3S">
-    <meta name="robots" content="all">
-    <meta property="fb:app_id" content="520754591819646">
-    <meta property="fb:pages" content="159425621565">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper">
-    <meta property="og:site_name" content="INSIDE">
-    <meta property="og:title" content="【Meta Connect 2024】最新 VR 頭盔 Quest 3S 來了！300 美元起 - INSIDE">
-    <meta property="og:description" content="Quest 3S 定價 300 美元起，比 Quest 3 便宜 200 美元，可說是想用更親 民的價格搶攻 VR 市場。">
-    <meta property="og:image"
-        content="https://bucket-image.inkmaginecms.com/version/social/1/image/2024/09/00476c46-a71e-4e0b-861a-2269951d6abd.png">
-    <meta property="og:see_also" content="https://www.inside.com.tw/article/36399-ray-ban-meta-smart-glasses-doxxing">
-    <meta property="og:see_also" content="https://www.inside.com.tw/article/36390-microsoft-exec-tells-staff-won">
-    <meta property="og:see_also" content="https://www.inside.com.tw/article/36360-metaverse-hype-period-is-over">
-    <meta property="og:see_also" content="https://www.inside.com.tw/feature/side-chat/36342-side-chat-e277">
-    <meta property="og:see_also" content="https://www.inside.com.tw/article/36339-meta-connect-2024-apple">
-    <meta property="og:see_also"
-        content="https://www.inside.com.tw/article/36330-meta-updates-ray-ban-smart-glasses-with-real-time-ai-video-reminders-and-qr-code-scanning">
-    <meta property="og:see_also"
-        content="https://www.inside.com.tw/article/36331-meta-pitches-vr-to-mobile-developers-with-new-support-for-android-apps-on-quest">
-    <meta property="og:see_also"
-        content="https://www.inside.com.tw/article/36329-meta-ais-genai-imagine-features-expand-across-facebook-instagram-and-messenger">
-    <meta property="og:see_also"
-        content="https://www.inside.com.tw/article/36328-meta-will-use-ai-to-create-lip-synced-translations-of-creators-reels">
-    <meta property="og:see_also" content="https://www.inside.com.tw/article/36327-meta-orion-ar-glasses">
-    <meta property="article:tag" content="XR">
-    <meta property="article:tag" content="Meta">
-    <meta property="article:tag" content="VR">
-    <meta property="article:tag" content="Quest 3S">
-    <meta property="article:publisher" content="https://www.facebook.com/cyberbuzz/">
-    <meta property="article:section" content="Technology">
-    <meta property="article:author" content="https://www.facebook.com/cyberbuzz/">
-    <meta property="article:modified_time" content="2024-09-26T02:06:56+08:00">
-    <meta property="article:published_time" content="2024-09-26T02:07:00+08:00">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@insideCyberbuzz">
-    <meta name="twitter:title" content="【Meta Connect 2024】最新 VR 頭盔 Quest 3S 來了！300 美元起 - INSIDE">
-    <meta name="twitter:description" content="Quest 3S 定價 300 美元起，比 Quest 3 便宜 200 美元，可說是想用更親民的價格搶攻 VR 市場。">
-    <meta name="twitter:creator" content="@insideCyberbuzz">
-    <meta name="twitter:image"
-        content="https://bucket-image.inkmaginecms.com/version/social/1/image/2024/09/00476c46-a71e-4e0b-861a-2269951d6abd.png">
 
 
 
-    <meta name="theme-color" content="#fffff">
-    <meta name="msapplication-TileColor" content="#fffff">
 
 
 
@@ -80,8 +61,13 @@ export const insidetest = `<!DOCTYPE html>
 
 
 
+<meta name="msapplication-TileColor" content="#FFFFFF">
+<meta name="msapplication-TileImage" content="https://static.ctee.com.tw/img/favicon/favicon-144.png">
+<meta name="msapplication-config" content="https://static.ctee.com.tw/img/favicon/browserconfig.xml?20240729">
 
 
+<meta name="apple-mobile-web-app-title" content="工商時報">
+<meta name="application-name" content="工商時報">
 
 
 
@@ -90,6 +76,7 @@ export const insidetest = `<!DOCTYPE html>
 
 
 
+<meta name="darkreader" content="ce3f9ebc277e4ce88de5fff240329ce9">
 
 
 
@@ -111,1289 +98,1033 @@ export const insidetest = `<!DOCTYPE html>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</head>
-
-<body>
-
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M756VB8" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MTDW7N3" height="0" width="0"
-            style="display:none;visibility:hidden"></iframe>
-    </noscript>
-
-
-    <div class="page page-article">
-        <nav class="js_nav">
-
-            <!-- Menu group 集團 menu -->
-            <!-- 引入 Menu group 集團 menu -->
-            <tnlmedia-header theme="styleLight" lang="zh-tw" style="height:56px;display: block;"></tnlmedia-header>
-            <!-- TNLMedia header end -->
-
-            <div class="header js_header ">
-                <div class="container">
-                    <div class="header_inner">
-                        <div class="logo">
-                            <a href="https://www.inside.com.tw">INSIDE 硬塞的網路趨勢觀察</a>
-                        </div>
-
-                        <div class="menu js_menu_category">
-                            <div role="search" method="get" class="search_form js_header_search_form">
-                                <input class="js-search_input search_input" id="search" placeholder="搜尋" type="text"
-                                    name="s" value="">
-                                <button class="js-search_submit search_submit"><i
-                                        class="fa-solid fa-magnifying-glass"></i></button>
-                            </div>
-                            <!-- route -->
-
-                            <ul class="primary_nav">
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">報導</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/feature/side-chat" target="_self">塞掐 Side
-                                            Chat：最科技的Podcast節目</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/feature/rmn"
-                                            target="_self">RMN：電商與媒體的未來之道</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/headline" target="_self">頭條</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/breaking" target="_self">快訊</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/opinion" target="_self">評論</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/column" target="_self">專欄</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/features"
-                                            target="_self">專題</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/interview" target="_self">人物專訪</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/event" target="_self">活動採訪</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/category/unboxing" target="_self">產品評測</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">數位轉型</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%B3%87%E5%AE%89"
-                                            target="_self">資安</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/AI"
-                                            target="_self">AI</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/IOT"
-                                            target="_self">IOT</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/5G"
-                                            target="_self">5G</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E9%9B%B2%E7%AB%AF"
-                                            target="_self">雲端</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E5%8D%80%E5%A1%8A%E9%8F%88"
-                                            target="_self">區塊鏈</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%83%BD%E6%BA%90"
-                                            target="_self">能源科技</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E9%87%8F%E5%AD%90"
-                                            target="_self">量子運算</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">半導體</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E5%8F%B0%E7%A9%8D%E9%9B%BB"
-                                            target="_self">台積電</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%81%AF%E9%9B%BB"
-                                            target="_self">聯電</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%81%AF%E7%99%BC%E7%A7%91"
-                                            target="_self">聯發科</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E9%AB%98%E9%80%9A"
-                                            target="_self">高通</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/ASML"
-                                            target="_self">ASML</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/AMD"
-                                            target="_self">AMD</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Intel"
-                                            target="_self">Intel</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/NVIDIA"
-                                            target="_self">NVIDIA</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">網路</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Apple"
-                                            target="_self">Apple</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Amazon"
-                                            target="_self">Amazon</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Facebook"
-                                            target="_self">Facebook</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Google"
-                                            target="_self">Google</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/Microsoft"
-                                            target="_self">Microsoft</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E9%81%8A%E6%88%B2"
-                                            target="_self">遊戲</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E4%B8%B2%E6%B5%81%E5%BD%B1%E9%9F%B3"
-                                            target="_self">串流</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%A1%8C%E9%8A%B7"
-                                            target="_self">行銷</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E7%A4%BE%E7%BE%A4"
-                                            target="_self">社群</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E9%9B%BB%E5%95%86"
-                                            target="_self">電商</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">商業</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E5%89%B5%E6%A5%AD"
-                                            target="_self">創業</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%81%B7%E5%A0%B4"
-                                            target="_self">職場</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E7%AE%A1%E7%90%86"
-                                            target="_self">管理</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/ESG"
-                                            target="_self">ESG</a>
-                                        <a class="primary_nav_child_item" href="https://www.inside.com.tw/tag/IPO"
-                                            target="_self">IPO</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E4%BD%B5%E8%B3%BC"
-                                            target="_self">併購</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E5%8B%9F%E8%B3%87"
-                                            target="_self">募資</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/tag/%E8%B2%A1%E5%A0%B1"
-                                            target="_self">財報</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">焦點</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://activity.tnlmedia.com/2024/paris-olympics?utm_source=INSIDE&amp;utm_medium=menu"
-                                            target="_blank">巴黎奧運系列專題</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/insidepossible/" target="_self">硬塞小聚 INSIDE
-                                            POSSIBLE</a>
-                                    </div>
-                                </li>
-                                <li class="primary_nav_item primary_nav_item-dropdown dropdown">
-                                    <a class="primary_nav_item_title dropdown_trigger" href="#">會員專屬</a>
-                                    <div class="primary_nav_item_content dropdown_content">
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/feature/member-exclusive?utm_source=website&amp;utm_medium=Bar"
-                                            target="_self">會員免費內容</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/feature/inside-pay-per-view-project-electric-vehicle?utm_source=INSIDE&amp;utm_medium=Bar"
-                                            target="_self">電動車大未來</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.inside.com.tw/feature/inside-pay-per-view-digital-transformation?utm_source=INSIDE&amp;utm_medium=Bar"
-                                            target="_self">數位轉型專刊</a>
-                                        <a class="primary_nav_child_item"
-                                            href="https://www.thenewslens.com/subscription?utm_source=INSIDE&amp;utm_medium=Bar"
-                                            target="_blank">TNL集團通用｜無廣告體驗</a>
-                                    </div>
-                                </li>
-                            </ul>
-
-                            <div class="secondary_block">
-                                <div class="header_translation_block" onclick="translatePage()">
-                                    <span class="lanText-tw">繁</span> / <span class="lanText-cn">簡</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="dropdown js-check-isDropdown" data-dropdown_content="js_menu_category_mobile">
-                            <button class="menu_btn dropdown_trigger" aria-label="category menu">
-                                <span class="menu_btn_icon"><span></span></span>
-                            </button>
-                            <div
-                                class="dropdown_content off_canvas_menu_container js_menu_category_mobile js-off_canvas_menu_container">
-                            </div>
-                        </div>
-                        <div class="dropdown dropdown_menu_member js_dropdown_menu_member js-check-isDropdown"
-                            data-dropdown_content="js_menu_member">
-                            <a class="menu_btn menu_btn_user no_isLogin" rel="nofollow"
-                                href="https://www.inside.com.tw/member?redirect=https%3A%2F%2Fwww.inside.com.tw%2Farticle%2F36326-meta-announces-300-quest-3s-a-cheaper">
-                                <div class="menu_btn_icon icon-user">登入</div>
-                            </a>
-                            <button class="menu_btn menu_btn_user dropdown_trigger js_user_dropdown_trigger"
-                                aria-label="user menu">
-                                <div class="menu_btn_icon icon-user-check">
-                                    <div class="avatars js_user_avatar">
-                                        <span class="avatar_name"></span>
-
-                                        <img class="avatar_img" src="" alt="User Icon">
-                                    </div>
-                                </div>
-                            </button>
-                            <div class="menu_member js_menu_member dropdown_content">
-                                <!-- menu KV start -->
-                                <!-- ==== menu member dropdown block login and unlogin start ====-->
-                                <!-- user login start -->
-                                <div class="menu_user_lists">
-                                    <div class="menu_list menu_member_profiles">
-                                        <div class="menu_member_profile">
-                                            <div classs="header_member_name">Hi, <span class="js_user_name">User
-                                                    Name</span>
-                                            </div>
-                                            <div class="js_user_mail header_user_mail small">user@mail.com</div>
-                                        </div>
-                                    </div>
-                                    <ul class="sec_nav">
-                                        <li class="sec_nav_item">
-                                            <a class="sec_nav_item_title" rel="nofollow" target="_blank"
-                                                href="https://www.inside.com.tw/member/profile"><i
-                                                    class="fas fa-user-circle"></i>會員中心</a>
-                                        </li>
-                                        <li class="sec_nav_item">
-                                            <a class="sec_nav_item_title" rel="nofollow" target="_blank"
-                                                href="https://www.inside.com.tw/member/subscription"><i
-                                                    class="fas fa-donate"></i>付費訂閱資料</a>
-                                        </li>
-                                        <li class="sec_nav_item">
-                                            <a class="sec_nav_item_title" rel="nofollow"
-                                                href="https://www.inside.com.tw/insider/newsletter"><i
-                                                    class="fas fa-envelope"></i>電子報</a>
-                                        </li>
-                                        <li class="sec_nav_item">
-                                            <a class="sec_nav_item_title btn-logout" rel="nofollow"
-                                                href="https://www.inside.com.tw/member/logout">登出</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <!-- user login end -->
-                                <!-- ==== menu member dropdown block login and unlogin end ====-->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <div class="content">
-            <div class="ad-content pc" style="min-height:294px;margin-bottom:24px;">
-                <div class="tmgad tmgad-type-flux tmgad-new">
-
-                </div>
-
-            </div>
-
-            <article class="first_article first-use " data-ad2trk-observe="Main Article">
-
-                <div class="container post post_header_wrapper ">
-                    <div class="post_content_wrapper">
-                        <div class="post_content article feature-top">
-                            <figure>
-                                <picture>
-                                    <source
-                                        srcset="https://bucket-image.inkmaginecms.com/version/mobile/1/image/2024/09/00476c46-a71e-4e0b-861a-2269951d6abd.png"
-                                        type="image/png" media="(max-width: 749px)">
-                                    <img src="https://bucket-image.inkmaginecms.com/version/desktop/1/image/2024/09/00476c46-a71e-4e0b-861a-2269951d6abd.png"
-                                        alt="" title="" width="750" height="393" style="width: 100%;">
-                                    <figcaption class="wp-caption-text">Photo Credit:Meta</figcaption>
-                                </picture>
-                            </figure>
-                        </div>
-                    </div>
-
-                    <div class="post_header js-post_header">
-                        <a class="post_category badge badge-large" style="background-color: #ea5496"
-                            href="https://www.inside.com.tw/category/meta">Meta</a>
-
-                        <h1 class="post_header_title js-auto_break_title">【Meta Connect 2024】最新 VR 頭盔 Quest 3S 來了！300 美元
-                            起</h1>
-
-                        <div class="post_author_g">
-                            <span class="post_author">
-                                <!-- <i class="fa-solid fa-user"></i> -->
-                                <a href="https://www.inside.com.tw/author/chris" title="Posts by Chris"
-                                    class="author url fn" rel="author">Chris</a>
-                            </span>
-                        </div>
-                        <ul class="post_meta">
-                            <li class="post_date">
-                                <span>2024/09/26</span>
-                            </li>
-
-                            <li>
-                                <a class="hero_slide_tag" href="https://www.inside.com.tw/tag/1045-VR">VR</a>
-                                、
-                                <a class="hero_slide_tag" href="https://www.inside.com.tw/tag/3014-Meta">Meta</a>
-                                、
-                                <a class="hero_slide_tag" href="https://www.inside.com.tw/tag/26680-Quest%203S">Quest
-                                    3S</a>
-                            </li>
-                        </ul>
-
-
-                        <div class="post_introduction">
-                            Quest 3S 定價 300 美元起，比 Quest 3 便宜 200 美元，可說是想用更親民的價格搶攻 VR 市場。
-                        </div>
-
-                        <div class="post_toolbox post_toolbox-">
-                            <div class="post_toolbox_action">
-                                <a class="post_toolbox_item fb-share sharer" data-sharer="facebook"
-                                    data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                        class="fab fa-facebook-f"></i></a>
-                                <a class="post_toolbox_item twitter-share sharer" data-sharer="twitter"
-                                    data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                        class="fab fa-x-twitter"></i></a>
-                                <a class="post_toolbox_item line-share sharer" data-sharer="line"
-                                    data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                        class="fab fa-line"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="container post mobile">
-                    <div class="ad-content" style="min-height:348px;margin-bottom:24px;">
-                        <div class="tmgad tmgad-type-flux tmgad-new">
-
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="container post">
-                    <div class="post_content_wrapper first-content">
-                        <div class="post_content article">
-                            <div class="post_toolbox post_toolbox-sticky">
-                                <a class="post_toolbox_logo js-post_toolbox_logo" href="https://www.inside.com.tw"></a>
-                                <div class="post_toolbox_action">
-                                    <a class="post_toolbox_item fb-share sharer" data-sharer="facebook"
-                                        data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                            class="fab fa-facebook-f"></i></a>
-                                    <a class="post_toolbox_item twitter-share sharer" data-sharer="twitter"
-                                        data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                            class="fab fa-x-twitter"></i></a>
-                                    <a class="post_toolbox_item line-share sharer" data-sharer="line"
-                                        data-url="https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper"><i
-                                            class="fab fa-line"></i></a>
-                                </div>
-                            </div>
-
-                            <div id="article_content" data-article-id="36326"
-                                class="js-article-continue article-continue post_content_wrapper post-content-section ">
-                                <section class="js-article-content-body">
-                                    <p class="ck-section">就如先前外媒所推測，Meta 在 2024 年 Connect 開發者大會上發表了 Quest 3S！
-                                        一款價格更親民的混合實境頭戴式裝置。Quest 3S 定價 300 美元起，比 Quest 3 便宜 200 美元，可說是想用更親民的價格搶攻 VR 市場。
-                                    </p>
-                                    <p class="ck-section">Quest 3S 採用與 Quest 2 相同的 1832×1920 解析度顯示器，並搭載與 Quest 3 相同的
-                                        Snapdragon XR Gen 2 處理器和 8GB 記憶體，不過為了將 Quest 3S 的價格壓低至 300 美元，Meta 也進行了一些規格調整：
-                                    </p>
-                                    <div class="ad-content" style="min-height:294px">
-                                        <div class="tmgad tmgad-type-flux tmgad-new">
-
-                                        </div>
-                                    </div>
-                                    <ul class="ck-section">
-                                        <li>顯示器： 採用與 Quest 2 相同的 1832×1920 解析度顯示器，這是與 Quest 3 的 2064×2208
-                                            解析度相比最大的差異，也是最顯著的成本降低措施。</li>
-                                        <li>視野： 與 Quest 2 相同，為 96H/90V，而 Quest 3 則為 110H/96V。</li>
-                                        <li>重量： 比 Quest 3 輕 1 公克，比 Quest 2 重 9 公克。</li>
-                                        <li>電池續航力： 儘管電池容量小於 Quest 3，但擁有最佳的平均 電池續航力。</li>
-                                    </ul>
-                                    <p class="ck-section">可以看得出來 Quest 3S 是融合了 Quest 3 跟 2 規格的產品，但隨著 Quest 3S 推出，Quest 2
-                                        和 Quest Pro 也正式宣布停產，同時 Quest 3 的價格也調降至 500 美元（512GB 版本）。Meta 還將為所有購買 Quest 3 或
-                                        3S 的消費者提供新的《蝙蝠俠：阿卡漢之影》遊戲和三個月的 Quest+ 訂閱服務。Quest 3S 將於 10 月 15 日開始在美國出貨。</p>
-                                    <p class="ck-section" style="margin-left:auto;text-align:justify;"><strong>快加入
-                                        </strong><a
-                                            href="https://news.google.com/publications/CAAqBwgKMJWgjgswlI2hAw?ceid=TW:zh-Hant&amp;oc=3"
-                                            target="_blank" rel="noopener noreferrer"><strong>INSIDE Google
-                                                News</strong></a><strong> 按下追蹤，給你最新、最 IN 的科技新聞！</strong></p>
-                                    <p class="ck-section" style="margin-left:auto;text-align:justify;">
-                                        <strong>延伸閱讀：</strong></p>
-                                    <ul class="ck-section">
-                                        <li class="post_title" style="margin-left:0px;"><a
-                                                href="https://www.inside.com.tw/article/36313-ready-for-meta-connect-2024-heres-what-expecting-to-see">Meta
-                                                Connect 2024 即將登場！傳聞的 Quest 3S、AI 聊天機器人會出現嗎？</a></li>
-                                    </ul>
-                                </section>
-
-                                <section class="article-content-mention">
-                                    <p><strong>最新發展：</strong></p>
-                                    <ul>
-                                        <li><a
-                                                href="https://www.inside.com.tw/article/36330-meta-updates-ray-ban-smart-glasses-with-real-time-ai-video-reminders-and-qr-code-scanning">【Meta
-                                                Connect 2024】Meta 雷朋智慧眼鏡可以即時翻譯了！還有 AI 影像處理、掃 QR Code</a></li>
-                                        <li><a
-                                                href="https://www.inside.com.tw/article/36331-meta-pitches-vr-to-mobile-developers-with-new-support-for-android-apps-on-quest">【Meta
-                                                Connect 2024】要和蘋果「空間運 算」對抗？Meta 大幅強調自家 MR 開發環境 Horizo​​n OS</a></li>
-                                        <li><a
-                                                href="https://www.inside.com.tw/article/36329-meta-ais-genai-imagine-features-expand-across-facebook-instagram-and-messenger">【Meta
-                                                Connect 2024】「以文生圖」AI 功 能 Imagine 要進入 Facebook、Instagram 和 Messenger
-                                                了！</a></li>
-                                        <li><a
-                                                href="https://www.inside.com.tw/article/36328-meta-will-use-ai-to-create-lip-synced-translations-of-creators-reels">【Meta
-                                                Connect 2024】翻譯蒟蒻真的來了？Meta 將使 用 AI 為 Reels 自動翻譯、配口型！</a></li>
-                                        <li><a href="https://www.inside.com.tw/article/36327-meta-orion-ar-glasses">【Meta
-                                                Connect 2024】Meta 發表全息 AR 眼鏡原型機「Orion」，會是挑戰智慧型手機的聖杯嗎？</a></li>
-                                    </ul>
-                                </section>
-
-
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-
-
-        </div>
-
-        <footer>
-            <div class="footer">
-                <div class="footer_top">
-                    <div class="container">
-                        <div class="footer_post_list_group">
-                            <div class="footer_post_list">
-                                <a class="footer_post_list_title badge badge-large" style="background-color: #1cafd7"
-                                    href="https://www.inside.com.tw/category/column">
-                                    專欄
-                                </a>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/24720-electric-vehicle-gearbox">【電車世代】電動車到底該不該裝變速箱？</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/08/27</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/chris" title="Posts by Chris"
-                                                class="author url fn" rel="author">Chris</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1008-%E9%9B%BB%E5%8B%95%E8%BB%8A">電動車</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2174-porsche">porsche</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/9496-Taycan">Taycan</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/14468-%E8%AE%8A%E9%80%9F%E7%AE%B1">變速箱</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35555-opportunities-and-challenges-of-stablecoins-why-they-remain-a-focus-in-2024">【Web3
-                                            元觀察】穩定幣的機會與挑戰：為何在 2024 年仍是焦點？</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/09</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/kordan"
-                                                title="Posts by 歐曜瑋（Kordan）" class="author url fn"
-                                                rel="author">歐曜瑋（Kordan）</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/80-%E7%9B%A3%E7%AE%A1">監管</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/7060-%E7%A9%A9%E5%AE%9A%E5%B9%A3">穩定幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/9941-DeFi">DeFi</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/16066-CBDC">CBDC</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25863-%E6%97%A5%E6%9C%AC%E7%A9%A9%E5%AE%9A%E5%B9%A3">日本穩定幣</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35469-japan-ai">【Web3
-                                            元觀察】日本穩定幣法案周年回顧與展望</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/01</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/kordan"
-                                                title="Posts by 歐曜瑋（Kordan）" class="author url fn"
-                                                rel="author">歐曜瑋（Kordan）</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/430-%E6%97%A5%E6%9C%AC">日本</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1728-%E5%8D%80%E5%A1%8A%E9%8F%88">區塊鏈</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/7060-%E7%A9%A9%E5%AE%9A%E5%B9%A3">穩定幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/19054-%E9%87%91%E8%9E%8D%E5%89%B5%E6%96%B0">金融創新</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25790-%E6%97%A5%E5%9C%93%E7%A9%A9%E5%AE%9A%E5%B9%A3">日圓穩定幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25791-%E7%A9%A9%E5%AE%9A%E5%B9%A3%E6%B3%95%E6%A1%88">穩定幣法案</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25792-%E6%97%A5%E6%9C%AC%E9%87%91%E8%9E%8D%E7%A7%91%E6%8A%80">日本金融科技</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/34438-has-the-cryptocurrency-bull-market-really-arrived-price-vs-value">【Web3
-                                            元觀察】加密貨幣的牛市真的來了嗎？價格 v.s. 價值</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/03/11</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/kordan"
-                                                title="Posts by 歐曜瑋（Kordan）" class="author url fn"
-                                                rel="author">歐曜瑋（Kordan）</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1000-%E6%AF%94%E7%89%B9%E5%B9%A3">比特幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1728-%E5%8D%80%E5%A1%8A%E9%8F%88">區塊鏈</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/4493-%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3">加密貨幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/9941-DeFi">DeFi</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/15529-Web3">Web3</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/34241-the-future-of-crypto-consumer-apps">【Web3
-                                            元觀察】探索 2024 年：加密消費者應用的未來發展</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/02/20</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/kordan"
-                                                title="Posts by 歐曜瑋（Kordan）" class="author url fn"
-                                                rel="author">歐曜瑋（Kordan）</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/32-%E6%87%89%E7%94%A8%E7%A8%8B%E5%BC%8F">應用程式</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1728-%E5%8D%80%E5%A1%8A%E9%8F%88">區塊鏈</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/6280-%E9%8C%A2%E5%8C%85">錢包</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/15781-web3.0">web3.0</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/24491-%E6%B6%88%E8%B2%BB%E8%80%85%E9%AB%94%E9%A9%97">消費者體驗</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer_post_list">
-                                <a class="footer_post_list_title badge badge-large" style="background-color: #ea5496"
-                                    href="https://www.inside.com.tw/category/trend">
-                                    趨勢
-                                </a>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36362-russia-spacex-starlink-shahed-136-drones">烏克蘭稱：俄軍無人機疑似使用
-                                            Starlink 系統提升攻擊能力</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/09/28</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/inside-blog"
-                                                title="Posts by INSIDE 硬塞的網路趨勢觀察" class="author url fn"
-                                                rel="author">INSIDE 硬塞的網路趨勢觀察</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1034-%E7%84%A1%E4%BA%BA%E6%A9%9F">無人機</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/5242-%E7%83%8F%E5%85%8B%E8%98%AD">烏克蘭</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/10310-Starlink">Starlink</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36334-eas-wallet-1200">悠遊付「手機嗶乘車」開放手機購買「1200&nbsp;定期票」，北北基桃各公共運輸工具皆可使用</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/09/26</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/inside-blog"
-                                                title="Posts by INSIDE 硬塞的網路趨勢觀察" class="author url fn"
-                                                rel="author">INSIDE 硬塞的網路趨勢觀察</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/4587-%E6%82%A0%E9%81%8A%E5%8D%A1">悠遊卡</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/10144-%E6%82%A0%E9%81%8A%E4%BB%98">悠遊付</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26708-1200%20%E5%AE%9A%E6%9C%9F%E7%A5%A8">1200
-                                                定期票</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36325-nintendo-taipei-will-open-in-2025-spring">任天堂專賣店確定來台！進駐新光三越
-                                            A11，明年春季開幕，快閃店先打頭陣</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/09/25</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/udn" title="Posts by 聯合新聞網"
-                                                class="author url fn" rel="author">聯合新聞網</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/548-%E4%BB%BB%E5%A4%A9%E5%A0%82">任天堂</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1041-nintendo">nintendo</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26696-%E6%96%B0%E5%85%89%E4%B8%89%E8%B6%8A%20A11">新光三越
-                                                A11</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26697-%E7%91%AA%E5%88%A9%E6%AD%90%E5%BF%AB%E9%96%83%E5%BA%97">瑪利歐快閃店</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36320-elon-musk-south-africa-president-ramaphosa-starlink">「回家吧。」南非總統西里爾邀請伊隆・馬斯克投資南非</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/09/25</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/inside-blog"
-                                                title="Posts by INSIDE 硬塞的網路趨勢觀察" class="author url fn"
-                                                rel="author">INSIDE 硬塞的網路趨勢觀察</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1420-%E9%A6%AC%E6%96%AF%E5%85%8B">馬斯克</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1686-%E7%89%B9%E6%96%AF%E6%8B%89">特斯拉</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1832-SpaceX">SpaceX</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/10227-%E5%8D%97%E9%9D%9E">南非</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/10310-Starlink">Starlink</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26683-%E6%8B%89%E9%A6%AC%E4%BD%9B%E6%B2%99">拉馬佛沙</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36233-amazon-jassy-tells-employees-to-return-to-office-five-days-a-week">Amazon
-                                            正式取消在家上班！明年起一周 5 日天天到辦公室</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/09/17</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/udn" title="Posts by 聯合新聞網"
-                                                class="author url fn" rel="author">聯合新聞網</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/139-Amazon">Amazon</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/921-%E4%BA%9E%E9%A6%AC%E9%81%9C">亞馬遜</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer_post_list">
-                                <a class="footer_post_list_title badge badge-large" style="background-color: #999"
-                                    href="https://www.inside.com.tw/category/interview">
-                                    人物專訪
-                                </a>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36070-exclusive-interview-with-the-director-of-the-brand-exhibition-at-the-2024-taiwan-creative-expo">【2024&nbsp;文博會】專訪
-                                            2024 台灣文博會商 展總監黃昱禎：有感媒合到數位商展，如何將台灣品牌推向海外</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/08/30</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/sherlock"
-                                                title="Posts by Sherlock" class="author url fn"
-                                                rel="author">Sherlock</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25908-%E5%AF%B6%E5%B3%B6%E7%99%BE%E9%9D%A2">寶島百面</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26303-2024%20%E6%96%87%E5%8D%9A%E6%9C%83">2024
-                                                文博會</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26377-%E7%B7%9A%E4%B8%8A%E5%95%86%E5%B1%95">線上商展</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26378-%E5%95%86%E5%B1%95%E7%B8%BD%E7%9B%A3">商展總監</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26379-%E9%BB%83%E6%98%B1%E7%A6%8E">黃昱禎</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26380-%E5%93%81%E7%89%8C%E5%AA%92%E5%90%88">品牌媒合</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/36045-exclusive-interview-with-the-curator-of-the-technology-exhibition-and-art-performance-at-the-2024-cultural-expo">【2024&nbsp;文博會】專訪
-                                            2024&nbsp;文博會科技展演藝術策展人馮建彰：視覺藝術與科技下的一筆一畫</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/08/29</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/sherlock"
-                                                title="Posts by Sherlock" class="author url fn"
-                                                rel="author">Sherlock</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25908-%E5%AF%B6%E5%B3%B6%E7%99%BE%E9%9D%A2">寶島百面</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25911-2024%20%E8%87%BA%E7%81%A3%E6%96%87%E5%8D%9A%E6%9C%83">2024
-                                                臺灣文博會</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26224-%E8%A3%B8%E8%A6%96%203D">裸視
-                                                3D</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26353-FREE%27S">FREE'S</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26354-%E9%A6%AE%E5%BB%BA%E5%BD%B0">馮建彰</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26356-FREE%27S%C2%A0%E8%87%AA%E7%94%B1%E7%9A%84%E8%A8%AD%E8%A8%88">FREE'S&nbsp;自由的設計</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/26357-%E7%9C%A0%E6%9C%88%E7%B7%9A">眠月線</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/feature/side-chat/35405-side-chat-e251">中指通：百萬
-                                            YouTuber 暨成人內容推廣師 | 競爭激烈、政策緊縮下的求生之道【塞掐 Side Chat】E251</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/06/24</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/mia" title="Posts by Mia"
-                                                class="author url fn" rel="author">Mia</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/687-%E5%95%86%E6%A5%AD%E6%A8%A1%E5%BC%8F">商業模式</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1045-VR">VR</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1999-YouTuber">YouTuber</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2474-%E5%89%B5%E4%BD%9C%E8%80%85">創作者</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/17863-%E6%88%90%E4%BA%BA%E5%85%A7%E5%AE%B9">成人內容</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25747-%E4%B8%AD%E6%8C%87%E9%80%9A">中指通</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/feature/ai-new-chip-war/34813-neuchips-interview">專訪
-                                            Neuchips 創鑫：台灣新創怎緊抓生成式 AI 大浪？</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/05/29</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/sisley" title="Posts by Sisley"
-                                                class="author url fn" rel="author">Sisley</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1321-AI">AI</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2354-GPU">GPU</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/19367-%E7%94%9F%E6%88%90%E5%BC%8FAI">生成式AI</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/19712-LLM">LLM</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/20309-AI%20%E6%99%B6%E7%89%87">AI
-                                                晶片</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25364-%E8%83%BD%E6%95%88">能效</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25365-%E8%BB%9F%E9%AB%94%E4%BA%BA%E6%89%8D">軟體人才</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/25366-Neuchips">Neuchips</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/34472-liang-sheng-lin">黃明志破億神曲《東京盆踊》背後的男人，專訪
-                                            Cool Japan TV 共同創辦人林良升</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/03/14</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/tnl" title="Posts by TNL"
-                                                class="author url fn" rel="author">TNL</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/84-%E8%A1%8C%E9%8A%B7">行銷</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/197-Youtube">Youtube</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1021-%E5%BD%B1%E9%9F%B3">影音</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2001-%E7%B6%B2%E7%B4%85">網紅</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/4600-%E5%89%B5%E4%BD%9C">創作</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/5492-%E8%87%AA%E5%AA%92%E9%AB%94">自媒體</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/15035-%E9%BB%83%E6%98%8E%E5%BF%97">黃明志</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/24796-Cool%20Japan%20TV">Cool Japan
-                                                TV</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/24797-%E6%9E%97%E8%89%AF%E5%8D%87">林良升</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="footer_post_list">
-                                <a class="footer_post_list_title badge badge-large" style="background-color: #e4ad00"
-                                    href="https://www.inside.com.tw/category/opinion">
-                                    評論
-                                </a>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35766-elta-rebroadcast">
-                                            奧運直播被愛爾達「獨佔」？不，這是耕耘 15 年的故事與困境</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/30</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/206092005" title="Posts by 精選轉貼"
-                                                class="author url fn" rel="author">精選轉貼</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/146-%E4%B8%AD%E8%8F%AF%E9%9B%BB%E4%BF%A1">中華電信</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1108-%E4%B8%B2%E6%B5%81">串流</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1126-%E7%9B%B4%E6%92%AD">直播</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/6866-%E6%84%9B%E7%88%BE%E9%81%94">愛爾達</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35756-learn-from-sbf">麥
-                                            可路易士《無限風暴》：幣圈神棍後浪推前浪，因此我們必須向 SBF 這樣的壞人「學習」</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/30</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/tnl" title="Posts by TNL"
-                                                class="author url fn" rel="author">TNL</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/999-bitcoin">bitcoin</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1000-%E6%AF%94%E7%89%B9%E5%B9%A3">比特幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1728-%E5%8D%80%E5%A1%8A%E9%8F%88">區塊鏈</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/4493-%E5%8A%A0%E5%AF%86%E8%B2%A8%E5%B9%A3">加密貨幣</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/10672-FTX">FTX</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/18628-SBF">SBF</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/20006-Sam%20Bankman-Fried">Sam
-                                                Bankman-Fried</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35745-another-failure-for-intel">Intel
-                                            的失敗又添一筆！基辛格還有機會取回市場信任嗎？</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/29</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/ericlin" title="Posts by 林宗輝"
-                                                class="author url fn" rel="author">林宗輝</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/649-Intel">Intel</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1913-CPU">CPU</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/3431-%E8%8B%B1%E7%89%B9%E7%88%BE">英特爾</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/13514-Pat%20Gelsinger">Pat
-                                                Gelsinger</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/14868-%E5%9F%BA%E8%BE%9B%E6%A0%BC">基辛格</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35561-threads-meta-one-year-anniversary">Threads
-                                            一週年：一個文字友好的社交場所，找到了它的受眾</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/10</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/chris" title="Posts by Chris"
-                                                class="author url fn" rel="author">Chris</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/3-Facebook">Facebook</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/534-instagram">instagram</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/3014-Meta">Meta</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/21206-Threads">Threads</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="footer_post_list_item">
-                                    <h5 class="post_title">
-                                        <a class="js-auto_break_title"
-                                            href="https://www.inside.com.tw/article/35524-why-did-elon-musk-retrieve-charges-against-openai">馬斯克為何悄悄撤告
-                                            Open AI，背後可能有哪些考量？</a>
-                                    </h5>
-                                    <ul class="post_meta">
-                                        <li class="post_date">
-                                            <span>2024/07/08</span>
-                                        </li>
-                                        <li>
-                                            <a href="https://www.inside.com.tw/author/abby" title="Posts by Abby"
-                                                class="author url fn" rel="author">Abby</a>
-                                        </li>
-                                        <li>
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/128-%E8%98%8B%E6%9E%9C">蘋果</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1256-%E4%BA%BA%E5%B7%A5%E6%99%BA%E6%85%A7">人工智慧</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/1420-%E9%A6%AC%E6%96%AF%E5%85%8B">馬斯克</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2189-%E6%B3%95%E5%BE%8B">法律</a>
-                                            、
-                                            <a class="hero_slide_tag"
-                                                href="https://www.inside.com.tw/tag/2724-OpenAI">OpenAI</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="footer_bottom">
-                    <div class="container">
-                        <div class="subscribe_block footer_subscribe_block">
-                            <div class="subscribe_block_title">訂閱 INSIDE</div>
-                            <div class="subscribe_block_description js-auto_break_text">隨時關注最新創業、科技、網路、工作訊息。</div>
-                            <div class="subscribe_block_action">
-                                <div class="subscribe_block_social_list">
-                                    <a class="subscribe_block_social_item" href="https://www.facebook.com/cyberbuzz"
-                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
-                                    <a class="subscribe_block_social_item" href="https://twitter.com/insideCyberbuzz"
-                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                                    <a class="subscribe_block_social_item" href="https://line.me/ti/p/@paq1370n"
-                                        target="_blank" rel="noopener noreferrer"><i class="fab fa-line"></i></a>
-                                    <a class="subscribe_block_social_item"
-                                        href="https://www.youtube.com/channel/UC5MwBnaH11q1nO2r4hiv5BQ?sub_confirmation=1"
-                                        target="_blank" rel="noopener noreferrer"><i
-                                            class="fa-brands fa-youtube"></i></a>
-                                    <a class="subscribe_block_social_item gtm-track" data-gtm-category="Footer"
-                                        data-gtm-label="Newsletter" rel="nofollow"
-                                        href="https://www.inside.com.tw/insider/newsletter"><i
-                                            class="fas fa-envelope"></i></a>
-                                </div>
-                            </div>
-                            <ul class="footer_links">
-                                <li>
-                                    <a href="https://www.tnlmediagene.com/zh-tw/media/inside" target="_blank">關於
-                                        INSIDE</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="contactus_block">
-                            <span class="contactus_title">聯絡我們</span>
-                            <ul>
-                                <li><a target="_blank"
-                                        href="mailto:sales@inside.com.tw">廣告採購、授權詢問、業務相關合作：<span>sales@inside.com.tw</span></a>
-                                </li>
-                                <li><a target="_blank"
-                                        href="mailto:partnership@inside.com.tw">非業務相關的行銷合作洽詢：<span>partnership@inside.com.tw</span></a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li><a target="_blank"
-                                        href="mailto:pr@inside.com.tw">新聞稿、書訊等內容合作：<span>pr@inside.com.tw</span></a>
-                                </li>
-                                <li><a target="_blank"
-                                        href="mailto:contact@inside.com.tw">新聞採訪、內容檢舉、投稿發文相關問題：<span>contact@inside.com.tw</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <tnlmedia-footer theme="styleLight" lang="zh-tw"></tnlmedia-footer>
-                </div>
-            </div>
-        </footer>
+<div id="fb-root"></div>
+
+
+
+
+
+
+
+
+
+
+<a href="#main" class="goMain">前往主要內容</a>
+<div class="wrapper" id="wrap">
+<div class="header__extend">
+<header class="header">
+<a class="header__main-logo-rectangular" href="/" title="工商時報">
+
+</a>
+<div class="header__left"><ul class="sns-clone">
+      <li class="fb-icon"><a href="https://www.facebook.com/ctee.fans" target="_blank" title="追蹤 Facebook"><span>追蹤
+            Facebook</span></a></li>
+      <li class="ig-icon"><a href="https://www.instagram.com/ctee.ig/" target="_blank" title="追蹤 Instagram"><span>追蹤
+            Instagram</span></a></li>
+      <li class="gnews-icon"><a href="https://news.google.com/publications/CAAiEPiRkO-b56f8-3lzE8KtgBsqFAgKIhD4kZDvm-en_Pt5cxPCrYAb?hl=zh-TW&amp;gl=TW&amp;ceid=TW:zh-Hant" target="_blank" title="訂閱 Google News"><span>訂閱 Google News</span>
+          </a></li>
+      <li class="youtube-icon"><a href="https://www.youtube.com/channel/UC9Ksf9o5OjzZWs2Jo8DC0Aw/featuup" target="_blank" title="訂閱 Youtube"><span>訂閱 Youtube</span></a></li>
+      <li class="podcast-icon"><a href="https://solink.soundon.fm/ctee?utm_medium=promotion&amp;utm_campaign=podcast" target="_blank" title="訂閱 Podcast"><span>訂閱 Podcast</span></a></li>
+      <li class="line-icon"><a href="https://page.line.me/ccf6523h" target="_blank" title="加Line 好友"> <span>加 Line
+            好友</span></a>
+      </li>
+    </ul></div>
+<div class="header__right">
+  <ul class="header__allied-link">
+    <li class="videotopic">
+      <a href="/videotopic">影音特區</a>
+    </li>
+    <li class="newspaper">
+      <a href="/readers">讀報區</a>
+    </li>
+    <li class="subscribe">
+      <a href="https://service.ctee.com.tw/Subscribe/edm.aspx" target="_blank">訂閱電子報</a>
+    </li>
+  </ul>
+</div>
+<nav class="header__nav" style="">
+<div class="header__nav--fixed-container">
+<a href="/" class="header__main-logo-square" title="工商時報首頁"><span>首頁</span><i class="header__menu-arrow"></i>
+
+</a>
+<ul class="nav-main">
+<li class="nav-main__menu-item " id="accordionMenu0">
+<a href="/livenews">即時</a>
+<a href="#accordionMenu0" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/livenews">即時首頁</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/policy">要聞</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/stock">證券</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/finance">金融</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/p-tax">稅法</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/industry">產業</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/house">房市</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/world">國際</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/china">兩岸</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/tech">科技</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/life">生活</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu1">
+<a href="/policy">要聞</a>
+<a href="#accordionMenu1" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/policy">要聞首頁</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-highlights">政經焦點</a></li>
+<li class="nav-main__sub-item"><a href="/policy/macro">總經趨勢</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-tax">稅務法務</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-prime">綜合要聞</a></li>
+<li class="nav-main__sub-item"><a href="/policy/futurecalendar">前瞻一周</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu2">
+<a href="/stock">證券</a>
+<a href="#accordionMenu2" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/stock">證券首頁</a></li>
+<li class="nav-main__sub-item"><a href="/stock/twmarket">上市櫃</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-market">陸港股市</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-market">國際股市</a></li>
+<li class="nav-main__sub-item"><a href="/industry/i-prime">產業焦點</a></li>
+<li class="nav-main__sub-item"><a href="/stock/futures">期貨</a></li>
+<li class="nav-main__sub-item"><a href="/stock/warrant">權證</a></li>
+<li class="nav-main__sub-item"><a href="/stock/star">亮點個股</a></li>
+<li class="nav-main__sub-item"><a href="/stock/insights">專家看盤</a></li>
+<li class="nav-main__sub-item"><a href="/stock/matchplay">台股逐洞賽</a></li>
+<li class="nav-main__sub-item"><a href="/stock/indices">重要指數</a></li>
+<li class="nav-main__sub-item"><a href="/stock/mops">重大訊息</a></li>
+<li class="nav-main__sub-item"><a href="/stock/calendar">財經行事曆</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu3">
+<a href="/finance">金融</a>
+<a href="#accordionMenu3" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/finance">金融首頁</a></li>
+<li class="nav-main__sub-item"><a href="/finance/f-highlights">金融話題</a></li>
+<li class="nav-main__sub-item"><a href="/finance/forex">外匯市場</a></li>
+<li class="nav-main__sub-item"><a href="/finance/currencies">牌告匯率</a></li>
+<li class="nav-main__sub-item"><a href="/finance/fintech">金融科技</a></li>
+<li class="nav-main__sub-item"><a href="/finance/bank">銀行動態</a></li>
+<li class="nav-main__sub-item"><a href="/finance/insurance">保險脈動</a></li>
+<li class="nav-main__sub-item"><a href="/finance/data">數據觀測</a></li>
+<li class="nav-main__sub-item"><a href="/finance/f-people">金融人物</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu4">
+<a href="/wealth">理財</a>
+<a href="#accordionMenu4" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/wealth">理財首頁</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/we-highlights">理財新訊</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/fund">基金</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/etf">ETF</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/we-consumption">生活消費</a></li>
+<li class="nav-main__sub-item"><a href="/search/信用卡/Keyword/4301,4302,4303,4304,4305,4306,4307,4308,4309,4310,4311,4313,4314/CategoryID">信用卡</a></li>
+<li class="nav-main__sub-item"><a href="/search/退休理財/Keyword/4301,4302,4303,4304,4305,4306,4307,4308,4309,4310,4311,4313,4314/CategoryID">退休理財</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/invoice">統一發票</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu5">
+<a href="/industry">產業</a>
+<a href="#accordionMenu5" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/industry">產業首頁</a></li>
+<li class="nav-main__sub-item"><a href="/industry/semi">半導體</a></li>
+<li class="nav-main__sub-item"><a href="/industry/tech">科技動態</a></li>
+<li class="nav-main__sub-item"><a href="/industry/i-prime">綜合產業</a></li>
+<li class="nav-main__sub-item"><a href="/industry/bio">生技醫療</a></li>
+<li class="nav-main__sub-item"><a href="/industry/ceo">CEO專訪</a></li>
+<li class="nav-main__sub-item"><a href="/industry/master">職場達人</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu6">
+<a href="/house">房市</a>
+<a href="#accordionMenu6" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/house">房市首頁</a></li>
+<li class="nav-main__sub-item"><a href="/house/h-highlights">房市焦點</a></li>
+<li class="nav-main__sub-item"><a href="/house/city">區域亮點</a></li>
+<li class="nav-main__sub-item"><a href="/house/expert">名家攻略</a></li>
+<li class="nav-main__sub-item"><a href="/house/project">居住安全</a></li>
+<li class="nav-main__sub-item"><a href="/house/opinion">觀點評論</a></li>
+<li class="nav-main__sub-item"><a href="/house/h-market">市場動態</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu7">
+<a href="/world">國際</a>
+<a href="#accordionMenu7" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/world">國際首頁</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-highlights">全球政經</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-market">全球市場</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-view">議題觀點</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-industry">國際產業</a></li>
+<li class="nav-main__sub-item"><a href="/world/globalscan">Global Scan</a></li>
+<li class="nav-main__sub-item"><a href="/world/world-news">全球財經周報</a></li>
+<li class="nav-main__sub-item"><a href="/world/commodity">大宗商品行情</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu8">
+<a href="/china">兩岸</a>
+<a href="#accordionMenu8" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/china">兩岸首頁</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-highlights">政情動向</a></li>
+<li class="nav-main__sub-item"><a href="/china/cross-strait">兩岸焦點</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-finance">大陸財經</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-industry">大陸產業</a></li>
+<li class="nav-main__sub-item"><a href="/china/chinascan">China Scan</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-market">陸港市場</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-view">觀點分析</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu9">
+<a href="/view">名家</a>
+<a href="#accordionMenu9" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/view">名家首頁</a></li>
+<li class="nav-main__sub-item"><a href="/view/analysis">總經經濟</a></li>
+<li class="nav-main__sub-item"><a href="/view/economic">國際經貿</a></li>
+<li class="nav-main__sub-item"><a href="/view/business">企業管理</a></li>
+<li class="nav-main__sub-item"><a href="/view/esg">ESG／綠能</a></li>
+<li class="nav-main__sub-item"><a href="/view/v-tax">稅務法務</a></li>
+<li class="nav-main__sub-item"><a href="/view/monetary">金融保險</a></li>
+<li class="nav-main__sub-item"><a href="/view/v-technology">產科脈動</a></li>
+<li class="nav-main__sub-item"><a href="/view/social">社會觀察</a></li>
+<li class="nav-main__sub-item"><a href="/view/leaders">名家薈萃</a></li>
+<li class="nav-main__sub-item"><a href="/view/frontline">編採線上</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu10">
+<a href="/lohas">樂活</a>
+<a href="#accordionMenu10" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/lohas">樂活首頁</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/food">美食饗宴</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/travel">旅遊休閒</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/lifestyle">生活風格</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/car">愛車天地</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/health">養生保健</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/fashion">時尚消費</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/art">藝文特區</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu11">
+<a href="/bookstore">書房</a>
+<a href="#accordionMenu11" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/bookstore">書房首頁</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/selection">書房嚴選</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/recommendation">名人書單</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/goodbook">好書推薦</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/learning">英文進修</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/magazine">雜誌精選</a></li>
+<li class="nav-main__sub-item"><a href="https://topic.ctee.com.tw/bestbook/" target="&quot;_blank&quot;">年度好書</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu12">
+<a href="/topic">專題</a>
+<a href="#accordionMenu12" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/topic">專題首頁</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/stock-fs-2024-aug/20240904700529-431501" target="&quot;_blank&quot;">上市櫃8月營收</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/stock-fs-2024q2/20240718700378-431501" target="&quot;_blank&quot;">上市櫃Q2季報</a></li>
+<li class="nav-main__sub-item"><a href="https://topic.ctee.com.tw/USVote2024/index.htm" target="&quot;_blank&quot;">2024美國大選風雲</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/NewGen2024/20240701700532-431501" target="&quot;_blank&quot;">開箱新世代夯話題</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/SEMI2024/20240626700508-431501" target="&quot;_blank&quot;">晶片戰突圍最前線</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/LTC2024/20240620700638-431501">長照2.0無憂老化</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu13">
+<a href="/industrynews">商情</a>
+<a href="#accordionMenu13" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/industrynews">商情首頁</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/automation">智慧機械</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/biomed">大健康</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/financesmanage">金融理財</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/building">房市建材</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/i-technology">科技綠能</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/i-consumption">消費時尚</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/cooperation">產學管顧</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/socialwelfare">社企公益</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu14">
+<a href="/i-topiclist">活動</a>
+<a href="#accordionMenu14" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/i-topiclist">活動首頁</a></li>
+<li class="nav-main__sub-item"><a href="https://ctms-tc.ctee.com.tw/" target="&quot;_blank&quot;">台中機械展</a></li>
+<li class="nav-main__sub-item"><a href="https://twkc.ctee.com.tw/" target="&quot;_blank&quot;">台灣權王</a></li>
+<li class="nav-main__sub-item"><a href="https://i-service.ctee.com.tw/" target="&quot;_blank&quot;">服務業大評鑑</a></li>
+<li class="nav-main__sub-item"><a href="https://digitalfinance.ctee.com.tw/" target="&quot;_blank&quot;">數位金融獎</a></li>
+<li class="nav-main__sub-item"><a href="https://esg-campus.ctee.com.tw/" target="&quot;_blank&quot;">永續校園徵影</a></li>
+<li class="nav-main__sub-item"><a href="https://etfnewforces.ctee.com.tw/" target="&quot;_blank&quot;">ETF投資論壇</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/sustainable-economy-29957" target="&quot;_blank&quot;">淨零新經濟</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/trust-28329" target="&quot;_blank&quot;"> 多元信託</a></li>
+<li class="nav-main__sub-item"><a href="https://2024newfutures.ctee.com.tw/" target="&quot;_blank&quot;">期貨與選擇權</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/carbon-neutral-30334" target="&quot;_blank&quot;">天天一小時</a></li>
+</ul>
+</div>
+</li>
+</ul>
+
+
+
+<ul class="nav-search">
+<li class="nav-search__menu-item" tabindex="0">
+<div class="nav-search__sub-menu taglist">
+<div class="search-bar">
+<input placeholder="輸入搜尋關鍵字" name="搜尋" id="search_keyword1" type="search" autocomplete="off">
+<button class="search_btn" name="搜尋" type="submit" num="1">搜尋</button>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="topbar-clone">
+  <ul class="header__allied-link">
+    <li class="videotopic">
+      <a href="/videotopic">影音特區</a>
+    </li>
+    <li class="newspaper">
+      <a href="/readers">讀報區</a>
+    </li>
+    <li class="subscribe">
+      <a href="https://service.ctee.com.tw/Subscribe/edm.aspx" target="_blank">訂閱電子報</a>
+    </li>
+  </ul>
+</div><div class="footer-clone">
+    <div class="footer__logo">
+      
+      
     </div>
-
-    <div class="ad-content">
-        <div class="tmgad tmgad-type-general tmgad-new">
-
-        </div>
-
+    <ul class="service-list">
+      <li>客服專線：(02) 2306-3848</li>
+      <li>業務專線：(02) 2308-7111 #6609 #6655</li>
+      <li>服務時間：週一至週五 9:00~12:00、13:30~18:00</li>
+    </ul>
+    <ul class="sns-list">
+      <li class="fb-icon"><a href="https://www.facebook.com/ctee.fans" target="_blank" title="追蹤 Facebook"><span>追蹤
+            Facebook</span></a></li>
+      <li class="ig-icon"><a href="https://www.instagram.com/ctee.ig/" target="_blank" title="追蹤 Instagram"><span>追蹤
+            Instagram</span></a></li>
+      <li class="gnews-icon"><a href="https://news.google.com/publications/CAAiEPiRkO-b56f8-3lzE8KtgBsqFAgKIhD4kZDvm-en_Pt5cxPCrYAb?hl=zh-TW&amp;gl=TW&amp;ceid=TW:zh-Hant" target="_blank" title="訂閱 Google News"><span>訂閱 Google News</span>
+          </a></li>
+      <li class="youtube-icon"><a href="https://www.youtube.com/channel/UC9Ksf9o5OjzZWs2Jo8DC0Aw/featuup" target="_blank" title="訂閱 Youtube"><span>訂閱 Youtube</span></a></li>
+      <li class="podcast-icon"><a href="https://solink.soundon.fm/ctee?utm_medium=promotion&amp;utm_campaign=podcast" target="_blank" title="訂閱 Podcast"><span>訂閱 Podcast</span></a></li>
+      <li class="line-icon"><a href="https://page.line.me/ccf6523h" target="_blank" title="加Line 好友"> <span>加 Line
+            好友</span></a>
+      </li>
+    </ul>
+    <div class="app-badge">
+      <div class="google"><a href="https://play.google.com/store/apps/details?id=tw.com.ctee&amp;hl=zh_TW&amp;gl=US" target="_blank">
+          
+        </a></div>
+      <div class="apple">
+        <a href="https://apps.apple.com/tw/app/%E5%B7%A5%E5%95%86%E6%99%82%E5%A0%B1%E8%A1%8C%E5%8B%95%E7%89%88/id441050876" target="_blank">
+          </a>
+      </div>
     </div>
+    <ul class="policy-list">
+      <li><a href="https://www.ctee.com.tw/about">關於我們</a></li>
+      <li><a href="https://www.ctee.com.tw/contact">聯絡我們</a></li>
+      <li><a href="https://topic.ctee.com.tw/ad_plan.htm" target="_blank">報紙廣告</a></li>
+      <li><a href="https://www.ctee.com.tw/service">服務條款</a></li>
+      <li><a href="https://www.ctee.com.tw/privacy">隱私權聲明</a></li>
+    </ul>
+    <p class="copyright">Copyright ©
+      2024 工商財經數位股份有限公司 China Times Group, All
+      Rights Reserved.
+    </p>
+  </div></nav>
+</header>
+</div>
+
+<div class="ad-box ad-box__header">
+
+<div id="div-gpt-ad-1689757103064-0"></div>
+</div>
+
+<main class="main-container" id="main">
+<ul class="bread-crumb">
+<li class="bread-crumb__home"><a href="/" title="工商時報首頁"><span>首頁</span></a></li>
+<li>
+<a href="/newspaper">日報</a>
+</li>
+<li>
+工商時報
+</li>
+<li class="crumb-last">台、歐盟6G合作 30家台廠搶進</li>
+</ul>
+<div class="content__header">
+<h1 class="main-title "> 
+台、歐盟6G合作 30家台廠搶進
+</h1>
+<h2 class="sub-title">獲歐盟認證，成境外第一座6G實驗網，並吸引仁寶、光寶科、明基材等投入研發</h2>
+<ul class="news-credit">
+<li class="publish-date">
+<time>2024.10.09</time>
+</li>
+<li class="publish-time">
+<time>03:00</time>
+</li>
+<li class="publish-author">
+<span class="organization">
+工商時報
+</span>
+<span class="name">
+<a href="/reporter/60169">林淑惠</a>
+</span>
+</li></ul>
+</div>
+<aside class="aside__top"></aside>
+<div class="content__body">
+
+<div class="article-wrap">
+<div class="article-function">
+<ul class="sns-share">
+<li class="size-icon" id="enlarge_font_size"> <a href="javascript:;" title="切換文字大小"><span>切換文字大小</span></a></li>
+<li class="link-icon"> <a href="javascript:;" onclick="copyToClipboard()" title="複製文章連結"><span>複製文章連結</span></a></li>
+<li class="fb-icon"><a href="javascript:;" onclick="shareToFacebook()" title="分享至臉書"><span>分享至臉書</span></a></li>
+<li class="line-icon"><a href="javascript:;" onclick="shareToLine()" title="以Line分享"><span>以Line分享</span></a></li>
+<li class="comment-icon"> <a href="#discussion" title="參與討論"><span>參與討論</span></a></li>
+<li class="print-icon"> <a href="javascript:window.print();" title="友善列印"> <span>友善列印</span></a> </li>
+</ul>
+</div>
+
+<div id="copied">
+<p>已將目前網頁的網址複製到您的剪貼簿！</p>
+</div>
+
+<article>
+<blockquote>
+<p></p>
+</blockquote>
+<p style="font-size: 100%;">台、歐盟6G合作向前衝！台、歐盟8日在台共同舉辦「2024臺歐盟6G SNS聯合研討會，並首度宣布台灣技術團隊獲得全球最大歐盟6G實驗網SANDBOX計畫認證，成為歐盟境外第一座6G實驗網，並吸引仁寶、光寶科、明基材、耀登、稜研、現觀科、訊勢等30家台廠投入6G研發，搶先布局6G搶商機。</p>
+
+<div class="ad-box ad-box--mobile ad-box__300">
+
+<div id="div-gpt-ad-1689936158672-0"></div>
+</div>
+
+
+<div class="ad-box ad-box--pc ad-box__300--float">
+
+<div id="div-gpt-ad-1689757193557-0"></div>
+</div>
+<p style="font-size: 100%;">經濟部產業技術司司長邱求慧表示，儘管6G通訊預定2030年初步商業化，但是2028年就可以看到台廠6G設備嶄露頭角，尤其看好台廠在基地台、可重構智慧表面（RIS）、晶片、感測器、O-RAN解決方案的機會很大。其中，明泰、鴻海等台廠已相繼投入研發專門為6G設計的微基地台，明基材、友達、稜研等廠商已著手布局RIS。</p>
+<p style="font-size: 100%;">據Market Research預估，6G預計2040年市場規模將達3,405億美元，全球各領先國無不積極投入跨國強強合作，希望在國際標準底定首波6G商用產品上市時，搶占市場先機。經濟部自2023年開始投入6G雛型系統的研發，並透過與歐盟大廠及研究機構合作展開6G前瞻技術及產業合作。</p>
+
+<div class="ad rwd d-block d-lg-none with-placeholder ad-box ad-box--mobile" data-id="mobile-middle-banner">
+<div class="underlay-auto-scale">
+<div class="clip-container">
+<div class="position-container">
+<div class="size-container placeholder">
+
+<div id="div-gpt-ad-1689936192976-0">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p style="font-size: 100%;">工研院資訊與通訊研究所主任許冬陽表示，3GPP規畫2025年開始討論6G技術標準、2028年確定，台灣為爭取未來在6G標準制定與主流技術的話語權，工研院及台積電、聯發科、中華電信、台達電、和碩、鴻海、緯創等已相繼加入NGA（Next G Alliance）、歐盟的6G IA等國際組織。</p>
+<p style="font-size: 100%;">歐盟6G-IA主席Colin Willcock致詞表示，歐盟自2021年開始陸續投入3.82億歐元，共支持63案智慧網路與服務研究計畫，看中台灣在微電子及資通訊領域的專業實力，工研院與台灣產學研已成功加入6G-SANDBOX計畫，並與光寶科、耀睿、現觀及中山大學、比利時、波蘭、法國等組成全球最大6G實驗網路，研發多項前瞻性O-RAN通訊與感測融合技術應用，台灣與西班牙亦聯手實證可重構智慧表面（RIS）解決方案。</p>
+
+<div class="ad-box ad-box--mobile ad-box__video">
+
+<div id="div-gpt-ad-1689936418574-0"></div>
+</div>
+<p style="font-size: 100%;">另外，工研院集結稜研、明基與中正大學組成的RISFORCE團隊，今年參與歐盟實驗網6G-SANDBOX計畫公開徵案，亦從全球21件提案中脫穎而出，成為歐盟計畫重要合作夥伴，象徵台灣在6G技術研發的關鍵突破。</p>
+</article>
+</div>
+<div class="list-box relatednews">
+<p class="box-title"><span>相關新聞</span></p>
+<ul>
+<li>
+<h4 class="list-title">
+<a href="/news/20241009700660-431401">這問題無法杜絕 必比登推介名店雙月突宣布青島店熄燈</a>
+</h4>
+</li>
+<li>
+<h4 class="list-title">
+<a href="/news/20241009700661-431401">台中飯店業者祭優惠 搶食爵士音樂節住房與餐飲商機</a>
+</h4>
+</li>
+<li>
+<h4 class="list-title">
+<a href="/news/20241009700639-431204">網購包材減量上路滿周年 電商須定期檢視減量情形</a>
+</h4>
+</li>
+
+<div class="ad-box--mobile">
+
+<div id="div-gpt-ad-1690536351782-0">
+</div>
+</div>
+
+
+<div class="ad-box--pc">
+
+<div id="div-gpt-ad-1690536072191-0">
+</div>
+</div>
+
+</ul>
+</div>
+
+<div class="ad-box ad-box--mobile ad-box__300">
+
+<div id="div-gpt-ad-1689936217959-0"></div>
+</div>
+
+
+<div class="ad-box ad-box--pc ad-box__video-combo">
+<div class="ad-box__video">
+
+<div id="div-gpt-ad-1689757281841-0"></div>
+</div>
+<div class="ad-box__300">
+
+<div id="div-gpt-ad-1689757344932-0"></div>
+</div>
+<div class="ad-box__300">
+
+<div id="div-gpt-ad-1689757316304-0"></div>
+</div>
+</div>
+
+
+<div class="group-box ad-recommend">
+<p class="box-title"><span>您可能感興趣的話題</span></p>
+
+<div id="_popIn_recommend_new"></div>
+
+
+</div>
+
+
+<div class="ad-box ad-box--mobile ad-box__300">
+
+<div id="div-gpt-ad-1689936252070-0"></div>
+</div>
+
+</div>
+
+<div class="fbmsg-box" id="discussion">
+<p class="box-title"><span>留言討論</span></p>
+<div id="fb-root"></div>
+
+<div class="fb-comments" data-href="https://www.ctee.com.tw/news/20241009700160-439901" data-width="100%" width="100%" data-numposts="5"></div>
+</div>
+
+<aside class="aside__right">
 
 
 
+<div class="ad-box ad-box--pc ad-box__300">
+
+<div id="div-gpt-ad-1689757132869-0"></div>
+</div>
+
+<div class="list-box hotnews">
+<p class="box-title">
+<span>熱門日報新聞</span>
+<a href="/hotnews">more</a>
+</p>
+<ol>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700042-430302">強勢美元來襲 新台幣、日圓全趴</a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700074-430304">金控飽賺 前三季衝逾5千億</a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700085-430601">房子還是有人買！顏炳立喊：房市不會泡沫 年底房價這樣看 </a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700236-430201">Robotaxi倒數 裕隆等13檔特斯拉概念股先行 這檔股價創波段新高</a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241009700208-430201">矽統等15檔營收雙增股吸金 這檔半導體股法人買最多</a></h4>
+</li>
+</ol>
+</div>
+
+<div class="ad-box ad-box--pc ad-box__300">
+
+<div id="div-gpt-ad-1689757159444-0"></div>
+</div>
 
 
+<div class="box__promo">
+<p class="box-title"><span>活動訊息</span></p>
+<a href="https://topic.ctee.com.tw/USVote2024/index.htm"></a>
+</div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="legal container-fluid wine-legal-disable" variant="fixed">
-        <div class="row">
-            <div class="legal unit" modifier="centered">
-                <div id="warning" class="warning">
-                    <span>-</span> 禁 止 酒 駕 <img src="../assets/images/legal/icon_warning.png" alt=""> 未 滿 十 八 歲 禁 止 飲 酒
-                    <span>-</span>
-                </div>
-                <div id="warning_s"> <img src="../assets/images/legal/txt_warn.png"></div>
-            </div>
-        </div>
+</aside>
+</main>
+<div class="footer__extend">
+  <footer class="footer">
+    <div class="footer__logo">
+      
+      
     </div>
+    <ul class="service-list">
+      <li>客服專線：(02) 2306-3848</li>
+      <li>業務專線：(02) 2308-7111 #6609 #6655</li>
+      <li>服務時間：週一至週五 9:00~12:00、13:30~18:00</li>
+    </ul>
+    <ul class="sns-list">
+      <li class="fb-icon"><a href="https://www.facebook.com/ctee.fans" target="_blank" title="追蹤 Facebook"><span>追蹤
+            Facebook</span></a></li>
+      <li class="ig-icon"><a href="https://www.instagram.com/ctee.ig/" target="_blank" title="追蹤 Instagram"><span>追蹤
+            Instagram</span></a></li>
+      <li class="gnews-icon"><a href="https://news.google.com/publications/CAAiEPiRkO-b56f8-3lzE8KtgBsqFAgKIhD4kZDvm-en_Pt5cxPCrYAb?hl=zh-TW&amp;gl=TW&amp;ceid=TW:zh-Hant" target="_blank" title="訂閱 Google News"><span>訂閱 Google News</span>
+          </a></li>
+      <li class="youtube-icon"><a href="https://www.youtube.com/channel/UC9Ksf9o5OjzZWs2Jo8DC0Aw/featuup" target="_blank" title="訂閱 Youtube"><span>訂閱 Youtube</span></a></li>
+      <li class="podcast-icon"><a href="https://solink.soundon.fm/ctee?utm_medium=promotion&amp;utm_campaign=podcast" target="_blank" title="訂閱 Podcast"><span>訂閱 Podcast</span></a></li>
+      <li class="line-icon"><a href="https://page.line.me/ccf6523h" target="_blank" title="加Line 好友"> <span>加 Line
+            好友</span></a>
+      </li>
+    </ul>
+    <div class="app-badge">
+      <div class="google"><a href="https://play.google.com/store/apps/details?id=tw.com.ctee&amp;hl=zh_TW&amp;gl=US" target="_blank">
+          
+        </a></div>
+      <div class="apple">
+        <a href="https://apps.apple.com/tw/app/%E5%B7%A5%E5%95%86%E6%99%82%E5%A0%B1%E8%A1%8C%E5%8B%95%E7%89%88/id441050876" target="_blank">
+          </a>
+      </div>
+    </div>
+    <ul class="policy-list">
+      <li><a href="https://www.ctee.com.tw/about">關於我們</a></li>
+      <li><a href="https://www.ctee.com.tw/contact">聯絡我們</a></li>
+      <li><a href="https://topic.ctee.com.tw/ad_plan.htm" target="_blank">報紙廣告</a></li>
+      <li><a href="https://www.ctee.com.tw/service">服務條款</a></li>
+      <li><a href="https://www.ctee.com.tw/privacy">隱私權聲明</a></li>
+    </ul>
+    <p class="copyright">Copyright ©
+      2024 工商財經數位股份有限公司 China Times Group, All
+      Rights Reserved.
+    </p>
+  </footer>
+</div>
+<div class="header-ad-extend">
+</div>
+</div>
+<div class="gotop go-top"><a href="#wrap" class="sticky-btn" title="返回頁首"><span>返回頁首</span></a></div>
+<button id="menuBtn" type="button" name="shownav"><span>網站選單開關</span></button>
+<div class="theme-switch" tabindex="5">
+<button id="darkLoad" type="button" name="theme-switch"><span>顏色主題切換</span></button><span id="mode">日間模式</span>
+</div>
 
-</body>
+<div class="cookie-concent">
+<p>為了提供您更流暢的使用體驗，本網站使用cookies分析技術。若您繼續使用本網站，即代表您同意我們使用cookies，更多本網站cookies使用的相關資訊請詳閱我們的<a href="/privacy" target="_blank" class="link-indicator">隱私權聲明</a>。</p>
+<button type="button" class="btn" id="cookieBtn">我知道了</button>
+</div>
 
-</html>`
+
+
+<div class="ad-box__idle">
+<div class="idle__content">
+<div class="list-box hotnews">
+<p class="box-title"><span>熱門新聞 TOP 3</span><a href="/hotnews">more</a></p>
+<ol>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700657-430403">Fed降息美債反跌 繼續買還是逃？長短債布局攻略來了 專家曝賣出時機點</a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700716-430601">人口驟降房市剉了！「解約、斷頭」浮出…專家列「房價下跌」後遺症</a></h4>
+</li>
+<li class="hotnews__item">
+<h4 class="list-title"><a href="/news/20241008700763-430702">美股崩盤倒數？「巴菲特指標」飆恐怖數字 玩火警報大響</a></h4>
+</li>
+</ol>
+</div>
+<div class="ad-box__300">
+
+
+<div id="div-gpt-ad-1690425136694-0"></div>
+
+</div>
+<p class="hint">本網頁已閒置超過3分鐘。請點撃框外背景，或右側關閉按鈕(X)，即可回到網頁。</p>
+<button class="btn" id="idleBtn" type="button"><span>關閉</span></button>
+</div>
+</div>
+
+
+<div class="ad-box ad-box__btm-overlay">
+
+<div class="ad-box--pc">
+
+<div id="div-gpt-ad-1689757231566-0">
+</div>
+</div>
+
+<div class="ad-box--mobile">
+
+<div id="div-gpt-ad-1689936335792-0">
+</div>
+</div>
+<button class="btn" type="button" id="btmAdClose"><span>關閉廣告</span></button>
+</div>
+
+
+<div class="ad rwd d-md-none ad-box--mobile">
+<div class="lightbox-auto-scale">
+
+
+<div id="div-gpt-ad-1689935672477-0">
+</div>
+</div>
+</div>
+
+
+
+<div class="header__nav--clone scroll-box">
+<div class="header__nav--fixed-container">
+<a href="/" class="header__main-logo-square" title="工商時報首頁"><span>首頁</span><i class="header__menu-arrow"></i>
+
+</a>
+<ul class="nav-main">
+<li class="nav-main__menu-item " id="accordionMenu0">
+<a href="/livenews">即時</a>
+<a href="#accordionMenu0" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/livenews">即時首頁</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/policy">要聞</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/stock">證券</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/finance">金融</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/p-tax">稅法</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/industry">產業</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/house">房市</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/world">國際</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/china">兩岸</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/tech">科技</a></li>
+<li class="nav-main__sub-item"><a href="/livenews/life">生活</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu1">
+<a href="/policy">要聞</a>
+<a href="#accordionMenu1" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/policy">要聞首頁</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-highlights">政經焦點</a></li>
+<li class="nav-main__sub-item"><a href="/policy/macro">總經趨勢</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-tax">稅務法務</a></li>
+<li class="nav-main__sub-item"><a href="/policy/p-prime">綜合要聞</a></li>
+<li class="nav-main__sub-item"><a href="/policy/futurecalendar">前瞻一周</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu2">
+<a href="/stock">證券</a>
+<a href="#accordionMenu2" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/stock">證券首頁</a></li>
+<li class="nav-main__sub-item"><a href="/stock/twmarket">上市櫃</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-market">陸港股市</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-market">國際股市</a></li>
+<li class="nav-main__sub-item"><a href="/industry/i-prime">產業焦點</a></li>
+<li class="nav-main__sub-item"><a href="/stock/futures">期貨</a></li>
+<li class="nav-main__sub-item"><a href="/stock/warrant">權證</a></li>
+<li class="nav-main__sub-item"><a href="/stock/star">亮點個股</a></li>
+<li class="nav-main__sub-item"><a href="/stock/insights">專家看盤</a></li>
+<li class="nav-main__sub-item"><a href="/stock/matchplay">台股逐洞賽</a></li>
+<li class="nav-main__sub-item"><a href="/stock/indices">重要指數</a></li>
+<li class="nav-main__sub-item"><a href="/stock/mops">重大訊息</a></li>
+<li class="nav-main__sub-item"><a href="/stock/calendar">財經行事曆</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu3">
+<a href="/finance">金融</a>
+<a href="#accordionMenu3" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/finance">金融首頁</a></li>
+<li class="nav-main__sub-item"><a href="/finance/f-highlights">金融話題</a></li>
+<li class="nav-main__sub-item"><a href="/finance/forex">外匯市場</a></li>
+<li class="nav-main__sub-item"><a href="/finance/currencies">牌告匯率</a></li>
+<li class="nav-main__sub-item"><a href="/finance/fintech">金融科技</a></li>
+<li class="nav-main__sub-item"><a href="/finance/bank">銀行動態</a></li>
+<li class="nav-main__sub-item"><a href="/finance/insurance">保險脈動</a></li>
+<li class="nav-main__sub-item"><a href="/finance/data">數據觀測</a></li>
+<li class="nav-main__sub-item"><a href="/finance/f-people">金融人物</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu4">
+<a href="/wealth">理財</a>
+<a href="#accordionMenu4" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/wealth">理財首頁</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/we-highlights">理財新訊</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/fund">基金</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/etf">ETF</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/we-consumption">生活消費</a></li>
+<li class="nav-main__sub-item"><a href="/search/信用卡/Keyword/4301,4302,4303,4304,4305,4306,4307,4308,4309,4310,4311,4313,4314/CategoryID">信用卡</a></li>
+<li class="nav-main__sub-item"><a href="/search/退休理財/Keyword/4301,4302,4303,4304,4305,4306,4307,4308,4309,4310,4311,4313,4314/CategoryID">退休理財</a></li>
+<li class="nav-main__sub-item"><a href="/wealth/invoice">統一發票</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu5">
+<a href="/industry">產業</a>
+<a href="#accordionMenu5" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/industry">產業首頁</a></li>
+<li class="nav-main__sub-item"><a href="/industry/semi">半導體</a></li>
+<li class="nav-main__sub-item"><a href="/industry/tech">科技動態</a></li>
+<li class="nav-main__sub-item"><a href="/industry/i-prime">綜合產業</a></li>
+<li class="nav-main__sub-item"><a href="/industry/bio">生技醫療</a></li>
+<li class="nav-main__sub-item"><a href="/industry/ceo">CEO專訪</a></li>
+<li class="nav-main__sub-item"><a href="/industry/master">職場達人</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu6">
+<a href="/house">房市</a>
+<a href="#accordionMenu6" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/house">房市首頁</a></li>
+<li class="nav-main__sub-item"><a href="/house/h-highlights">房市焦點</a></li>
+<li class="nav-main__sub-item"><a href="/house/city">區域亮點</a></li>
+<li class="nav-main__sub-item"><a href="/house/expert">名家攻略</a></li>
+<li class="nav-main__sub-item"><a href="/house/project">居住安全</a></li>
+<li class="nav-main__sub-item"><a href="/house/opinion">觀點評論</a></li>
+<li class="nav-main__sub-item"><a href="/house/h-market">市場動態</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu7">
+<a href="/world">國際</a>
+<a href="#accordionMenu7" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/world">國際首頁</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-highlights">全球政經</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-market">全球市場</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-view">議題觀點</a></li>
+<li class="nav-main__sub-item"><a href="/world/w-industry">國際產業</a></li>
+<li class="nav-main__sub-item"><a href="/world/globalscan">Global Scan</a></li>
+<li class="nav-main__sub-item"><a href="/world/world-news">全球財經周報</a></li>
+<li class="nav-main__sub-item"><a href="/world/commodity">大宗商品行情</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu8">
+<a href="/china">兩岸</a>
+<a href="#accordionMenu8" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/china">兩岸首頁</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-highlights">政情動向</a></li>
+<li class="nav-main__sub-item"><a href="/china/cross-strait">兩岸焦點</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-finance">大陸財經</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-industry">大陸產業</a></li>
+<li class="nav-main__sub-item"><a href="/china/chinascan">China Scan</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-market">陸港市場</a></li>
+<li class="nav-main__sub-item"><a href="/china/c-view">觀點分析</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu9">
+<a href="/view">名家</a>
+<a href="#accordionMenu9" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/view">名家首頁</a></li>
+<li class="nav-main__sub-item"><a href="/view/analysis">總經經濟</a></li>
+<li class="nav-main__sub-item"><a href="/view/economic">國際經貿</a></li>
+<li class="nav-main__sub-item"><a href="/view/business">企業管理</a></li>
+<li class="nav-main__sub-item"><a href="/view/esg">ESG／綠能</a></li>
+<li class="nav-main__sub-item"><a href="/view/v-tax">稅務法務</a></li>
+<li class="nav-main__sub-item"><a href="/view/monetary">金融保險</a></li>
+<li class="nav-main__sub-item"><a href="/view/v-technology">產科脈動</a></li>
+<li class="nav-main__sub-item"><a href="/view/social">社會觀察</a></li>
+<li class="nav-main__sub-item"><a href="/view/leaders">名家薈萃</a></li>
+<li class="nav-main__sub-item"><a href="/view/frontline">編採線上</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu10">
+<a href="/lohas">樂活</a>
+<a href="#accordionMenu10" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/lohas">樂活首頁</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/food">美食饗宴</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/travel">旅遊休閒</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/lifestyle">生活風格</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/car">愛車天地</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/health">養生保健</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/fashion">時尚消費</a></li>
+<li class="nav-main__sub-item"><a href="/lohas/art">藝文特區</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu11">
+<a href="/bookstore">書房</a>
+<a href="#accordionMenu11" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/bookstore">書房首頁</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/selection">書房嚴選</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/recommendation">名人書單</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/goodbook">好書推薦</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/learning">英文進修</a></li>
+<li class="nav-main__sub-item"><a href="/bookstore/magazine">雜誌精選</a></li>
+<li class="nav-main__sub-item"><a href="https://topic.ctee.com.tw/bestbook/" target="&quot;_blank&quot;">年度好書</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu12">
+<a href="/topic">專題</a>
+<a href="#accordionMenu12" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/topic">專題首頁</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/stock-fs-2024-aug/20240904700529-431501" target="&quot;_blank&quot;">上市櫃8月營收</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/stock-fs-2024q2/20240718700378-431501" target="&quot;_blank&quot;">上市櫃Q2季報</a></li>
+<li class="nav-main__sub-item"><a href="https://topic.ctee.com.tw/USVote2024/index.htm" target="&quot;_blank&quot;">2024美國大選風雲</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/NewGen2024/20240701700532-431501" target="&quot;_blank&quot;">開箱新世代夯話題</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/SEMI2024/20240626700508-431501" target="&quot;_blank&quot;">晶片戰突圍最前線</a></li>
+<li class="nav-main__sub-item"><a href="https://www.ctee.com.tw/topic/LTC2024/20240620700638-431501">長照2.0無憂老化</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu13">
+<a href="/industrynews">商情</a>
+<a href="#accordionMenu13" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/industrynews">商情首頁</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/automation">智慧機械</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/biomed">大健康</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/financesmanage">金融理財</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/building">房市建材</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/i-technology">科技綠能</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/i-consumption">消費時尚</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/cooperation">產學管顧</a></li>
+<li class="nav-main__sub-item"><a href="/industrynews/socialwelfare">社企公益</a></li>
+</ul>
+</div>
+</li>
+<li class="nav-main__menu-item " id="accordionMenu14">
+<a href="/i-topiclist">活動</a>
+<a href="#accordionMenu14" class="nav-main__collapse-btn"><span>開闔次選單</span></a>
+<i class="header__menu-arrow"></i>
+<div class="nav-main__sub-menu">
+<ul>
+<li class="nav-main__sub-item"><a href="/i-topiclist">活動首頁</a></li>
+<li class="nav-main__sub-item"><a href="https://ctms-tc.ctee.com.tw/" target="&quot;_blank&quot;">台中機械展</a></li>
+<li class="nav-main__sub-item"><a href="https://twkc.ctee.com.tw/" target="&quot;_blank&quot;">台灣權王</a></li>
+<li class="nav-main__sub-item"><a href="https://i-service.ctee.com.tw/" target="&quot;_blank&quot;">服務業大評鑑</a></li>
+<li class="nav-main__sub-item"><a href="https://digitalfinance.ctee.com.tw/" target="&quot;_blank&quot;">數位金融獎</a></li>
+<li class="nav-main__sub-item"><a href="https://esg-campus.ctee.com.tw/" target="&quot;_blank&quot;">永續校園徵影</a></li>
+<li class="nav-main__sub-item"><a href="https://etfnewforces.ctee.com.tw/" target="&quot;_blank&quot;">ETF投資論壇</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/sustainable-economy-29957" target="&quot;_blank&quot;">淨零新經濟</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/trust-28329" target="&quot;_blank&quot;"> 多元信託</a></li>
+<li class="nav-main__sub-item"><a href="https://2024newfutures.ctee.com.tw/" target="&quot;_blank&quot;">期貨與選擇權</a></li>
+<li class="nav-main__sub-item"><a href="https://event.ctee.com.tw/carbon-neutral-30334" target="&quot;_blank&quot;">天天一小時</a></li>
+</ul>
+</div>
+</li>
+</ul>
+
+
+
+<ul class="nav-search">
+<li class="nav-search__menu-item" tabindex="0">
+<div class="nav-search__sub-menu taglist">
+<div class="search-bar">
+<input placeholder="輸入搜尋關鍵字" name="搜尋" id="search_keyword3" type="search" autocomplete="off">
+<button class="search_btn" name="搜尋" type="submit" num="3">搜尋</button>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+<iframe height="1" width="1" style="position: absolute; top: 0px; left: 0px; border: medium; visibility: hidden; --darkreader-inline-border-top: currentcolor; --darkreader-inline-border-right: currentcolor; --darkreader-inline-border-bottom: currentcolor; --darkreader-inline-border-left: currentcolor;" data-darkreader-inline-border-top="" data-darkreader-inline-border-right="" data-darkreader-inline-border-bottom="" data-darkreader-inline-border-left=""></iframe>
+
+<div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><div class="lb-nav"><a class="lb-prev" aria-label="Previous image" href="#"></a><a class="lb-next" aria-label="Next image" href="#"></a></div><div class="lb-loader"><a class="lb-cancel" href="#"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" href="#"></a></div></div></div></div>`

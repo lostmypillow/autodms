@@ -35,7 +35,8 @@
 
 
 
-
+import { dmsScrape } from "../src/index.mjs";
+import { insidetest } from "./insidetest.js";
 
 
 // console.log(await dmsScrape("html", "https://buzzorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/", techorangetest))
@@ -60,11 +61,12 @@
 // bug title: https://www.eprice.com.tw/mobile/talk/6113/5812708/1
 //unwanted content: https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085
 /// undefined: https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT
-// const urls = ["https://www.xfastest.com/thread-292892-1-1.html", "https://www.cool3c.com/article/225948" , "https://tw.nextapple.com/finance/20241002/F46EF42772FDB0898B925982A2D4F7D3" ]
+// const urls = ["https://3c.ltn.com.tw/news/59763", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34" ]
 // for (const url of urls) {
 //   await multscrape(url);
 // }
-
+// sogi leo
+//xfastest time
 /// sogi promotion: https://www.sogi.com.tw/articles/samsung_galaxy_tab_s10_ultra/6263080
 // eprice title: https://www.eprice.com.tw/mobile/talk/102/5812686/1
 ///bug: https://www.cool3c.com/article/226021
@@ -72,15 +74,19 @@
 
 // async function multscrape(url) {
 //   const data = await dmsScrape("link", url);
+// // const data = await dmsScrape("html", url, insidetest);
 //   console.log(data.title);
 //   console.log(data.date + ' / ' + data.source + ' / ' + data.author);
 //   console.log(data.url);
 //   console.log(data.content);
+//   console.log()
 // }
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
 
-console.log(await dmsScrape("link", "https://www.chinatimes.com/realtimenews/20240904005289-260410?chdtv"))
+console.log(await dmsScrape("link", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34"))
+
+
 // const link = "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"
 // const check = "https://www.chinatimes"
 // console.log(link.startsWith(check))
