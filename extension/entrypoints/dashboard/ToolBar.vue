@@ -3,6 +3,7 @@ import { store } from "./store.js";
 import PizZip from "pizzip";
 import Docxtemplater from "docxtemplater";
 import saveAs from "file-saver";
+
 import {
   patchDocument,
   PatchType,
@@ -193,18 +194,22 @@ async function exportDocx() {
 </script>
 <template>
   <v-toolbar>
-    <img class="ml-5" src="/src/32.png" alt="" />
-    <v-toolbar-title>Dashboard</v-toolbar-title>
-    <p>
-      <v-progress-circular
-        indeterminate
-        v-if="store.isLoading === true"
-      ></v-progress-circular
-      >{{ store.isLoading === true ? "sending data" : "Standby" }}
-    </p>
+    <v-toolbar-title class="font-bold">JDMS DASHBOARD</v-toolbar-title>
+    <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
+      store.isLoading ? "Syncing" : "Synced to Cloud"
+    }}</v-btn>
     <v-spacer></v-spacer>
     <v-btn
-      variant="tonal"
+      variant="outlined"
+      rounded="xl"
+      prepend-icon="mdi-plus"
+      class="mr-4"
+      @click="store.isAddDialogOpen = !store.isAddDialogOpen"
+      >Manual Import</v-btn
+    >
+
+    <v-btn
+      variant="outlined"
       rounded="xl"
       prepend-icon="mdi-export"
       class="mr-4"

@@ -1,15 +1,17 @@
 import { reactive } from "vue";
 import axios from "axios";
-// const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update";
-// const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc";
-// const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
-const editURL = "https://update-ud47er3zea-de.a.run.app";
-const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app ";
-const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
+const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
+const deleteURL =
+  "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
+const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
+// const editURL = "https://update-ud47er3zea-de.a.run.app";
+// const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app ";
+// const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
 
 export const store = reactive({
   count: 0,
   isDialogOpen: false,
+  isAddDialogOpen: false,
   data: [],
   isLoading: false,
   currentlyEditing: {},
@@ -48,103 +50,48 @@ export const store = reactive({
     return false;
   },
   setCurrentlyEditing(id) {
-    this.isDialogOpen = !this.isDialogOpen;
     this.currentlyEditing = this.data.filter((x) => x.id === id)[0];
   },
-  sendHTML(data) {
-    this.isLoading = true;
-    axios
-      .post(addURL, data)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  async sendHTML(data) {
+  this.isLoading = true
+    await axios.post(addURL, data);
+
     this.isLoading = false;
   },
-  sendEdit(type, obj, direction) {
+  async sendEdit(type, obj, direction) {
     this.isLoading = true;
-    if (type == "data") {
-      axios
-        .post(
-          editURL + "?id=" + this.currentlyEditing.id + "&edit=" + type,
-          this.currentlyEditing
-        )
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else if (type == "priority") {
-      const sendObj =
-        direction == "down"
-          ? {
+    let response;
+    const APIURL =
+      type == "priority"
+        ? editURL + obj.id + "&edit=" + type
+        : editURL + this.currentlyEditing.id + "&edit=" + type;
+
+    try {
+      response =
+        type == "data"
+          ? await axios.post(APIURL, this.currentlyEditing)
+          : type == "priority"
+          ? await axios.post(APIURL, {
               sourceID: obj.id,
               sourceCategory: obj.category,
               sourcePriority: obj.priority,
-              targetPriority: obj.priority + 1,
-            }
-          : {
-              sourceID: obj.id,
-              sourceCategory: obj.category,
-              sourcePriority: obj.priority,
-              targetPriority: obj.priority - 1,
-            };
-      axios
-        .post(
-          "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=" +
-            obj.id +
-            "&edit=" +
-            type,
-          sendObj
-        )
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    } else if (type == "select") {
-      axios
-        .post(editURL + "/?id=" + this.currentlyEditing.id + "&edit=" + type, {
-          selected_content: "",
-        })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      this.currentlyEditing = this.data.filter(
-        (x) => x.id === this.currentlyEditing.id
-      )[0];
-    } else if ((type = "unselect")) {
-      axios
-        .post(editURL + "?id=" + this.currentlyEditing.id + "&edit=" + type)
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-      this.currentlyEditing = this.data.filter(
-        (x) => x.id === this.currentlyEditing.id
-      )[0];
+              targetPriority:
+                direction == "down" ? obj.priority + 1 : obj.priority - 1,
+            })
+          : await axios.post(APIURL);
+    } catch (error) {
+      conso;
     }
+
+    type == "select" || type == "unselect"
+      ? this.setCurrentlyEditing(this.currentlyEditing.id)
+      : "";
+    console.log(response);
     this.isLoading = false;
   },
-  sendDelete(id) {
+  async sendDelete(id) {
     this.isLoading = true;
-    axios
-      .post(deleteURL + "?id=" + id)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    await axios.post(deleteURL + id);
     this.isLoading = false;
   },
   findObjectIdByUrl(url) {

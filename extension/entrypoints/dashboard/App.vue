@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import ToolBar from "./toolBar.vue";
 import CardContainer from "./CardContainer.vue";
+import AddDialog from "./addDialog.vue";
 
 const app = initializeApp({
   apiKey: "AIzaSyAgzKXjreJUMqEiUNbzUZLhAoiv3KfS8Uk",
@@ -25,6 +26,7 @@ connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
+  store.isLoading = true
   snapshot.docChanges().forEach((change) => {
     const docData = change.doc.data();
     if (change.doc.metadata.hasPendingWrites) {
@@ -33,10 +35,10 @@ const unsub = onSnapshot(q, (snapshot) => {
     }
 
     if (change.type === "added") {
-      console.log("New news content: ", docData);
       store.data.push(docData);
-      console.log(store.data);
+      store.isLoading = false
       if (docData.error) {
+        store.isLoading = true
         console.log("this is an unsupported link, triggering background: ");
         chrome.runtime.sendMessage({
           action: "importFromDash",
@@ -45,7 +47,6 @@ const unsub = onSnapshot(q, (snapshot) => {
       }
     }
     if (change.type === "modified") {
-      console.log("Modified city: ", docData);
       const findIndex = store.data.findIndex(
         (obj) => obj["id"] === docData["id"]
       );
@@ -58,6 +59,7 @@ const unsub = onSnapshot(q, (snapshot) => {
       }
     }
   });
+  store.isLoading = false
 });
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
@@ -70,10 +72,10 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
   }
 });
-
 </script>
 <template>
   <ToolBar />
   <EditDialog />
+  <AddDialog />
   <CardContainer />
 </template>

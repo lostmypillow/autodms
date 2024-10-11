@@ -1,10 +1,16 @@
 <script setup>
 import { store } from "./store.js";
 const props = defineProps(["category"]);
+const handleEdit = (id) => {
+  store.isDialogOpen = !store.isDialogOpen;
+  store.setCurrentlyEditing(id)
+}
 </script>
 <template>
   <div class="w-1/5 h-full flex flex-col gap-4 items-center justify-start px-4">
-    <h1 class="text-xl font-bold">{{ props.category.toUpperCase() }}:</h1>
+    <h1 class="text-xl" v-if="store.getByCategory(props.category).length > 0">
+      {{ props.category.toUpperCase() }}:
+    </h1>
 
     <v-card
       v-for="n in store.getByCategory(props.category)"
@@ -13,6 +19,7 @@ const props = defineProps(["category"]);
       :title="n.title"
       :subtitle="n.date + ' / ' + n.source + ' / ' + n.author"
     >
+  
       <v-card-actions class="justify-between">
         <v-btn
           icon="mdi-arrow-up"
@@ -32,7 +39,7 @@ const props = defineProps(["category"]);
           @click="store.sendEdit('priority', n, 'down')"
         />
         <v-btn
-          @click="store.setCurrentlyEditing(n.id)"
+          @click="handleEdit(n.id)"
           rounded="xl"
           prepend-icon="mdi-pencil"
           >Edit</v-btn

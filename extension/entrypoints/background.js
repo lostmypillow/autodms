@@ -6,7 +6,7 @@ export default defineBackground(() => {
       tempObj = message.data;
       const url = message.data.url;
       browser.tabs
-        .create({ url: url })
+        .create({ url: url, active: false })
         .then((newTab) => {
           browser.scripting.executeScript({
             target: { tabId: newTab.id },

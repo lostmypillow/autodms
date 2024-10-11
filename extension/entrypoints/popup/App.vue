@@ -27,11 +27,9 @@ const dialog = ref(false);
 </script>
 
 <template>
-  <div class="w-[450px] h-[600px]">
-    <div
-      class="flex flex-col items-center justify-between mb-4 w-full h-full p-4"
-    >
-      <div class="flex flex-col w-full h-1/2 items-center justify-center">
+  <div class="w-[200px] h-[200px] flex flex-col items-center justify-center">
+
+      <!-- <div class="flex flex-col w-full h-1/2 items-center justify-center">
         <v-btn size="large" rounded="xl" @click="dialog = true">Import</v-btn>
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur
@@ -39,15 +37,17 @@ const dialog = ref(false);
           similique, totam impedit nihil a nobis, doloribus culpa hic itaque
           inventore!
         </p>
-      </div>
+      </div> -->
 
-      <div class="flex flex-col w-full h-1/2 items-center justify-center">
+      <div class="flex flex-col w-full h-1/2 items-center justify-center gap-4">
+        <h1 class="text-2xl font-bold">JDMS</h1>
         <v-btn
-          size="large"
+       
           rounded="xl"
           @click="
             browser.tabs.create({
               url: browser.runtime.getURL('/dashboard.html'),
+              
             })
           "
           >Dashboard ></v-btn
@@ -55,8 +55,8 @@ const dialog = ref(false);
       </div>
     </div>
 
-    <div
-      v-show="dialog"
+    <!-- <div
+ 
       class="h-full w-full top-0 z-500 absolute bg-black p-4"
     >
       <div class="flex flex-row w-full items-center justify-between mb-4">
@@ -103,6 +103,6 @@ const dialog = ref(false);
         variant="filled"
         class="w-full"
       ></v-textarea>
-    </div>
-  </div>
+    </div> -->
+
 </template>

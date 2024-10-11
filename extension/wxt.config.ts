@@ -4,8 +4,8 @@ import { defineConfig } from "wxt";
 export default defineConfig({
   modules: ["@wxt-dev/module-vue"],
   manifest: {
-    name: "CompassPR DMS",
-    description: "Extension for automating CompassPR DMS duties",
+    name: "JDMS",
+    description: "Extension for automating DMS duties",
     version: "0.0.1",
     host_permissions: [
       "https://*.digitimes.com.tw/*",
