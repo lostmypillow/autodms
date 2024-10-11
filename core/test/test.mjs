@@ -32,12 +32,8 @@
 
 // console.log(await dmsScrape("html", "https://www.setn.com/News.aspx?NewsID=1526574", setntest))
 
-
-
-
 import { dmsScrape } from "../src/index.mjs";
-import { insidetest } from "./insidetest.js";
-
+import { china1, china2, china3, ctee1, ctee2, ctee3, digi1, digi2 } from "./insidetest.js";
 
 // console.log(await dmsScrape("html", "https://buzzorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/", techorangetest))
 
@@ -61,32 +57,96 @@ import { insidetest } from "./insidetest.js";
 // bug title: https://www.eprice.com.tw/mobile/talk/6113/5812708/1
 //unwanted content: https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085
 /// undefined: https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT
-const urls = ["https://technews.tw/2024/10/09/mediatek-dimensity-9400-ai-features-are-coming-in-droves/", "https://www.xfastest.com/thread-293068-1-1.html", "https://www.kocpc.com.tw/archives/569144", "https://www.cool3c.com/article/226396", "https://ccc.technews.tw/2024/10/09/tws-market-high-end-product", "https://news.cnyes.com/news/id/5736726", "https://technews.tw/2024/10/09/nvidia-mediatek-3nm-ai-pc-cpu" ]
-for (const url of urls) {
-  await multscrape(url);
-}
+// const urls = [
+//   "https://money.udn.com/money/story/123398/8284364",
+//   "https://www.ettoday.net/news/20241011/2833056.htm",
+//   "https://technews.tw/2024/10/11/intel-releases-new-intel-core-ultra-200s-series-processors/",
+//   "https://mashdigi.com/to-strengthen-artificial-intelligence-computing-amd-launches-ryzen-ai-pro-300-series-processors-for-workstations-and-commercial-laptops/",
+//   "https://mashdigi.com/intel-explains-that-performance-notebook-processors-codenamed-arrow-lake-h-and-arrow-lake-hx-will-be-launched-in-the-first-quarter-of-2025/",
+//   "https://www.cool3c.com/article/226483",
+//   "https://www.setn.com/News.aspx?NewsID=1544745",
+//   "https://www.sogi.com.tw/articles/sale_poco_f6_pro/6263112",
+//   "https://www.sogi.com.tw/articles/oppo_find_x8_pro/6263141",
+  
+
+//   "https://ec.ltn.com.tw/article/paper/1671206",
+//   "https://mashdigi.com/ul-benchmark-cooperates-with-mediatek-to-add-a-test-project-called-opacity-micromap-to-the-android-version-of-3dmark/",
+//   "https://money.udn.com/money/story/5612/8282066",
+//   "https://www.sogi.com.tw/articles/mediatek/6263140",
+//   "https://money.udn.com/money/story/5612/8280899",
+//   "https://www.taisounds.com/news/content/76/151410",
+//   "https://www.cool3c.com/article/226434"
+// ];
+
+// const htmls = [
+//   {
+//     url: "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&cat=40&id=0000704572_U324G0818MRM9Y1TCLWJR&wpidx=3",
+//     html: digi1
+//   },
+//   {
+//     url: "https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&Cat=40&id=0000704573_2546E95R6ZHTTV4VS0AV9&wpidx=4",
+//     html: digi2
+//   },
+//   {
+//     url: "https://www.ctee.com.tw/news/20241011700170-439901",
+//     html: ctee1
+//   },
+//   {
+//     url: "https://www.ctee.com.tw/news/20241010700051-439901",
+//     html: ctee2
+//   },
+//   {
+//     url: "https://www.chinatimes.com/realtimenews/20241010003610-260410?chdtv",
+//     html: china1
+//   },
+//   {
+//     url: "https://www.chinatimes.com/realtimenews/20241010002015-260410?chdtv",
+//     html: china2
+//   },
+//   {
+//     url: "https://www.chinatimes.com/realtimenews/20241009003816-260410?chdtv",
+//     html: china3
+//   },
+//   {
+//     url: "https://www.ctee.com.tw/news/20241010700054-439901",
+//     html:ctee3
+//   }
+
+// ]
+// for (const url of urls) {
+//   await multscrape("link", url);
+// }
+// for (const ht of htmls) {
+//   await multscrape("html", ht.url, ht.html)
+// }
 // sogi leo
+// mashdigi bug:https://mashdigi.com/ul-benchmark-cooperates-with-mediatek-to-add-a-test-project-called-opacity-micromap-to-the-android-version-of-3dmark/
+// no match found: https://money.udn.com/money/story/5612/8282066 or https://www.sogi.com.tw/articles/mediatek/6263140
 //xfastest time
 /// sogi promotion: https://www.sogi.com.tw/articles/samsung_galaxy_tab_s10_ultra/6263080
 // eprice title: https://www.eprice.com.tw/mobile/talk/102/5812686/1
 ///bug: https://www.cool3c.com/article/226021
 // multscrape("https://3c.ltn.com.tw/news/59704")
+// SETN headline
+//udn bug: https://money.udn.com/money/story/123398/8284364
 
-async function multscrape(url) {
-  const data = await dmsScrape("link", url);
-// const data = await dmsScrape("html", url, insidetest);
+async function multscrape(type, url, html) {
+  const data = type == "link"? await dmsScrape(type, url): await dmsScrape(type, url, html)
+  // const data = await dmsScrape("html", url, insidetest);
   console.log(data.title);
-  console.log(data.date + ' / ' + data.source + ' / ' + data.author);
+  console.log(data.date + " / " + data.source + " / " + data.author);
   console.log(data.url);
   console.log(data.content);
-  console.log()
+  console.log();
 }
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
 
 // console.log(await dmsScrape("link", "https://tw.nextapple.com/finance/20241009/6E1E2C3FF02D616024AC319E2B952A34"))
 
-
 // const link = "https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv"
 // const check = "https://www.chinatimes"
 // console.log(link.startsWith(check))
+//sanitize titles
+
+console.log(await multscrape("link", "https://www.cool3c.com/article/226478"))

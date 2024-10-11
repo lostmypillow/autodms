@@ -29,6 +29,7 @@
 - [x] 太報
 - [x] ETtoday (ETDAY)
 - [ ] cw
+- [ ] 遠見 gvm
 
 ### T5
 - [x] Mashdigi

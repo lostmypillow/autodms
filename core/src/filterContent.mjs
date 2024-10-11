@@ -1,7 +1,7 @@
 export function filterContent(inputArray) {
   const excludedStartWords = [
     "一手掌握經濟脈動", "《你可能還想看》", "(", "不用抽", "記者", "▲", "<", "\\", "。", 
-    "此處", "還在靠社群媒體", "訂閱即同意", "＊本文開放", "（本文訊息", "相關資源", "• 更多關於：", "快加入 INSIDE"
+    "此處", "還在靠社群媒體", "訂閱即同意", "＊本文開放", "（本文訊息", "相關資源", "• 更多關於：", "快加入 INSIDE", "責任編輯：", "現在，你也可以同步"
   ];
 
   const excludedSubstrings = [
