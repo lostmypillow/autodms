@@ -27,7 +27,7 @@ const dialog = ref(false);
 </script>
 
 <template>
-  <div class="w-[200px] h-[200px] flex flex-col items-center justify-center">
+  <div class="w-[300px] h-[400px] flex flex-col items-center justify-center p-4">
 
       <!-- <div class="flex flex-col w-full h-1/2 items-center justify-center">
         <v-btn size="large" rounded="xl" @click="dialog = true">Import</v-btn>
@@ -40,7 +40,13 @@ const dialog = ref(false);
       </div> -->
 
       <div class="flex flex-col w-full h-1/2 items-center justify-center gap-4">
-        <h1 class="text-2xl font-bold">JDMS</h1>
+        <div class="flex flex-row w-full items-center justify-between">
+           <h1 class="text-2xl font-bold">JDMS</h1>
+           <v-btn rounded="xl" prepend-icon="mdi-help">Help</v-btn>
+        </div>
+       
+        <h2 class="text-lg font-semibold">LINE Bot QR Code: </h2>
+        <img src="/line_qr.png" alt="" width="180" height="180">
         <v-btn
        
           rounded="xl"
