@@ -1,12 +1,13 @@
 import { reactive } from "vue";
 import axios from "axios";
-const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
-const deleteURL =
-  "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
-const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
-// const editURL = "https://update-ud47er3zea-de.a.run.app";
-// const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app ";
-// const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
+// const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
+// const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
+// const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
+// const manualURL = "http://127.0.0.1:5001/compassprdms/asia-east1/manualadd";
+const editURL = "https://update-ud47er3zea-de.a.run.app/?id=";
+const deleteURL = "https://deletedoc-ud47er3zea-de.a.run.app/?id=";
+const addURL = "https://addhtml-ud47er3zea-de.a.run.app";
+const manualURL = "https://manualadd-ud47er3zea-de.a.run.app";
 
 export const store = reactive({
   count: 0,
@@ -15,23 +16,35 @@ export const store = reactive({
   data: [],
   isLoading: false,
   currentlyEditing: {},
-  mockData: [
-    {
-      title: "efmekmfkemfkwmefmwefmwemfiwmefwmefmwefmkwefmkwemfkwefkmwkemfkwmf",
-      priority: 1,
-      date: "2024-09-25",
-      source: "imasource",
-      author: "imanauthor",
-      category: "Qualcomm相關新聞",
-    },
-  ],
   original: {},
   navCategories: [
     "Qualcomm相關新聞",
     "MediaTek相關新聞",
     "無線通訊市場",
-    "智慧型手機",
+    "智慧型手機/消費性電子產品",
     "其他業界重要訊息",
+  ],
+  compoundCategories: [
+    {
+      value: "qualcomm",
+      title: "Qualcomm相關新聞",
+    },
+    {
+      value: "mediatek",
+      title: "MediaTek相關新聞",
+    },
+    {
+      value: "commu",
+      title: "無線通訊市場",
+    },
+    {
+      value: "phone",
+      title: "智慧型手機/消費性電子產品",
+    },
+    {
+      value: "other",
+      title: "其他業界重要訊息",
+    },
   ],
   hasObjectChanged(obj1, obj2) {
     const keys1 = Object.keys(obj1);
@@ -52,8 +65,13 @@ export const store = reactive({
   setCurrentlyEditing(id) {
     this.currentlyEditing = this.data.filter((x) => x.id === id)[0];
   },
+  async sendManImport(data) {
+    this.isLoading = true;
+    await axios.post(manualURL, data);
+    this.isLoading = false;
+  },
   async sendHTML(data) {
-  this.isLoading = true
+    this.isLoading = true;
     await axios.post(addURL, data);
 
     this.isLoading = false;

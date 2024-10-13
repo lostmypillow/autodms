@@ -21,59 +21,64 @@ async function generateDocx() {
     const doc = new Docxtemplater(zip, {
       paragraphLoop: true,
       linebreaks: true,
+      nullGetter() {
+        return "";
+      },
     });
+    const tolist = [];
+    const processList = (category) => {
+      const list = structuredClone(
+        toRaw(store)
+          .data.filter((x) => x.category == category)
+          .sort((a, b) => a.priority - b.priority)
+      );
 
-    const processList = (list) => {
       // Split content into paragraphs
       console.log(list[0]?.category, "starts");
+      console.log(
+        list.length > 0 ? list.map((item) => ({ headline: item.title })) : []
+      );
+      return {
+        toc:
+          list.length > 0 ? list.map((item) => ({ headline: item.title })) : [],
+        data:
+          list.length > 0
+            ? list.map((x) => {
+                const splitContent = x.content.split("\n\n");
+                console.log("split content: ", splitContent);
+                const mappedContent = splitContent.map((it) => ({ para: it }));
+                console.log("mapped content", mappedContent);
 
-      return list.map((x) => {
-        const splitContent = x.content.split("\n\n");
-        console.log("split content: ", splitContent);
-        const mappedContent = splitContent.map((it) => ({ para: it }));
-        console.log("mapped content", mappedContent);
-
-        return {
-          ...x,
-          content: mappedContent,
-        };
-      });
+                return {
+                  ...x,
+                  content: mappedContent,
+                };
+              })
+            : [],
+      };
     };
-    // const selectedLis = store.data.filter(
-    //   (x) => x.selected_content !== undefined
-    // );
 
-    const qualcommLis = store.data
-      .filter((x) => x.category == "qualcomm")
-      .sort((a, b) => a.priority - b.priority);
+    const { toc: qualcommTOCs, data: qualcommList } = processList("qualcomm");
+    const { toc: mediatekTOCs, data: mediatekList } = processList("mediatek");
+    const { toc: commuTOCs, data: commuList } = processList("commu");
+    const { toc: phoneTOCs, data: phoneList } = processList("phone");
+    const { toc: otherTOCs, data: otherList } = processList("other");
+    const selectedList = structuredClone(
+      toRaw(store).data.filter((x) => x.selected_content_chi !== undefined)
+    );
 
-    const mediatekLis = store.data
-      .filter((x) => x.category == "mediatek")
-      .sort((a, b) => a.priority - b.priority);
+    selectedList.forEach((element) => {
+      tolist.push(element.url);
+      element.url = "{{url" + count + "}}";
+      count++;
+    });
 
-    const commuLis = store.data
-      .filter((x) => x.category == "commu")
-      .sort((a, b) => a.priority - b.priority);
-
-    const phoneLis = store.data
-      .filter((x) => x.category == "phone")
-      .sort((a, b) => a.priority - b.priority);
-
-    const otherLis = store.data
-      .filter((x) => x.category == "other")
-      .sort((a, b) => a.priority - b.priority);
-
-    const qualcommList = processList(qualcommLis);
-    const mediatekList = processList(mediatekLis);
-    const commuList = processList(commuLis);
-    const phoneList = processList(phoneLis);
-    const otherList = processList(otherLis);
-    const tolist = [];
     qualcommList.forEach((element) => {
       tolist.push(element.url);
       element.url = "{{url" + count + "}}";
       count++;
     });
+
     mediatekList.forEach((element) => {
       tolist.push(element.url);
       element.url = "{{url" + count + "}}";
@@ -96,16 +101,20 @@ async function generateDocx() {
       count++;
     });
 
-    const data = {
+    doc.render({
       date: new Date().toISOString().split("T")[0],
+      selectedList: selectedList,
+      qualcommTOCs: qualcommTOCs,
+      mediatekTOCs: mediatekTOCs,
+      commuTOCs: commuTOCs,
+      phoneTOCs: phoneTOCs,
+      otherTOCs: otherTOCs,
       qualcommList: qualcommList,
       mediatekList: mediatekList,
       commuList: commuList,
       phoneList: phoneList,
       otherList: otherList,
-    };
-
-    doc.render(data);
+    });
 
     const out = doc.getZip().generate({
       type: "blob",
@@ -193,14 +202,18 @@ async function exportDocx() {
 }
 </script>
 <template>
-  <v-toolbar>
-    <v-toolbar-title class="font-bold">JDMS DASHBOARD</v-toolbar-title>
-    <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
-      store.isLoading ? "Syncing" : "Synced to Cloud"
-    }}</v-btn>
+  <v-toolbar elevation="6">
+    <v-icon icon="mdi-view-dashboard" class="ml-4"></v-icon>
+    <v-toolbar-title class="font-bold">
+      AutoDMS Dashboard
+      <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
+        store.isLoading ? "Syncing" : "Synced to Cloud"
+      }}</v-btn>
+    </v-toolbar-title>
+
     <v-spacer></v-spacer>
     <v-btn
-      variant="outlined"
+      variant="tonal"
       rounded="xl"
       prepend-icon="mdi-plus"
       class="mr-4"
@@ -209,7 +222,7 @@ async function exportDocx() {
     >
 
     <v-btn
-      variant="outlined"
+      variant="tonal"
       rounded="xl"
       prepend-icon="mdi-export"
       class="mr-4"

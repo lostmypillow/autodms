@@ -26,8 +26,8 @@ connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
-  store.isLoading = true
   snapshot.docChanges().forEach((change) => {
+    store.isLoading = true;
     const docData = change.doc.data();
     if (change.doc.metadata.hasPendingWrites) {
       console.log("Local change detected, skipping");
@@ -36,9 +36,9 @@ const unsub = onSnapshot(q, (snapshot) => {
 
     if (change.type === "added") {
       store.data.push(docData);
-      store.isLoading = false
+      store.isLoading = false;
       if (docData.error) {
-        store.isLoading = true
+        store.isLoading = true;
         console.log("this is an unsupported link, triggering background: ");
         chrome.runtime.sendMessage({
           action: "importFromDash",
@@ -58,8 +58,8 @@ const unsub = onSnapshot(q, (snapshot) => {
         store.data.splice(index, 1);
       }
     }
+    store.isLoading = false;
   });
-  store.isLoading = false
 });
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
