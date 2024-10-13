@@ -8,7 +8,7 @@ export function filterContent(inputArray) {
     "請繼續往下閱讀...", "核稿編輯", "圖／", "引用來源：", "<h2>", "&nbsp;", "訂閱手機王", 
     "想快速知道", "資料來源：", "上傳", "消息來源", ".jpg", "下載附件", "保存到相冊", ".png", 
     "，請點選", "，請造訪", "其他因素不同而產生差異", "中央社「一手新聞」 app", 
-    "本網站之文字、圖片及影音", "#content>a:hover {", "color: ", "text-decoration: "
+    "本網站之文字、圖片及影音", "#content>a:hover {", "color: ", "text-decoration: ", "分享的貼文"
   ];
 
   const excludedEndsWith = ["："];
