@@ -5,7 +5,8 @@ export default defineContentScript({
     "https://*.digitimes/*",
     "https://*.ctee/*",
     "https://*.chinatimes/*",
-    "https://buzzorange.com/techorange/*"
+    "https://buzzorange.com/techorange/*",
+    "https://www.moneydj.com/*"
   ],
   main() {
     // Get the full HTML of the document

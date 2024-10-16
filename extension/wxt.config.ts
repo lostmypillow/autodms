@@ -12,6 +12,7 @@ export default defineConfig({
       "https://*.ctee.com.tw/*",
       "https://*.chinatimes.com/*",
       "https://buzzorange.com/*",
+      "https://www.moneydj.com/*"
     ],
   },
 });

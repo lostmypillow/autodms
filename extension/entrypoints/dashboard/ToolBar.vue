@@ -63,47 +63,58 @@ async function generateDocx() {
     const { toc: commuTOCs, data: commuList } = processList("commu");
     const { toc: phoneTOCs, data: phoneList } = processList("phone");
     const { toc: otherTOCs, data: otherList } = processList("other");
-    const selectedList = structuredClone(
-      toRaw(store).data.filter((x) => x.selected_content_chi !== undefined)
-    );
+    // const selectedList = structuredClone(
+    //   toRaw(store).data.filter((x) => x.selected_content_chi !== undefined)
+    // );
 
-    selectedList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
+    // selectedList.forEach((element) => {
+    //   tolist.push(element.url);
+    //   element.url = "{{url" + count + "}}";
+    //   count++;
+    // });
 
-    qualcommList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
+    if (qualcommList.length > 0) {
+      qualcommList.forEach((element) => {
+        tolist.push(element.url);
+        element.url = "{{url" + count + "}}";
+        count++;
+      });
+    }
 
-    mediatekList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
-    commuList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
-    phoneList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
+    if (mediatekList.length > 0) {
+      mediatekList.forEach((element) => {
+        tolist.push(element.url);
+        element.url = "{{url" + count + "}}";
+        count++;
+      });
+    }
 
-    otherList.forEach((element) => {
-      tolist.push(element.url);
-      element.url = "{{url" + count + "}}";
-      count++;
-    });
+    if (commuList.length > 0) {
+      commuList.forEach((element) => {
+        tolist.push(element.url);
+        element.url = "{{url" + count + "}}";
+        count++;
+      });
+    }
+    if (phoneList.length > 0) {
+      phoneList.forEach((element) => {
+        tolist.push(element.url);
+        element.url = "{{url" + count + "}}";
+        count++;
+      });
+    }
 
+    if (otherList.length > 0) {
+      otherList.forEach((element) => {
+        tolist.push(element.url);
+        element.url = "{{url" + count + "}}";
+        count++;
+      });
+    }
+    console.log("tolist: ", tolist);
     doc.render({
       date: new Date().toISOString().split("T")[0],
-      selectedList: selectedList,
+      // selectedList: selectedList,
       qualcommTOCs: qualcommTOCs,
       mediatekTOCs: mediatekTOCs,
       commuTOCs: commuTOCs,
@@ -121,7 +132,7 @@ async function generateDocx() {
       mimeType:
         "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     });
-
+    // saveAs(out, 'debug.docx');
     return [out, tolist];
   } catch (error) {
     console.error("Error generating document:", error);
@@ -141,6 +152,8 @@ async function onFileChange(blob, listOfUrl) {
     let count = 0;
     for (let url of listOfUrl) {
       const patchName = "url" + count;
+      console.log(`dealing with url${count}: ${url}`)
+      console.log("url encoded:" + encodeURI(url))
 
       const patchData = {
         type: PatchType.DOCUMENT,
@@ -157,7 +170,7 @@ async function onFileChange(blob, listOfUrl) {
                     },
                   }),
                 ],
-                link: url,
+                link: encodeURI(url),
               }),
             ],
           }),
