@@ -163,14 +163,14 @@ async function onFileChange(blob, listOfUrl) {
               new ExternalHyperlink({
                 children: [
                   new TextRun({
-                    text: url,
+                    text: encodeURI(url).replace(/&/g, "&amp;"),
                     color: "0563C1",
                     underline: {
                       color: "0563C1",
                     },
                   }),
                 ],
-                link: encodeURI(url),
+                link: encodeURI(url).replace(/&/g, "&amp;"),
               }),
             ],
           }),
@@ -217,8 +217,8 @@ async function exportDocx() {
 <template>
   <v-toolbar elevation="6">
     <v-icon icon="mdi-view-dashboard" class="ml-4"></v-icon>
-    <v-toolbar-title class="font-bold">
-      AutoDMS Dashboard
+    <v-toolbar-title class="font-extrabold">
+      Dashboard
       <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
         store.isLoading ? "Syncing" : "Synced to Cloud"
       }}</v-btn>

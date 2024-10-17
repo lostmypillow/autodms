@@ -22,7 +22,7 @@ const app = initializeApp({
   appId: "1:189553958868:web:38e313ca61559c42d74041",
 });
 const db = getFirestore(app);
-connectFirestoreEmulator(db, "127.0.0.1", 8080);
+// connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
@@ -72,10 +72,25 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
     });
   }
 });
+const chosenCategory = ref("qualcomm");
 </script>
 <template>
   <ToolBar />
+  <div class="flex flex-row items-center justify-start gap-4 my-4 mx-8">
+    <span class="font-bold text-xl">Categories:</span>
+
+    <v-btn-toggle
+      rounded="xl"
+      color="primary"
+      v-model="chosenCategory"
+      mandatory
+    >
+      <v-btn v-for="x in store.compoundCategories" :value="x.value">{{x.title}}</v-btn>
+
+    </v-btn-toggle>
+  </div>
+
   <EditDialog />
   <AddDialog />
-  <CardContainer />
+  <CardContainer :category="chosenCategory" />
 </template>

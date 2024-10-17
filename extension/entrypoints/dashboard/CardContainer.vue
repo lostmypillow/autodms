@@ -1,13 +1,12 @@
 <script setup>
 import Cards from "./Cards.vue";
-import {store} from './store.js'
+import { store } from "./store.js";
+const props = defineProps(["category"]);
 </script>
 <template>
-  <div class="flex md:flex-row flex-col w-full h-full pt-8 px-4">
-    <Cards
-      v-for="x in store.compoundCategories"
-      :category="x.value"
-      :title="x.title"
-    />
+  <div
+    class="w-full h-full flex flex-col gap-6 items-center justify-start px-4"
+  >
+    <Cards :category="props.category" />
   </div>
 </template>

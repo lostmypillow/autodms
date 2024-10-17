@@ -7,49 +7,59 @@ const handleEdit = (id) => {
 };
 </script>
 <template>
-  <div class="w-1/5 h-full flex flex-col gap-4 items-center justify-start px-4">
-    <h1 class="text-xl" v-if="store.getByCategory(props.category).length > 0">
-      {{ props.title.toUpperCase() }}:
-    </h1>
-
-    <v-card
-      elevation="3"
-      v-for="n in store.getByCategory(props.category)"
-      variant="tonal"
-      rounded="xl"
-      :title="n.title"
-      :subtitle="n.date + ' / ' + n.source + ' / ' + n.author"
-    >
-      <v-card-actions class="justify-between">
+  <v-card
+    elevation="6"
+    class="w-full"
+    v-for="n in store.getByCategory(props.category)"
+    variant="tonal"
+    rounded="xl"
+    :title="n.title"
+    :subtitle="n.date + ' / ' + n.source + ' / ' + n.author"
+  >
+    <v-card-actions class="justify-between">
+      <div class="flex flex-row items-center justify-center gap-4">
         <v-btn
-          icon="mdi-arrow-up"
+          prepend-icon="mdi-arrow-up"
           size="small"
           :disabled="n.priority == 1"
           @click="store.sendEdit('priority', n, 'up')"
           :loading="store.isLoading"
-        />
+          variant="outlined"
+          rounded="xl"
+          >Move Up</v-btn
+        >
 
         <span class="text-lg">{{ n.priority }}</span>
 
         <v-btn
-          icon="mdi-arrow-down"
+          prepend-icon="mdi-arrow-down"
           size="small"
-          :disabled="n.priority == store.data.length"
+          :disabled="n.priority == store.getByCategory(props.category).length"
           :loading="store.isLoading"
           @click="store.sendEdit('priority', n, 'down')"
-        />
-        <v-btn @click="handleEdit(n.id)" rounded="xl" prepend-icon="mdi-pencil"
-          >Edit</v-btn
-        >
-
-        <v-btn
-          :loading="store.isLoading"
+          variant="outlined"
           rounded="xl"
-          color="error"
-          icon="mdi-delete"
-          @click="store.sendDelete(n.id)"
-        />
-      </v-card-actions>
-    </v-card>
-  </div>
+          >Move Down</v-btn
+        >
+      </div>
+
+      <v-btn
+        @click="handleEdit(n.id)"
+        rounded="xl"
+        variant="outlined"
+        prepend-icon="mdi-pencil"
+        color="primary"
+        >Edit</v-btn
+      >
+      <v-btn
+        :loading="store.isLoading"
+        rounded="xl"
+        color="error"
+        prepend-icon="mdi-delete"
+        variant="outlined"
+        @click="store.sendDelete(n.id)"
+        >Delete</v-btn
+      >
+    </v-card-actions>
+  </v-card>
 </template>
