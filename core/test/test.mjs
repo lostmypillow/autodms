@@ -57,26 +57,9 @@ import { china1, china2, china3, ctee1, ctee2, ctee3, digi1, digi2 } from "./ins
 // bug title: https://www.eprice.com.tw/mobile/talk/6113/5812708/1
 //unwanted content: https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085
 /// undefined: https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT
-// const urls = [
-//   "https://money.udn.com/money/story/123398/8284364",
-//   "https://www.ettoday.net/news/20241011/2833056.htm",
-//   "https://technews.tw/2024/10/11/intel-releases-new-intel-core-ultra-200s-series-processors/",
-//   "https://mashdigi.com/to-strengthen-artificial-intelligence-computing-amd-launches-ryzen-ai-pro-300-series-processors-for-workstations-and-commercial-laptops/",
-//   "https://mashdigi.com/intel-explains-that-performance-notebook-processors-codenamed-arrow-lake-h-and-arrow-lake-hx-will-be-launched-in-the-first-quarter-of-2025/",
-//   "https://www.cool3c.com/article/226483",
-//   "https://www.setn.com/News.aspx?NewsID=1544745",
-//   "https://www.sogi.com.tw/articles/sale_poco_f6_pro/6263112",
-//   "https://www.sogi.com.tw/articles/oppo_find_x8_pro/6263141",
-  
-
-//   "https://ec.ltn.com.tw/article/paper/1671206",
-//   "https://mashdigi.com/ul-benchmark-cooperates-with-mediatek-to-add-a-test-project-called-opacity-micromap-to-the-android-version-of-3dmark/",
-//   "https://money.udn.com/money/story/5612/8282066",
-//   "https://www.sogi.com.tw/articles/mediatek/6263140",
-//   "https://money.udn.com/money/story/5612/8280899",
-//   "https://www.taisounds.com/news/content/76/151410",
-//   "https://www.cool3c.com/article/226434"
-// ];
+const urls = [
+  "https://money.udn.com/money/story/123398/8284364"
+];
 
 // const htmls = [
 //   {
@@ -113,9 +96,9 @@ import { china1, china2, china3, ctee1, ctee2, ctee3, digi1, digi2 } from "./ins
 //   }
 
 // ]
-// for (const url of urls) {
-//   await multscrape("link", url);
-// }
+for (const url of urls) {
+  await multscrape("link", url);
+}
 // for (const ht of htmls) {
 //   await multscrape("html", ht.url, ht.html)
 // }
@@ -149,4 +132,4 @@ async function multscrape(type, url, html) {
 // console.log(link.startsWith(check))
 //sanitize titles
 
-console.log(await multscrape("link", "https://www.cool3c.com/article/226478"))
+// console.log(await multscrape("link", "https://www.cool3c.com/article/226478"))
