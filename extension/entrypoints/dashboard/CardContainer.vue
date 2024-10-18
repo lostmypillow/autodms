@@ -5,7 +5,7 @@ const props = defineProps(["category"]);
 </script>
 <template>
   <div
-    class="w-full h-full flex flex-col gap-6 items-center justify-start px-4"
+    class="w-full h-full flex flex-col gap-6 items-center justify-start p-6"
   >
     <Cards :category="props.category" />
   </div>

@@ -22,7 +22,7 @@ const app = initializeApp({
   appId: "1:189553958868:web:38e313ca61559c42d74041",
 });
 const db = getFirestore(app);
-// connectFirestoreEmulator(db, "127.0.0.1", 8080);
+connectFirestoreEmulator(db, "127.0.0.1", 8080);
 
 const q = query(collection(db, store.getUDate()));
 const unsub = onSnapshot(q, (snapshot) => {
@@ -64,7 +64,8 @@ const unsub = onSnapshot(q, (snapshot) => {
 
 browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.action === "HTMLFromContent") {
-    browser.tabs.remove(sender.tab.id);
+    // setTimeout(loopInfo(1, false), 1500)
+    // browser.tabs.remove(sender.tab.id);
     store.sendHTML({
       id: store.findObjectIdByUrl(message.url),
       url: message.url,

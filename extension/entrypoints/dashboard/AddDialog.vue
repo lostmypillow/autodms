@@ -53,7 +53,7 @@ const errorText = ref("Category Not Selected");
           icon="$error"
           text="Category Not Selected"
           rounded="xl"
-          class="ml-4 w-fit h-fit"
+          class="ml-4 p-4"
           size="small"
           color="error"
         ></v-alert>

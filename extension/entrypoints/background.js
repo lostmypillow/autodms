@@ -5,6 +5,7 @@ export default defineBackground(() => {
     if (message.action === "importFromDash") {
       tempObj = message.data;
       const url = message.data.url;
+      console.log('injecting script')
       browser.tabs
         .create({ url: url, active: false })
         .then((newTab) => {

@@ -117,14 +117,10 @@ const testRef = false;
           <v-text-field
             label="URL"
             class="px-4"
-            append-inner-icon="mdi-open-in-new"
             variant="outlined"
             v-model="store.currentlyEditing.url"
             @input="
               savedChangesExist === false ? (savedChangesExist = true) : ''
-            "
-            @click:append-inner="
-              browser.tabs.create({ url: store.currentlyEditing.url })
             "
           ></v-text-field>
 
@@ -178,7 +174,7 @@ const testRef = false;
           </v-textarea>
           <v-text-field
             v-model="store.currentlyEditing.selected_content_eng_title"
-            label="中文摘要 Title"
+            label="英文摘要 Title"
             class="mx-4"
             variant="outlined"
             @input="

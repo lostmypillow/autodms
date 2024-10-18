@@ -11,8 +11,10 @@ import {
   ExternalHyperlink,
   TextRun,
 } from "docx";
-
+const exportOpen = ref(false);
+const exporting = ref(false);
 async function generateDocx() {
+  exporting.value = true;
   let count = 0;
   try {
     const response = await fetch(browser.runtime.getURL("/input.docx"));
@@ -63,15 +65,15 @@ async function generateDocx() {
     const { toc: commuTOCs, data: commuList } = processList("commu");
     const { toc: phoneTOCs, data: phoneList } = processList("phone");
     const { toc: otherTOCs, data: otherList } = processList("other");
-    // const selectedList = structuredClone(
-    //   toRaw(store).data.filter((x) => x.selected_content_chi !== undefined)
-    // );
+    const selectedList = structuredClone(
+      toRaw(store).data.filter((x) => x.selected_content_chi !== undefined)
+    );
 
-    // selectedList.forEach((element) => {
-    //   tolist.push(element.url);
-    //   element.url = "{{url" + count + "}}";
-    //   count++;
-    // });
+    selectedList.forEach((element) => {
+      tolist.push(element.url);
+      element.url = "{{url" + count + "}}";
+      count++;
+    });
 
     if (qualcommList.length > 0) {
       qualcommList.forEach((element) => {
@@ -114,7 +116,7 @@ async function generateDocx() {
     console.log("tolist: ", tolist);
     doc.render({
       date: new Date().toISOString().split("T")[0],
-      // selectedList: selectedList,
+      selectedList: selectedList,
       qualcommTOCs: qualcommTOCs,
       mediatekTOCs: mediatekTOCs,
       commuTOCs: commuTOCs,
@@ -152,8 +154,8 @@ async function onFileChange(blob, listOfUrl) {
     let count = 0;
     for (let url of listOfUrl) {
       const patchName = "url" + count;
-      console.log(`dealing with url${count}: ${url}`)
-      console.log("url encoded:" + encodeURI(url))
+      console.log(`dealing with url${count}: ${url}`);
+      console.log("url encoded:" + encodeURI(url));
 
       const patchData = {
         type: PatchType.DOCUMENT,
@@ -212,9 +214,34 @@ async function exportDocx() {
   } catch (error) {
     console.error("Error handling document generation and patching:", error);
   }
+  exporting.value = false;
+  exportOpen.value = !exportOpen.value;
 }
 </script>
 <template>
+  <v-dialog v-model="exportOpen" persistent class="w-1/2">
+    <v-card class="p-8 w-full flex flex-col gap-4" rounded="xl">
+      <div class="flex flex-row w-full items-center justify-between">
+        <div class="flex flex-row gap-4 w-full items-center justify-between">
+          <p class="text-2xl font-bold pl-4">Export</p>
+          <v-btn
+            rounded="xl"
+            color="error"
+            prepend-icon="mdi-close"
+            @click="exportOpen = !exportOpen"
+            :loading="exporting"
+            >Close</v-btn
+          >
+        </div>
+      </div>
+      <v-alert rounded="xl" color="warning" icon="$warning"
+        >No program is perfect, remember to double check for errors!</v-alert
+      >
+      <v-btn @click="exportDocx" rounded="xl" color="primary"
+        >I've double-checked, export to DOCX</v-btn
+      >
+    </v-card>
+  </v-dialog>
   <v-toolbar elevation="6">
     <v-icon icon="mdi-view-dashboard" class="ml-4"></v-icon>
     <v-toolbar-title class="font-extrabold">
@@ -239,7 +266,7 @@ async function exportDocx() {
       rounded="xl"
       prepend-icon="mdi-export"
       class="mr-4"
-      @click="exportDocx"
+      @click="exportOpen = !exportOpen"
       >Export</v-btn
     >
   </v-toolbar>
