@@ -1,6 +1,8 @@
 // const testLinks = [
 //   "https://www.cool3c.com/article/202079",
 
+import { dmsScrape } from "../src/index.mjs"
+
 //   "https://www.kocpc.com.tw/archives/563640",
 //   "https://mashdigi.com/qualcomm-continues-to-launch-the-snapdragon-x-plus-processor-composed-of-8-sets-of-performance-cores-expanding-the-copilot-pc-product-lineup/",
 //   "https://www.sogi.com.tw/articles/samsung_galaxy_s25_ultra/6262880",
@@ -32,15 +34,15 @@
 
 // console.log(await dmsScrape("html", "https://www.setn.com/News.aspx?NewsID=1526574", setntest))
 
-import { dmsScrape } from "../src/index.mjs";
-import { china1, china2, china3, ctee1, ctee2, ctee3, digi1, digi2 } from "./insidetest.js";
+// import { dmsScrape } from "../src/index.mjs";
+// import { china1, china2, china3, ctee1, ctee2, ctee3, digi1, digi2 } from "./insidetest.js";
 
 // console.log(await dmsScrape("html", "https://buzzorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/", techorangetest))
 
 // const $ = cheerio.load(chinatest)
 // console.log(CHINATIMES($))
 
-// const inithtml = await (await fetch("https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper")).text()
+
 
 // let $ = cheerio.load(await (await fetch("https://www.inside.com.tw/article/36326-meta-announces-300-quest-3s-a-cheaper")).text())
 // $('script, style, link').remove();
@@ -113,15 +115,15 @@ for (const url of urls) {
 // SETN headline
 //udn bug: https://money.udn.com/money/story/123398/8284364
 
-async function multscrape(type, url, html) {
-  const data = type == "link"? await dmsScrape(type, url): await dmsScrape(type, url, html)
-  // const data = await dmsScrape("html", url, insidetest);
-  console.log(data.title);
-  console.log(data.date + " / " + data.source + " / " + data.author);
-  console.log(data.url);
-  console.log(data.content);
-  console.log();
-}
+// async function multscrape(type, url, html) {
+//   const data = type == "link"? await dmsScrape(type, url): await dmsScrape(type, url, html)
+//   // const data = await dmsScrape("html", url, insidetest);
+//   console.log(data.title);
+//   console.log(data.date + " / " + data.source + " / " + data.author);
+//   console.log(data.url);
+//   console.log(data.content);
+//   console.log();
+// }
 // console.log(COMPOTECHASIA(cheerio.load(compotechtest)))
 // console.log(INSIDE(cheerio.load(insidetest)))
 
@@ -132,4 +134,13 @@ async function multscrape(type, url, html) {
 // console.log(link.startsWith(check))
 //sanitize titles
 
+<<<<<<< Updated upstream
 // console.log(await multscrape("link", "https://www.cool3c.com/article/226478"))
+=======
+// console.log(await multscrape("link", "https://www.cool3c.com/article/226478"))
+
+// const inithtml = 
+
+// console.log(await (await fetch("https://www.ntdtv.com.tw/b5/20240905/video/398013.html?IFA%E5%B1%95%E9%AB%98%E9%80%9A%E6%8E%A8%E5%B9%B3%E5%83%B9AI%20PC%E6%99%B6%E7%89%87%20%E5%8F%AB%E9%99%A3%E8%8B%B1%E7%89%B9%E7%88%BE%E8%88%87%E8%B6%85%E5%BE%AE")).text())
+console.log(await dmsScrape("link", "https://www.ntdtv.com.tw/b5/20240905/video/398013.html?IFA%E5%B1%95%E9%AB%98%E9%80%9A%E6%8E%A8%E5%B9%B3%E5%83%B9AI%20PC%E6%99%B6%E7%89%87%20%E5%8F%AB%E9%99%A3%E8%8B%B1%E7%89%B9%E7%88%BE%E8%88%87%E8%B6%85%E5%BE%AE"))
+>>>>>>> Stashed changes

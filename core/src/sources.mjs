@@ -23,6 +23,9 @@ import { CNYES } from "./sources/T5/CNYES.mjs";
 import { SAYDIGI } from "./sources/T5/SAYDIGI.mjs";
 import { COMPOTECHASIA } from "./sources/T5/COMPOTECHASIA.mjs";
 import { INSIDE } from "./sources/T5/INSIDE.mjs";
+import { AOTTER } from "./sources/T5/AOTTER.mjs";
+import { CTIMES } from "./sources/T5/CTIMES.mjs";
+import { NTDTV } from "./sources/T5/NTDTV.mjs";
 export const sources = {
   "3c.ltn": LTN3C,
   "ec.ltn": LTNEC,
@@ -48,5 +51,8 @@ export const sources = {
   "cnyes": CNYES,
   "saydigi": SAYDIGI,
   "compotechasia": COMPOTECHASIA,
-  "inside": INSIDE
+  "inside": INSIDE,
+  "aotter": AOTTER,
+  "ctimes": CTIMES,
+  "ntdtv": NTDTV
 };

@@ -45,9 +45,9 @@
 - [x] 點子生活
 - [x] 智慧電子解決方案設計平台
 - [x] Inside
-- [ ] Engadget
-- [ ] 電獺少女
-- [ ] CTIMES
+- [ ] Engadget (transitioned to yahoo news?)
+- [x] 電獺少女
+- [x] CTIMES
 - [ ] 新唐人亞太台
 - [ ] 新通訊元件雜誌
 - [ ] 中時電子報

@@ -1,6 +1,6 @@
 {
   "name": "dms-scrape",
-  "version": "0.4.8",
+  "version": "0.4.10",
   "main": "dist/index.mjs",
   "type": "module",
   "scripts": {
