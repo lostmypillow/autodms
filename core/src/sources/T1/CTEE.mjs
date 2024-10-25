@@ -1,20 +1,18 @@
 export function CTEE($) {
   const data = $.extract({
-    title: [{ selector: "h1.main-title", value: (el) => $(el).text().trim() }],
-    date: [
-      {
-        selector: "li.publish-date time",
-        value: (el, key) => {
-          const data = $(el).text().replace(/\./g, "-");
-          return data;
-        },
+    title: { selector: "h1.main-title", value: (el) => $(el).text().trim() },
+    date: {
+      selector: "li.publish-date time",
+      value: (el, key) => {
+        const data = $(el).text().replaceAll('.', '');
+        return data;
       },
-    ],
-    author: [
-        { 
-            selector: "span.name",
-            value: (el) => $(el).text().trim()
-        }],
+    },
+
+    author: {
+      selector: "span.name",
+      value: (el) => $(el).text().trim(),
+    },
     content: [
       {
         selector: "article p",

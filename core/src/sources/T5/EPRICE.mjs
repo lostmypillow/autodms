@@ -1,6 +1,7 @@
 export function EPRICE($) {
+  $('a[href^="https://www.eprice.com.tw/ad/"]').remove()
   const data = $.extract({
-    headline: "h1.title",
+    title: "h1.title",
   });
   data["date"] = $("span.date")
     .first()
@@ -11,9 +12,9 @@ export function EPRICE($) {
   data["content"] = $("div.user-comment-block")
     .first()
     .html() // Get inner HTML of the div
-    .split(/<br\s*\/?>\s*<br\s*\/?>/i) // Split by two consecutive <br> tags
-    .map((line) => line.trim()) // Trim whitespace from each line
-    .filter((line) => line.length > 0);
+    .split(/<br\s*\/?>/i) // Split by a single <br> tag
+
+  
     data["source"] = "ePrice"
   return data;
 }

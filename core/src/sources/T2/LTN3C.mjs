@@ -1,7 +1,7 @@
 export function LTN3C($) {
   const data = $.extract({
     title: "div.whitecon.borderline.boxTitle.boxText h1",
-    date: [
+    date: 
       {
         selector: "span.time",
         value: (el, key) => {
@@ -9,8 +9,8 @@ export function LTN3C($) {
           return data;
         },
       },
-    ],
-    author: [
+   
+    author: 
       {
         selector: "span.author",
         value: (el) => {
@@ -18,7 +18,7 @@ export function LTN3C($) {
           return data;
         },
       },
-    ],
+  
     content: [
       {
         selector: "div.text p",

@@ -1,24 +1,22 @@
 export function UDNMoney($) {
   const data = $.extract({
     title: "h1#story_art_title",
-    date: [
-      {
-        selector: "time.article-body__time",
-        value: (el, key) => {
-          const data = $(el).text().replace(/\//g, "-").slice(0, 10);
-          return data;
-        },
+    date: {
+      selector: "time.article-body__time",
+      value: (el, key) => {
+        const data = $(el).text().replace(/\//g, "-").slice(0, 10);
+        return data;
       },
-    ],
-    author: [
-      {
-        selector: "div.article-body__info > span",
-        value: (el, key) => {
-          const text = $(el).text();
-          return text.replace(/.*記者(.{3}).*/, "$1");
-        },
+    },
+
+    author: {
+      selector: "div.article-body__info > span",
+      value: (el, key) => {
+        const text = $(el).text();
+        return text.replace(/.*記者(.{3}).*/, "$1");
       },
-    ],
+    },
+
     content: [
       {
         selector: "section.article-body__editor p",
@@ -29,11 +27,10 @@ export function UDNMoney($) {
               .text()
               .replace(/\$\(.*/s, "")
               .trim();
-          
-              // if (key < sampleKey) {
-                return sample;
-              // }
-            
+
+            // if (key < sampleKey) {
+            return sample;
+            // }
           }
         },
       },

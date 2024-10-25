@@ -1,15 +1,14 @@
 export function UDN($) {
   const data = $.extract({
     title: "h1.article-content__title",
-    date: [
-      {
-        selector: "time.article-content__time",
-        value: (el, key) => {
-          const data = $(el).text().replace(/\//g, "-").slice(0, 10);
-          return data;
-        },
+    date: {
+      selector: "time.article-content__time",
+      value: (el, key) => {
+        const data = $(el).text().replace(/\//g, "-").slice(0, 10);
+        return data;
       },
-    ],
+    },
+
     author: "a[href^='/news/reporter/']",
     content: [
       {

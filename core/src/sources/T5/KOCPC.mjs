@@ -8,8 +8,6 @@ export function KOCPC($) {
   data["source"] = "電腦王阿達";
   data["author"] = $("div.jeg_meta_author a").text();
   data["content"] = [];
-// data['category'] = $("meta")
-  //Zi_ad_ar_iR
 
   $("div.Zi_ad_ar_iR p").each((index, element) => {
     if (

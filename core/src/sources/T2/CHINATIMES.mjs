@@ -20,14 +20,13 @@
 export function CHINATIMES($) {
   const data = $.extract({
     title: "h1.article-title",
-    date: [
-      {
-        selector: "span.date:first",
-        value: (el) => $(el).text().replace(/\//g, "-"),
-      },
-    ],
+    date: {
+      selector: "span.date:first",
+      value: (el) => $(el).text().replace(/\//g, "-"),
+    },
+
     source: { selector: "div.source", value: (el) => $(el).text().trim() },
-    author: [{ selector: "div.author", value: (el) => $(el).text().trim() }],
+    author: { selector: "div.author", value: (el) => $(el).text().trim() },
     content: [
       {
         selector: "div.article-body p",
