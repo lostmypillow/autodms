@@ -4,28 +4,19 @@ export function LTN3C($) {
     date: 
       {
         selector: "span.time",
-        value: (el, key) => {
-          const data = $(el).text().split(" ").slice(0)[0].replace(/\//g, "-");
-          return data;
-        },
+        value: el => $(el).text().split(" ").slice(0)[0].replace(/\//g, "-"),
       },
    
     author: 
       {
         selector: "span.author",
-        value: (el) => {
-          const data = $(el).text().split("").slice(-3).join("");
-          return data;
-        },
+        value: el => $(el).text().split("").slice(-3).join(""),
       },
   
     content: [
       {
         selector: "div.text p",
-        value: (el, key) => {
-          const text = $(el).text().trim();
-          return text;
-        },
+
       },
     ],
   });

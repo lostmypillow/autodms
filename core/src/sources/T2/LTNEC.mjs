@@ -13,22 +13,17 @@ export function LTNEC($) {
 
     author: {
       selector: "div.text p:nth-of-type(2)",
-      value: (el) => {
-        const data = $(el).text().split("／")[0];
-        return data;
-      },
+      value: el =>  $(el).text().split("／")[0]
+
     },
 
     content: [
       {
         selector: "div.text p",
-        value: (el, key) => {
-          const text = $(el)
-            .text()
-            .trim()
-            .replace(/〔.*?〕/g, "");
-          return text;
-        },
+        value: el => $(el)
+              .text()
+              .trim()
+              .replace(/〔.*?〕/g, "")
       },
     ],
   });

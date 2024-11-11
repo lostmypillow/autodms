@@ -3,20 +3,14 @@ export function UDN($) {
     title: "h1.article-content__title",
     date: {
       selector: "time.article-content__time",
-      value: (el, key) => {
-        const data = $(el).text().replace(/\//g, "-").slice(0, 10);
-        return data;
-      },
+      value: el => $(el).text().replaceAll("/", "-").slice(0, 10);
     },
 
     author: "a[href^='/news/reporter/']",
     content: [
       {
         selector: "section.article-content__editor  p",
-        value: (el, key) => {
-          const text = $(el).text().trim();
-          return text;
-        },
+        value: el => $(el).text().trim()
       },
     ],
   });
