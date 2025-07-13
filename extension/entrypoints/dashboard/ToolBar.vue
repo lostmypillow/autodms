@@ -181,21 +181,28 @@ async function onFileChange(blob, listOfUrl) {
       count++;
       patches[patchName] = patchData;
     }
+    console.log("Array buffer")
+    console.log(arrayBuffer instanceof ArrayBuffer)
 
     try {
-      const doc = await patchDocument(arrayBuffer, {
-        patches,
+      const doc = await patchDocument({
+        data: arrayBuffer,
+        patches: patches,
+        outputType: "uint8array",
       });
+      console.log(doc)
 
       const patchedBlob = new Blob([doc], {
         type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       });
+      console.log("patchedBlob")
 
       const newfilename =
         new Date().toISOString().split("T")[0] + " Qualcomm DMS.docx";
       saveAs(patchedBlob, newfilename);
     } catch (error) {
-      console.error("Error patching document:", error);
+      console.error("Error patching document:", error)
+      console.error(error.stack);
     }
   };
 
