@@ -18,7 +18,7 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
     "@mdi/font": "^7.4.47",
-    "axios": "^1.16.0",
+    "axios": "^1.18.0",
     "docx": "^8.5.0",
     "docxtemplater": "^3.50.0",
     "file-saver": "^2.0.5",
