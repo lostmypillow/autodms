@@ -4,7 +4,7 @@ import type {
     APIGatewayProxyEventV2 as LambdaFunctionUrlEvent,
 } from 'aws-lambda'
 import { handler } from '../src/delete.js'
-import { testDocClient } from '../setup.js'
+import { testDocClient } from '../setup-vitest.js'
 import { ScanCommand } from '@aws-sdk/lib-dynamodb'
 const TABLE_NAME = process.env['TABLE_NAME'] ?? 'TestTable'
 

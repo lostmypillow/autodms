@@ -74,10 +74,12 @@ export const handler = async (
             const result = await dmsScrape(rawDocument.url)
             const now = new Date().toISOString()
             const today = new Date().toISOString().split('T')[0]
+            const base36Timestamp = Date.now().toString(36)
             processedDocument = {
                 PK: `DATE#${today}`,
                 SK: generateKey(rawDocument.url),
                 ...result,
+                orderKey: `CAT_${result.category}#${base36Timestamp}`,
                 createdAt: now,
                 updatedAt: now,
             }
@@ -123,7 +125,6 @@ export const handler = async (
                 referenceId: context.awsRequestId,
                 message: 'Failed to retrieve or process URL payload.',
                 details: error.message,
-                cause: cause instanceof Error ? cause.message : cause,
             }),
         }
     }

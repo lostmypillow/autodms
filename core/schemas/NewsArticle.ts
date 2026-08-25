@@ -8,6 +8,9 @@ export const FullArticleSchema = z.object({
   content: z.string(),
   source: z.string(),
   category: z.string(),
+  orderKey: z.string(),
+  englishSummary: z.string().optional(),
+  chineseSummary: z.string().optional(),
   url: z.url(),
 });
 

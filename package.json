@@ -15,7 +15,8 @@
     },
     "workspaces": [
         "core",
-        "aws"
+        "aws",
+        "frontend"
     ],
     "devDependencies": {
         "@eslint/js": "^10.0.1",
