@@ -1,0 +1,38 @@
+{
+    "name": "autodms",
+    "version": "1.0.0",
+    "description": "",
+    "homepage": "https://github.com/lostmypillow/autodms#readme",
+    "bugs": {
+        "url": "https://github.com/lostmypillow/autodms/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/lostmypillow/autodms.git"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "workspaces": [
+        "core",
+        "aws"
+    ],
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/aws-lambda": "^8.10.162",
+        "@types/cheerio": "^1.0.0",
+        "@types/node": "^26.2.0",
+        "@vitest/coverage-v8": "^4.1.11",
+        "aws-sdk-client-mock": "^4.1.0",
+        "esbuild": "^0.28.2",
+        "eslint": "^10.9.0",
+        "eslint-config-prettier": "^10.1.8",
+        "globals": "^17.11.0",
+        "jiti": "^2.6.1",
+        "prettier": "^3.9.6",
+        "typescript": "^5.9.3",
+        "typescript-eslint": "^8.67.0",
+        "vite": "^8.0.1",
+        "vitest": "^4.1.0"
+    }
+}

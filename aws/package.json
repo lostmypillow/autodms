@@ -1,0 +1,33 @@
+{
+    "name": "aws-api",
+    "version": "0.1.0",
+    "description": "This is a blank project for CDK development with TypeScript.",
+    "type": "module",
+    "directories": {
+        "lib": "lib",
+        "test": "tests"
+    },
+    "workspaces": [
+        "aws"
+    ],
+    "scripts": {
+        "build": "tsc",
+        "watch": "tsc -w",
+        "test": "docker compose -f docker-compose.test.yml up -d --wait && vitest run; status=$?; docker compose -f docker-compose.test.yml down -v; exit $status",
+        "cdk": "cdk"
+    },
+    "dependencies": {
+        "@aws-sdk/client-dynamodb": "^3.1116.0",
+        "@aws-sdk/lib-dynamodb": "^3.1116.0",
+        "aws-cdk-lib": "^2.265.0",
+        "constructs": "^10.5.0"
+    },
+    "devDependencies": {
+        "@types/node": "^24.10.1",
+        "aws-cdk": "2.1138.0",
+        "jest": "^30",
+        "tsx": "^4.23.0",
+        "typescript": "~7.0.2",
+        "vitest": "^4.1.0"
+    }
+}

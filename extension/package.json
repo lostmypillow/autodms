@@ -1,9 +1,10 @@
 {
-  "name": "autodms",
-  "description": "Extension for automating DMS duties",
+  "name": "extension",
   "version": "0.3.1",
   "private": true,
+  "description": "Extension for automating DMS duties",
   "type": "module",
+  "main": "tailwind.config.js",
   "scripts": {
     "dev": "wxt",
     "dev:firefox": "wxt -b firefox",
@@ -12,8 +13,7 @@
     "zip": "wxt zip",
     "zip:firefox": "wxt zip -b firefox",
     "compile": "vue-tsc --noEmit",
-    "postinstall": "wxt prepare",
-    "release": "release-it"
+    "postinstall": "wxt prepare"
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
@@ -26,8 +26,6 @@
     "firebase-admin": "^12.5.0",
     "firebase-functions": "^6.0.1",
     "pizzip": "^3.1.7",
-    "release-it": "^20.2.0",
-    "release-it-pnpm": "^4.6.6",
     "vue": "^3.4.34"
   },
   "devDependencies": {
