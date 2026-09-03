@@ -15,10 +15,10 @@
   },
   "main": "index.js",
   "dependencies": {
-    "@google-cloud/functions-framework": "^3.4.2",
+    "@google-cloud/functions-framework": "^5.0.5",
     "dms-scrape": "^0.5.1",
     "firebase-admin": "^12.6.0",
-    "firebase-functions": "^6.0.1",
+    "firebase-functions": "^7.3.2",
     "uuid": "^14.0.0"
   },
   "devDependencies": {
