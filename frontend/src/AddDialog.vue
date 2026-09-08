@@ -42,10 +42,10 @@ const savedChangesExist = ref(false)
 const errorText = ref('Category Not Selected')
 </script>
 <template>
-    <v-dialog v-model="store.isAddDialogOpen" persistent>
-        <v-card class="p-8" rounded="xl">
+    <v-dialog v-model="store.isAddDialogOpen" persistent class="w-6/5">
+        <v-card class="p-8 w-full flex flex-col gap-4" rounded="xl">
             <!-- Top Bar Start -->
-            <div class="flex flex-row items-center justify-between">
+            <div class="flex flex-row w-full items-center justify-between">
                 <div class="flex flex-row gap-4 items-center justify-center">
                     <p class="text-2xl font-bold pl-4">Manual Import</p>
                 </div>
@@ -173,19 +173,26 @@ const errorText = ref('Category Not Selected')
                 <!-- Left End -->
 
                 <!-- Middle Start -->
-
-                <v-textarea
-                    label="Content"
-                    v-model="toFirebase.content"
-                    variant="outlined"
-                    class="mx-4"
-                    @input="
-                        savedChangesExist === false
-                            ? (savedChangesExist = true)
-                            : ''
+                <div
+                    :class="
+                        toFirebase.selected_content_chi == undefined
+                            ? 'w-2/3'
+                            : 'w-1/3'
                     "
-                ></v-textarea>
-
+                >
+                    <v-textarea
+                        label="Content"
+                        v-model="toFirebase.content"
+                        variant="outlined"
+                        class="mx-4"
+                        auto-grow
+                        @input="
+                            savedChangesExist === false
+                                ? (savedChangesExist = true)
+                                : ''
+                        "
+                    ></v-textarea>
+                </div>
                 <!-- Middle End -->
                 <!-- Right Start -->
                 <div

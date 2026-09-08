@@ -1,27 +1,11 @@
-<script setup>
+<script setup lang="ts">
 import EditDialog from './EditDialog.vue'
 import { store } from './store.js'
-import { ref } from 'vue'
-// import { initializeApp } from 'firebase/app'
-// import {
-//     getFirestore,
-//     collection,
-//     query,
-//     onSnapshot,
-//     connectFirestoreEmulator,
-// } from 'firebase/firestore'
-import ToolBar from './toolBar.vue'
+import { onMounted, ref } from 'vue'
+import ToolBar from './ToolBar.vue'
 import CardContainer from './CardContainer.vue'
 import AddDialog from './addDialog.vue'
 
-// const app = initializeApp({
-//     apiKey: 'AIzaSyAgzKXjreJUMqEiUNbzUZLhAoiv3KfS8Uk',
-//     authDomain: 'compassprdms.firebaseapp.com',
-//     projectId: 'compassprdms',
-//     storageBucket: 'compassprdms.appspot.com',
-//     messagingSenderId: '189553958868',
-//     appId: '1:189553958868:web:38e313ca61559c42d74041',
-// })
 // const db = getFirestore(app)
 // connectFirestoreEmulator(db, "127.0.0.1", 8080);
 //
@@ -76,11 +60,22 @@ import AddDialog from './addDialog.vue'
 //     });
 //   }
 // });
-const chosenCategory = ref('qualcomm')
+const chosenCategory = ref('A')
+
+onMounted(async () => {
+    // TODO: placeholder value
+    // const data = await fetch(
+    //     `http://localhost:3000/read/${new Date().toISOString().split('T')[0]}`
+    // )
+    const data = await fetch(`http://localhost:3000/read/2026-09-30`)
+    const posts = await data.json()
+    console.log(posts)
+    store.data = posts
+})
 </script>
 <template>
     <ToolBar />
-    <div class="flex flex-row items-center justify-start gap-4 py-4 px-8">
+    <div class="flex flex-row items-center justify-start gap-4 my-4 mx-8">
         <span class="font-bold text-xl">Categories:</span>
 
         <v-btn-toggle

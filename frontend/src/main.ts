@@ -1,25 +1,15 @@
-/**
- * main.ts
- *
- * Bootstraps Vuetify and other plugins then mounts the App`
- */
+import { createApp } from 'vue';
+import '@mdi/font/css/materialdesignicons.css'
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
 
-// Composables
-import { createApp } from 'vue'
-
-// Plugins
-import { registerPlugins } from '@/plugins'
-
-// Components
-import App from './App.vue'
-
-// Styles
-import 'unfonts.css'
-import './styles/tailwind.css'
-import './styles/main.scss'
-
-const app = createApp(App)
-
-registerPlugins(app)
-
-app.mount('#app')
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
+import './style.css';
+import App from './App.vue';
+const vuetify = createVuetify({
+    components,
+    directives,
+  })
+createApp(App).use(vuetify).use(autoAnimatePlugin).mount('#app');

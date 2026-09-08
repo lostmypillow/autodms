@@ -1,0 +1,25 @@
+{
+    "name": "api",
+    "version": "0.0.0",
+    "private": true,
+    "description": "",
+    "license": "ISC",
+    "author": "",
+    "type": "module",
+    "main": "app.js",
+    "scripts": {
+        "start": "tsx server.js",
+        "build": "esbuild server.js --analyze --bundle --minify --platform=node --target=node24 --format=esm \"--banner:js=delete process.env.AWS_PROFILE; import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" --outfile=dist/index.js"
+    },
+    "dependencies": {
+        "@codegenie/serverless-express": "^5.0.0",
+        "cookie-parser": "~1.4.4",
+        "cors": "^2.8.6",
+        "debug": "~2.6.9",
+        "dotenv": "^17.4.2",
+        "express": "~4.16.1",
+        "fractional-indexing": "^4.0.0",
+        "morgan": "~1.9.1",
+        "uuid": "^14.0.2"
+    }
+}

@@ -1,0 +1,34 @@
+services:
+  autodms:
+    build:
+      context: .
+      dockerfile: api/Dockerfile
+    env_file:
+      - api/.env.dev
+    environment:
+      AWS_PROFILE: ""
+      AWS_EC2_METADATA_DISABLED: "true"
+    ports:
+      - "3000:3000"
+    depends_on:
+      dynamodb:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+
+  dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: dms-dynamodb
+    ports:
+      - "8000:8000"
+    env_file:
+      - api/.env
+    healthcheck:
+      test: [ "CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'" ]
+      interval: 1s
+      timeout: 2s
+      retries: 10
+      start_period: 2s

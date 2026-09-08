@@ -17,8 +17,8 @@ const testRef = false
 </script>
 
 <template>
-    <v-dialog v-model="store.isDialogOpen" persistent>
-        <v-card class="p-8 flex flex-col gap-4" rounded="xl">
+    <v-dialog v-model="store.isDialogOpen" persistent class="w-6/5">
+        <v-card class="p-8 w-full flex flex-col gap-4" rounded="xl">
             <!-- Top Bar Start -->
             <div class="flex flex-row w-full items-center justify-between">
                 <div class="flex flex-row gap-4 items-center justify-center">
@@ -146,7 +146,7 @@ const testRef = false
                 <div
                     :class="
                         store.currentlyEditing.selected_content_chi == undefined
-                            ? 'w-full'
+                            ? 'w-2/3'
                             : 'w-1/3'
                     "
                 >

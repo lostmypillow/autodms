@@ -1,17 +1,16 @@
 <script setup>
-import {
-    ExternalHyperlink,
-    Paragraph,
-    patchDocument,
-    PatchType,
-    TextRun,
-} from 'docx'
+import { store } from './store.js'
+import PizZip from 'pizzip'
 import Docxtemplater from 'docxtemplater'
 import saveAs from 'file-saver'
-import PizZip from 'pizzip'
-
-import { store } from './store.js'
 import { ref } from 'vue'
+import {
+    patchDocument,
+    PatchType,
+    Paragraph,
+    ExternalHyperlink,
+    TextRun,
+} from 'docx'
 const exportOpen = ref(false)
 const exporting = ref(false)
 async function generateDocx() {
@@ -52,7 +51,7 @@ async function generateDocx() {
                     list.length > 0
                         ? list.map((x) => {
                               const splitContent = x.content.split('\n\n')
-                              console.log('split content:', splitContent)
+                              console.log('split content: ', splitContent)
                               const mappedContent = splitContent.map((it) => ({
                                   para: it,
                               }))
@@ -80,53 +79,53 @@ async function generateDocx() {
             )
         )
 
-        for (const element of selectedList) {
+        selectedList.forEach((element) => {
             tolist.push(element.url)
             element.url = '{{url' + count + '}}'
             count++
-        }
+        })
 
         if (qualcommList.length > 0) {
-            for (const element of qualcommList) {
+            qualcommList.forEach((element) => {
                 tolist.push(element.url)
                 element.url = '{{url' + count + '}}'
                 count++
-            }
+            })
         }
 
         if (mediatekList.length > 0) {
-            for (const element of mediatekList) {
+            mediatekList.forEach((element) => {
                 tolist.push(element.url)
                 element.url = '{{url' + count + '}}'
                 count++
-            }
+            })
         }
 
         if (commuList.length > 0) {
-            for (const element of commuList) {
+            commuList.forEach((element) => {
                 tolist.push(element.url)
                 element.url = '{{url' + count + '}}'
                 count++
-            }
+            })
         }
         if (phoneList.length > 0) {
-            for (const element of phoneList) {
+            phoneList.forEach((element) => {
                 tolist.push(element.url)
                 element.url = '{{url' + count + '}}'
                 count++
-            }
+            })
         }
 
         if (otherList.length > 0) {
-            for (const element of otherList) {
+            otherList.forEach((element) => {
                 tolist.push(element.url)
                 element.url = '{{url' + count + '}}'
                 count++
-            }
+            })
         }
-        console.log('tolist:', tolist)
+        console.log('tolist: ', tolist)
         doc.render({
-            date: new Date().toISOString().split('T', 1)[0],
+            date: new Date().toISOString().split('T')[0],
             selectedList: selectedList,
             qualcommTOCs: qualcommTOCs,
             mediatekTOCs: mediatekTOCs,
@@ -159,11 +158,11 @@ async function onFileChange(blob, listOfUrl) {
         return
     }
     const reader = new FileReader()
-    reader.addEventListener('load', async (e) => {
+    reader.onload = async (e) => {
         const arrayBuffer = e.target.result
-        const patches = {}
+        let patches = {}
         let count = 0
-        for (const url of listOfUrl) {
+        for (let url of listOfUrl) {
             const patchName = 'url' + count
             console.log(`dealing with url${count}: ${url}`)
             console.log('url encoded:' + encodeURI(url))
@@ -212,13 +211,13 @@ async function onFileChange(blob, listOfUrl) {
             console.log('patchedBlob')
 
             const newfilename =
-                new Date().toISOString().split('T', 1)[0] + ' Qualcomm DMS.docx'
+                new Date().toISOString().split('T')[0] + ' Qualcomm DMS.docx'
             saveAs(patchedBlob, newfilename)
         } catch (error) {
             console.error('Error patching document:', error)
             console.error(error.stack)
         }
-    })
+    }
 
     reader.readAsArrayBuffer(blob)
 }
@@ -238,64 +237,64 @@ async function exportDocx() {
     exporting.value = false
     exportOpen.value = !exportOpen.value
 }
+
+const date = new Date()
+
+let day = date.getDate()
+let month = date.getMonth() + 1
+let year = date.getFullYear()
 </script>
 <template>
-    <v-dialog v-model="exportOpen" class="w-1/2" persistent>
-        <v-card class="p-8 flex flex-col gap-4" rounded="xl">
-            <div class="flex flex-row items-center justify-between">
+    <v-dialog v-model="exportOpen" persistent class="w-1/2">
+        <v-card class="p-8 w-full flex flex-col gap-4" rounded="xl">
+            <div class="flex flex-row w-full items-center justify-between">
                 <div
                     class="flex flex-row gap-4 w-full items-center justify-between"
                 >
                     <p class="text-2xl font-bold pl-4">Export</p>
-
                     <v-btn
-                        color="error"
-                        :loading="exporting"
-                        prepend-icon="mdi-close"
                         rounded="xl"
+                        color="error"
+                        prepend-icon="mdi-close"
                         @click="exportOpen = !exportOpen"
+                        :loading="exporting"
                         >Close</v-btn
                     >
                 </div>
             </div>
-
-            <v-alert color="warning" icon="$warning" rounded="xl"
+            <v-alert rounded="xl" color="warning" icon="$warning"
                 >No program is perfect, remember to double check for
                 errors!</v-alert
             >
-
-            <v-btn color="primary" rounded="xl" @click="exportDocx"
+            <v-btn @click="exportDocx" rounded="xl" color="primary"
                 >I've double-checked, export to DOCX</v-btn
             >
         </v-card>
     </v-dialog>
-
     <v-toolbar elevation="6">
-        <v-icon class="ml-4" icon="mdi-view-dashboard" />
-
         <v-toolbar-title class="font-extrabold">
-            Dashboard
+            DMS for
+            {{ new Date().toISOString().split('T')[0] }}
             <v-btn :prepend-icon="store.isLoading ? 'mdi-sync' : 'mdi-cloud'">{{
                 store.isLoading ? 'Syncing' : 'Synced to Cloud'
             }}</v-btn>
         </v-toolbar-title>
 
-        <v-spacer />
-
+        <v-spacer></v-spacer>
         <v-btn
-            class="mr-4"
-            prepend-icon="mdi-plus"
-            rounded="xl"
             variant="tonal"
+            rounded="xl"
+            prepend-icon="mdi-plus"
+            class="mr-4"
             @click="store.isAddDialogOpen = !store.isAddDialogOpen"
             >Manual Import</v-btn
         >
 
         <v-btn
-            class="mr-4"
-            prepend-icon="mdi-export"
-            rounded="xl"
             variant="tonal"
+            rounded="xl"
+            prepend-icon="mdi-export"
+            class="mr-4"
             @click="exportOpen = !exportOpen"
             >Export</v-btn
         >
