@@ -26,14 +26,14 @@
     "firebase-admin": "^12.5.0",
     "firebase-functions": "^6.0.1",
     "pizzip": "^3.1.7",
-    "release-it": "^20.2.0",
+    "release-it": "^21.0.2",
     "release-it-pnpm": "^4.6.6",
     "vue": "^3.4.34"
   },
   "devDependencies": {
     "@wxt-dev/module-vue": "^1.0.0",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.5.15",
+    "postcss": "^8.5.28",
     "tailwindcss": "^3.4.13",
     "typescript": "^5.5.4",
     "vite-plugin-vuetify": "^2.0.4",
