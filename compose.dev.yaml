@@ -1,0 +1,37 @@
+services:
+  autodms-dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: autodms-dynamodb
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'" ]
+      interval: 1s
+      timeout: 2s
+      retries: 10
+      start_period: 2s
+    networks:
+      proxy-net:
+
+  autodms-dev:
+    container_name: autodms-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.dev
+    depends_on:
+      autodms-dynamodb:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+    networks:
+      proxy-net:
+
+
+networks:
+  proxy-net:
+    external: true
