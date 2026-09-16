@@ -14,7 +14,7 @@ services:
       proxy-net:
 
   autodms-prod:
-    container_name: autodms-dynamodb
+    container_name: autodms-prod
     build:
       context: .
       dockerfile: Dockerfile
