@@ -11,11 +11,11 @@ COPY api/ ./api/
 COPY shared/ ./shared/
 ENV NODE_ENV=development
 RUN npm ci
-
+ARG FRONTEND_BUILD_MODE='.'
 RUN npm run build --workspace=api
 
 COPY frontend/ ./frontend/
-RUN npm run build --workspace=frontend -- --mode dev
+RUN npm run build --workspace=frontend -- --mode ${FRONTEND_BUILD_MODE}
 FROM gcr.io/distroless/nodejs24-debian13 AS runner
 
 WORKDIR /app

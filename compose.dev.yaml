@@ -18,6 +18,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        FRONTEND_BUILD_MODE: dev
     env_file:
       - .env.dev
     depends_on:
