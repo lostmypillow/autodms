@@ -1,15 +1,9 @@
-#!/usr/bin/env node
-
-/**
- * Module dependencies.
- */
-
-import app from './app.js'
+import app from './src/app.js'
 import debug from 'debug'
 debug('express:server')
 import http from 'http'
 import 'dotenv/config.js'
-import { initTable } from './lib/initTable.ts'
+import { initTable } from './src/lib/initTable.ts'
 
 /**
  * Get port from environment and store in Express.

@@ -1,15 +1,13 @@
-import { createApp } from 'vue';
-import '@mdi/font/css/materialdesignicons.css'
-import 'vuetify/styles'
-import { createVuetify } from 'vuetify'
-import * as components from 'vuetify/components'
-import * as directives from 'vuetify/directives'
+import { createApp } from 'vue'
+import ui from 'beercss' // Import the default function export
+import 'material-dynamic-colors'
+import './style.css'
+import App from './App.vue'
+import { router } from './router.ts'
+// Make ui accessible across components and window
+window.ui = ui
 
-import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
-import './style.css';
-import App from './App.vue';
-const vuetify = createVuetify({
-    components,
-    directives,
-  })
-createApp(App).use(vuetify).use(autoAnimatePlugin).mount('#app');
+const app = createApp(App)
+app.config.globalProperties.$ui = ui
+ui('mode', 'light')
+app.use(router).mount('#app')

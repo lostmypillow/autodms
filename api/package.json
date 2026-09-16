@@ -2,24 +2,33 @@
     "name": "api",
     "version": "0.0.0",
     "private": true,
-    "description": "",
+    "description": "Must have ```credentials [test] aws_access_key_id = fake aws_secret_access_key = fake aws_session_token = fake region = us-east-1 ```  in .aws/credentials for development",
     "license": "ISC",
     "author": "",
     "type": "module",
-    "main": "app.js",
+    "main": "src/app.js",
     "scripts": {
-        "start": "tsx server.js",
-        "build": "esbuild server.js --analyze --bundle --minify --platform=node --target=node24 --format=esm \"--banner:js=delete process.env.AWS_PROFILE; import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" --outfile=dist/index.js"
+        "dev": "tsx server.js",
+        "test": "vitest run",
+        "build": "esbuild server.js --bundle --minify --platform=node --target=node24 --format=esm \"--banner:js=delete process.env.AWS_PROFILE; import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" --outfile=dist/index.js",
+        "start": "node server.js"
     },
     "dependencies": {
-        "@codegenie/serverless-express": "^5.0.0",
+        "@aws-sdk/client-dynamodb": "^3.1116.0",
+        "@aws-sdk/lib-dynamodb": "^3.1116.0",
+        "cheerio": "^1.0.0",
         "cookie-parser": "~1.4.4",
         "cors": "^2.8.6",
         "debug": "~2.6.9",
         "dotenv": "^17.4.2",
-        "express": "~4.16.1",
+        "express": "^5.2.1",
         "fractional-indexing": "^4.0.0",
-        "morgan": "~1.9.1",
-        "uuid": "^14.0.2"
+        "morgan": "^1.12.1",
+        "uuid": "^14.0.2",
+        "zod": "^4.4.3"
+    },
+    "devDependencies": {
+        "@types/cookie-parser": "^1.4.10",
+        "@types/morgan": "^1.9.10"
     }
 }

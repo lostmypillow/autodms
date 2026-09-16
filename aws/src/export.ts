@@ -12,7 +12,8 @@ const docClient: DynamoDBDocumentClient = DynamoDBDocumentClient.from(
     new DynamoDBClient({})
 )
 const tableName: string = process.env['TABLE_NAME'] || ''
-import { ReadParamsSchema } from 'core/schemas/ReadParamsSchema.js'
+
+import { ReadParamsSchema } from 'api/routes/read/schemas.js'
 
 export const handler = async (
     event: LambdaFunctionUrlEvent,

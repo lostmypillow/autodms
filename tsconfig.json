@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "target": "ES2022",
+        "rootDir": ".",
         "module": "NodeNext",
         "moduleResolution": "NodeNext",
         "esModuleInterop": true,
@@ -18,11 +19,10 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true,
-        "noPropertyAccessFromIndexSignature": true,
-       
-    },
-    "include": [
-            "**/*.ts",
-            "**/*.mjs" 
-        ]
+        "baseUrl": ".",
+        "paths": {
+            "shared": ["./shared/index.ts"],
+            "shared/*": ["./shared/*"]
+        }
+    }
 }

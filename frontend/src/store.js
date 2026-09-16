@@ -1,14 +1,7 @@
 import { reactive } from 'vue'
 import axios from 'axios'
-// const editURL = "http://127.0.0.1:5001/compassprdms/asia-east1/update/?id=";
-// const deleteURL = "http://127.0.0.1:5001/compassprdms/asia-east1/deleteDoc/?id=";
-// const addURL = "http://127.0.0.1:5001/compassprdms/asia-east1/addhtml";
-// const manualURL = "http://127.0.0.1:5001/compassprdms/asia-east1/manualadd";
-const editURL = 'https://update-ud47er3zea-de.a.run.app/?id='
-const deleteURL = 'https://deletedoc-ud47er3zea-de.a.run.app/?id='
-const addURL = 'https://addhtml-ud47er3zea-de.a.run.app'
-const manualURL = 'https://manualadd-ud47er3zea-de.a.run.app'
-
+const editURL = `http://${import.meta.env.VITE_API_ENDPOINT}/update`
+const manualURL = `http://${import.meta.env.VITE_API_ENDPOINT}/add`
 export const store = reactive({
     count: 0,
     isDialogOpen: false,
@@ -17,6 +10,7 @@ export const store = reactive({
     isLoading: false,
     currentlyEditing: {},
     original: {},
+    editDialogRef: null,
     navCategories: [
         'Qualcomm相關新聞',
         'MediaTek相關新聞',
@@ -46,29 +40,40 @@ export const store = reactive({
             title: '其他業界重要訊息',
         },
     ],
-    hasObjectChanged(obj1, obj2) {
-        const keys1 = Object.keys(obj1)
-        const keys2 = Object.keys(obj2)
-
-        if (keys1.length !== keys2.length) {
-            return true
+    async sync() {
+        try {
+        const response = await fetch(
+            `http://${import.meta.env.VITE_API_ENDPOINT}/read/${new Date().toISOString().split('T')[0]}`
+        )
+        const data = await response.json()
+        if (Array.isArray(data)) {
+            this.data = data.sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))
         }
-
-        for (let key of keys1) {
-            if (obj1[key] !== obj2[key]) {
-                return true
-            }
-        }
-
-        return false
+    } catch (e) {
+        console.error('Failed to load data:', e)
+    }
     },
+    // hasObjectChanged(obj1, obj2) {
+    //     const keys1 = Object.keys(obj1)
+    //     const keys2 = Object.keys(obj2)
+
+    //     if (keys1.length !== keys2.length) {
+    //         return true
+    //     }
+
+    //     for (let key of keys1) {
+    //         if (obj1[key] !== obj2[key]) {
+    //             return true
+    //         }
+    //     }
+
+    //     return false
+    // },
     setCurrentlyEditing(id) {
-        this.currentlyEditing = this.data.filter((x) => x.id === id)[0]
+        this.currentlyEditing = this.data.filter((x) => x.PK === id)[0]
     },
     async sendManImport(data) {
-        this.isLoading = true
-        await axios.post(manualURL, data)
-        this.isLoading = false
+        return await axios.post(manualURL, data)
     },
     async sendHTML(data) {
         this.isLoading = true
@@ -76,43 +81,15 @@ export const store = reactive({
 
         this.isLoading = false
     },
-    async sendEdit(type, obj, direction) {
-        this.isLoading = true
-        let response
-        const APIURL =
-            type == 'priority'
-                ? editURL + obj.id + '&edit=' + type
-                : editURL + this.currentlyEditing.id + '&edit=' + type
-
-        try {
-            response =
-                type == 'data'
-                    ? await axios.post(APIURL, this.currentlyEditing)
-                    : type == 'priority'
-                      ? await axios.post(APIURL, {
-                            sourceID: obj.id,
-                            sourceCategory: obj.category,
-                            sourcePriority: obj.priority,
-                            targetPriority:
-                                direction == 'down'
-                                    ? obj.priority + 1
-                                    : obj.priority - 1,
-                        })
-                      : await axios.post(APIURL)
-        } catch (error) {
-            console.error(error)
-        }
-
-        type == 'select' || type == 'unselect'
-            ? this.setCurrentlyEditing(this.currentlyEditing.id)
-            : ''
-        console.log(response)
-        this.isLoading = false
+    async sendEdit() {
+       return await axios.post(editURL, this.currentlyEditing)
     },
-    async sendDelete(id) {
-        this.isLoading = true
-        await axios.post(deleteURL + id)
-        this.isLoading = false
+    async sendDelete(sk, pk) {
+        await axios.delete(
+            `http://${import.meta.env.VITE_API_ENDPOINT}/delete/${sk.split('#')[1]}/${pk.split('#')[1]}`
+        )
+        await store.sync()
+        
     },
     findObjectIdByUrl(url) {
         for (let i = 0; i < this.data.length; i++) {
@@ -132,7 +109,7 @@ export const store = reactive({
     },
     getByCategory(category) {
         const qcomm = this.data.filter((x) => x.category == category)
-        qcomm.sort((a, b) => a.priority - b.priority)
+        qcomm.sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))
         return qcomm
     },
 })

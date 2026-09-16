@@ -6,7 +6,8 @@ import type {
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
 import { DynamoDBDocumentClient, UpdateCommand } from '@aws-sdk/lib-dynamodb'
 import { DynamoDBServiceException } from '@aws-sdk/client-dynamodb'
-import { UpdateParamsSchema } from 'core/schemas/UpdateParamsSchema.js'
+
+import { UpdateParamsSchema } from 'api/routes/update/schemas.js'
 
 const docClient: DynamoDBDocumentClient = DynamoDBDocumentClient.from(
     new DynamoDBClient({})

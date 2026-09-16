@@ -1,21 +1,19 @@
 import type {
     Context,
     APIGatewayProxyEventV2 as LambdaFunctionUrlEvent,
-    APIGatewayProxyResultV2, APIGatewayProxyEventQueryStringParameters,
+    APIGatewayProxyResultV2,
+    APIGatewayProxyEventQueryStringParameters,
 } from 'aws-lambda'
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
-import {
-    DynamoDBDocumentClient,
-    ScanCommand,
-} from '@aws-sdk/lib-dynamodb'
+import { DynamoDBDocumentClient, ScanCommand } from '@aws-sdk/lib-dynamodb'
 import { DynamoDBServiceException } from '@aws-sdk/client-dynamodb'
 
 const docClient: DynamoDBDocumentClient = DynamoDBDocumentClient.from(
     new DynamoDBClient({})
 )
 const tableName: string = process.env['TABLE_NAME'] || ''
-import {  ReadParamsSchema } from 'core/schemas/ReadParamsSchema.js'
 
+import { ReadParamsSchema } from 'api/routes/read/schemas.js'
 
 export const handler = async (
     event: LambdaFunctionUrlEvent,

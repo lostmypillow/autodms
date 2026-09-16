@@ -2,12 +2,9 @@ services:
   autodms:
     build:
       context: .
-      dockerfile: api/Dockerfile
+      dockerfile: Dockerfile
     env_file:
-      - api/.env.dev
-    environment:
-      AWS_PROFILE: ""
-      AWS_EC2_METADATA_DISABLED: "true"
+      - .env.dev
     ports:
       - "3000:3000"
     depends_on:
@@ -16,7 +13,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '1.0'
+          cpus: '0.5'
           memory: 512M
 
   dynamodb:
@@ -25,7 +22,7 @@ services:
     ports:
       - "8000:8000"
     env_file:
-      - api/.env
+      - .env
     healthcheck:
       test: [ "CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'" ]
       interval: 1s

@@ -6,13 +6,14 @@ import type {
 import { DynamoDBClient } from '@aws-sdk/client-dynamodb'
 import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb'
 import { DynamoDBServiceException } from '@aws-sdk/client-dynamodb'
+import { createHash } from 'crypto'
+import { dmsScrape } from 'api/lib/dmsScrape/index.js'
+
 import {
     FullArticleSchema,
     type NewsArticleAddition,
-} from 'core/schemas/NewsArticle.js'
-import { UrlOnlySchema } from 'core/schemas/NewsArticle.js'
-import { createHash } from 'crypto'
-import { dmsScrape } from 'core'
+    UrlOnlySchema,
+} from 'api/routes/add/schemas.js'
 
 function generateKey(rawUrl: string): string {
     const url = new URL(rawUrl.trim())
