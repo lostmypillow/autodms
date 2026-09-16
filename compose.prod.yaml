@@ -1,9 +1,25 @@
 services:
+  autodms-dynamodb:
+    image: amazon/dynamodb-local:latest
+    container_name: autodms-dynamodb
+    env_file:
+      - .env
+    healthcheck:
+      test: [ "CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'" ]
+      interval: 1s
+      timeout: 2s
+      retries: 10
+      start_period: 2s
+    networks:
+      proxy-net:
+
   autodms-prod:
     container_name: autodms-dynamodb
     build:
       context: .
       dockerfile: Dockerfile
+      args:
+        FRONTEND_BUILD_MODE: prod
     env_file:
       - .env.dev
     depends_on:
