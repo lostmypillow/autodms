@@ -15,7 +15,7 @@ RUN npm ci
 RUN npm run build --workspace=api
 
 COPY frontend/ ./frontend/
-RUN npm run build --workspace=frontend -- --mode development
+RUN npm run build --workspace=frontend -- --mode dev
 FROM gcr.io/distroless/nodejs24-debian13 AS runner
 
 WORKDIR /app

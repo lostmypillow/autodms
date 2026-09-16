@@ -57,7 +57,7 @@ const getClipboard = async () => {
     const preScrapeResult = (
         await (
             await fetch(
-                `http://${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
+                `${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
             )
         ).json()
     )?.result
@@ -83,12 +83,12 @@ const getClipboard = async () => {
             display: flex;
             flex-direction: row;
             width: 100%;
-            align-items: center;
+            align-items: start;
             justify-content: space-between;
         "
     >
-        <h5>Manual Import</h5>
-        <button @click="sendData">Send</button>
+        <h6>Manual Import</h6>
+        <button @click="sendData"><i>cloud_upload</i>上傳</button>
     </div>
     <!-- Top Bar End -->
     <!-- Main Content Start -->

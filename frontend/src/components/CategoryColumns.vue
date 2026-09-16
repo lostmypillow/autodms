@@ -58,7 +58,7 @@ function onDragEnd(event: any) {
         movedItem.orderKey = getNewOrderKey(destIndex)
         movedItem.category = targetCategory
         console.log('changedObject', movedItem)
-        axios.post(`http://${import.meta.env.VITE_API_ENDPOINT}/update`, movedItem).then((response) => {
+        axios.post(`${import.meta.env.VITE_API_ENDPOINT}/update`, movedItem).then((response) => {
                 console.log(response.data)
                  ui('#snackbar')
             }).catch((e) => {

@@ -20,12 +20,11 @@ const props = defineProps({
         type: String,
         required: true,
     },
-      data: {
+    data: {
         type: Object,
-        required: true
-    }
+        required: true,
+    },
 })
-
 
 const handleEdit = (PK: string) => {
     console.log(`To edit PK of ${PK}`)
@@ -52,7 +51,6 @@ const handleDelete = async (sk, pk) => await store.sendDelete(sk, pk)
             cursor: isDragging ? 'grabbing' : 'grab',
             boxShadow: isDragging ? '0 12px 24px rgba(0,0,0,0.35)' : 'none',
             opacity: isDragging ? 0.6 : 1,
-
         }"
         :id="data.PK || data.id"
     >
@@ -70,7 +68,7 @@ const handleDelete = async (sk, pk) => await store.sendDelete(sk, pk)
             <ins class="tooltip right">{{ data.title }}</ins>
         </p>
 
-        <p>{{ data.date }} {{ data.orderKey }}</p>
+        <p>{{ data.date }}</p>
         <p>{{ data.source + ' / ' + data.author }}</p>
         <nav class="group" style="width: 100%; justify-content: space-between">
             <button @click="handleEdit(data.PK)" class="primary">

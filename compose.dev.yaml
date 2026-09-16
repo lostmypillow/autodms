@@ -1,27 +1,7 @@
 services:
-  autodms-dev:
-    container_name: autodms-dynamodb
-    build:
-      context: .
-      dockerfile: Dockerfile
-    env_file:
-      - .env.dev
-    ports:
-      - "3000:3000"
-    depends_on:
-      autodms-dynamodb:
-        condition: service_healthy
-    deploy:
-      resources:
-        limits:
-          cpus: '0.5'
-          memory: 512M
-
   autodms-dynamodb:
     image: amazon/dynamodb-local:latest
     container_name: autodms-dynamodb
-    ports:
-      - "8000:8000"
     env_file:
       - .env
     healthcheck:
@@ -30,3 +10,28 @@ services:
       timeout: 2s
       retries: 10
       start_period: 2s
+    networks:
+      proxy-net:
+
+  autodms-dev:
+    container_name: autodms-dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env.dev
+    depends_on:
+      autodms-dynamodb:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+    networks:
+      proxy-net:
+
+
+networks:
+  proxy-net:
+    external: true

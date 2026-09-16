@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 import axios from 'axios'
-const editURL = `http://${import.meta.env.VITE_API_ENDPOINT}/update`
-const manualURL = `http://${import.meta.env.VITE_API_ENDPOINT}/add`
+const editURL = `${import.meta.env.VITE_API_ENDPOINT}/update`
+const manualURL = `${import.meta.env.VITE_API_ENDPOINT}/add`
 export const store = reactive({
     count: 0,
     isDialogOpen: false,
@@ -43,7 +43,7 @@ export const store = reactive({
     async sync() {
         try {
         const response = await fetch(
-            `http://${import.meta.env.VITE_API_ENDPOINT}/read/${new Date().toISOString().split('T')[0]}`
+            `${import.meta.env.VITE_API_ENDPOINT}/read/${new Date().toISOString().split('T')[0]}`
         )
         const data = await response.json()
         if (Array.isArray(data)) {
@@ -86,7 +86,7 @@ export const store = reactive({
     },
     async sendDelete(sk, pk) {
         await axios.delete(
-            `http://${import.meta.env.VITE_API_ENDPOINT}/delete/${sk.split('#')[1]}/${pk.split('#')[1]}`
+            `${import.meta.env.VITE_API_ENDPOINT}/delete/${sk.split('#')[1]}/${pk.split('#')[1]}`
         )
         await store.sync()
         

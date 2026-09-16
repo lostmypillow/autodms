@@ -16,7 +16,7 @@ onMounted(() => {
     <!-- 2. DESKTOP / TABLET SIDEBAR (m l)-->
     <nav id="sidebar" class="left m l scroll">
         <header>
-            <h6 class="max">DMS</h6>
+            <h6 class="max" style="font-weight: bolder">DMS</h6>
             <button
                 type="button"
                 class="extend square round"
