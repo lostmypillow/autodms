@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { dmsScrape } from '../index.js'
-import { NewsArticleTestSchema } from '../NewsArticleTestSchema.js'
+import { dmsScrape } from '../src/lib/dmsScrape/index.js'
+import { NewsArticleTestSchema } from '../src/schemas/NewsArticleTestSchema.js'
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 describe('Test scraping from fetch', () => {

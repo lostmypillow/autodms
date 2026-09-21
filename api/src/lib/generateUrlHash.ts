@@ -1,6 +1,6 @@
 import { createHash } from 'crypto'
 
-export function generateKey(rawUrl: string): string {
+export function generateUrlHash(rawUrl: string): string {
     const url = new URL(rawUrl.trim())
     url.hostname = url.hostname.toLowerCase()
     let cleanUrl = url.toString()

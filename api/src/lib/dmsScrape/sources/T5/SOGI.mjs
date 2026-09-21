@@ -4,16 +4,17 @@ export function SOGI($) {
     author: {
       selector: "div.d-inline-block.mr-3",
       value: function (el, key) {
+        let match;
         let cleanedText = $(el)
           .text()
           .trim()
           .replace(/[\n\s]/g, "");
         if (cleanedText.includes("特約編輯")) {
-          var match = cleanedText.match(/by(.*?)特約編輯/);
+          match = cleanedText.match(/by(.*?)特約編輯/);
         } else if (cleanedText.includes("編輯")) {
-          var match = cleanedText.match(/by(.*?)編輯/);
+          match = cleanedText.match(/by(.*?)編輯/);
         } else {
-          var match = null;
+          match = null;
         }
         if (match) {
           let result = match[1]; // This will give you the text between "by" and "特約編輯"

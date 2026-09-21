@@ -21,11 +21,10 @@ export function XF($) {
   data["source"] = "XFastest";
   data["author"] = $("a[href^='space-uid']").last().text();
   $('td[id^="post"]').each((index, element) => {
-    let content = $(element)
+      data["content"] =  $(element)
       .html()
       .split(/<\/?[^>]+>/)
       .map((item) => item.trim()); // Trim all elements
-    data["content"] = content;
   });
   return data;
 }

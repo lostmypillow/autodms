@@ -53,8 +53,7 @@ export const handler = async (
         const pathSegments = rawPath.split('/').filter(Boolean) // ["xyz"]
         const dateKey = `DATE#${pathSegments[0]}`
         const urlHash = `URL#${pathSegments[1]}`
-        const changeList =
-            typeof event.body === 'string' ? JSON.parse(event.body) : event.body
+        const changeList = JSON.parse(event.body)
         const attributeNames: Record<string, string> = {}
         const attributeValues: Record<string, any> = {}
         const updateExpressionsArray: string[] = []

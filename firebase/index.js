@@ -19,10 +19,7 @@ const getTargetID = async (category, priority) => {
         .where('category', '==', category)
         .where('priority', '==', priority)
         .get()
-    if (snapshot.empty) {
-        console.log('No matching documents.')
-        return
-    } else {
+    if (!snapshot.empty) {
         let eyed
         snapshot.forEach((doc) => {
             if (doc.id !== undefined) {

@@ -5,12 +5,12 @@ import {
     FullArticleSchema,
     type NewsArticleAddition,
     UrlOnlySchema,
-} from 'shared/schemas.js'
+} from 'shared/schemas'
 import { dmsScrape } from 'shared'
 import { v7 as uuidv7 } from 'uuid'
 import 'dotenv/config'
 import { Router } from 'express'
-import { generateKey } from '../../lib/generateKey.js'
+import { generateUrlHash } from '../../lib/generateUrlHash.js'
 import { docClient } from '../../lib/initTable.js'
 import { generateKeyBetween } from 'fractional-indexing'
 const tableName: string = process.env['TABLE_NAME'] || ''
@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
         }
         processedDocument = {
             SK: `DATE#${today}`,
-            PK: generateKey(rawDocument.url),
+            PK: generateUrlHash(rawDocument.url),
         }
 
         if (parseResult.success) {

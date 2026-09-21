@@ -4,8 +4,7 @@ export function CTEE($) {
     date: {
       selector: "li.publish-date time",
       value: (el, key) => {
-        const data = $(el).text().replaceAll('.', '');
-        return data;
+        return $(el).text().replaceAll('.', '');
       },
     },
 

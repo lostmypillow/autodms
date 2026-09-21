@@ -13,12 +13,10 @@ export function MASHDIGI($) {
     const textContent = $(this).text().trim();
 
     if (
-      htmlContent.includes("<img") ||
-      textContent.startsWith("▲") ||
-      textContent === ""
+      !htmlContent.includes("<img") &&
+      !textContent.startsWith("▲") &&
+      textContent !== ""
     ) {
-      return;
-    } else {
       data["content"].push(textContent.replace("undefined", "").trim());
     }
   });

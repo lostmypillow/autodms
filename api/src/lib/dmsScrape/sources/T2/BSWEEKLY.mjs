@@ -1,5 +1,5 @@
 export function BSWEEKLY($) {
-  const data = $.extract({
+  return $.extract({
     title: "h1.Single-title-main.col-lg-10",
     date: {
       selector: "meta[property='article:published_time']",
@@ -15,5 +15,4 @@ export function BSWEEKLY($) {
         }
     ]
   });
-  return data;
 }

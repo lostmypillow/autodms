@@ -18,7 +18,7 @@
 //   break;
 //////
 export function CHINATIMES($) {
-  const data = $.extract({
+  return  $.extract({
     title: "h1.article-title",
     date: {
       selector: "span.date:first",
@@ -38,5 +38,4 @@ export function CHINATIMES($) {
       },
     ],
   });
-  return data;
 }

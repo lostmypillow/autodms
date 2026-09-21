@@ -15,9 +15,7 @@ export function COOL3C($) {
   data["content"] = [];
   $("div.row.content div p").each(function () {
     const text = $(this).html().trim();
-    if (text.startsWith("<img") || text.startsWith("▲")) {
-      return;
-    } else {
+    if (!text.startsWith("<img") && !text.startsWith("▲")) {
       data["content"].push(text.replace("undefined", "").trim());
     }
   });

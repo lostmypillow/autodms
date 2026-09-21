@@ -6,7 +6,7 @@ const firebaseConfig = {
     messagingSenderId: "189553958868",
     appId: "1:189553958868:web:38e313ca61559c42d74041",
   };
-  
+
   import { initializeApp } from "firebase/app";
   import {
     collection,
@@ -26,13 +26,13 @@ const firebaseConfig = {
   import { store } from "../dashboard/store";
   import { connectFirestoreEmulator } from "firebase/firestore";
   const app = initializeApp(firebaseConfig);
-  
+
   export const firebaseStore = reactive({
     db: null,
     originalDoc: null,
     currentlyEditingDoc: null,
     data: [],
-  
+
     initDb() {
       this.db = getFirestore(app);
       connectFirestoreEmulator(this.db, "127.0.0.1", 8080);
@@ -63,7 +63,7 @@ const firebaseConfig = {
         query(this.collectionRef("Qualcomm相關新聞")),
         handleSnapshot
       );
-  
+
       const mediatek = onSnapshot(
         query(this.collectionRef("MediaTek相關新聞")),
         handleSnapshot
@@ -120,9 +120,9 @@ const firebaseConfig = {
     /////changing priority: updatedDoc(data, 'down')
     /////saving edits: updateDoc(data)
     async updateDoc(data, changeType) {
-      var categoryChanged = determineCategoryChange(
-        this.originalDoc,
-        this.currentlyEditingDoc
+      const categoryChanged = determineCategoryChange(
+          this.originalDoc,
+          this.currentlyEditingDoc
       );
       if (categoryChanged) {
         //handle category change
@@ -141,7 +141,7 @@ const firebaseConfig = {
             : this.currentlyEditingDoc.priority - 1;
         const originalPriChange = changeType == "down" ? 1 : -1;
         const changedPriChange = changeType == "down" ? -1 : 1;
-  
+
         const querySnapshot = await getDocs(
           query(
             this.collectionRef(this.currentlyEditingDoc.category),
@@ -152,7 +152,7 @@ const firebaseConfig = {
         //if querysnapshot is not empty, we get the next doc's data
         if (!querySnapshot.empty) {
           const nextDoc = querySnapshot.docs[0].data();
-  
+
           await updateDoc(
             this.docRef(
               this.currentlyEditingDoc.category,
@@ -179,4 +179,3 @@ const firebaseConfig = {
         .sort((a, b) => a.priority - b.priority);
     },
   });
-  
