@@ -14,12 +14,14 @@ import { generateKeyBetween } from 'fractional-indexing'
 console.log(`${JSON.stringify(process.env)}`)
 const rawClient = new DynamoDBClient({
     endpoint: (
-        process.env['DYNAMODB_ENDPOINT'] || 'http://dms-dynamodb:8000'
+        process.env['DYNAMODB_ENDPOINT'] || 'http://localhost:8000'
     ).trim(),
     region: (process.env['AWS_REGION'] || 'us-east-1').trim(),
     credentials: {
         accessKeyId: (process.env['AWS_ACCESS_KEY_ID'] || 'fake').trim(),
-        secretAccessKey: (process.env['AWS_SECRET_ACCESS_KEY'] || 'fake').trim(),
+        secretAccessKey: (
+            process.env['AWS_SECRET_ACCESS_KEY'] || 'fake'
+        ).trim(),
     },
 })
 export const docClient: DynamoDBDocumentClient =

@@ -42,16 +42,22 @@ export const store = reactive({
     ],
     async sync() {
         try {
-        const response = await fetch(
-            `${import.meta.env.VITE_API_ENDPOINT}/read/${new Date().toISOString().split('T')[0]}`
-        )
-        const data = await response.json()
-        if (Array.isArray(data)) {
-            this.data = data.sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))
+            const response = await fetch(
+                `${import.meta.env.VITE_API_ENDPOINT}/read/${new Date().toISOString().split('T')[0]}`
+            )
+            const data = await response.json()
+            if (Array.isArray(data)) {
+                this.data = data.sort((a, b) =>
+                    a.orderKey < b.orderKey
+                        ? -1
+                        : a.orderKey > b.orderKey
+                          ? 1
+                          : 0
+                )
+            }
+        } catch (e) {
+            console.error('Failed to load data:', e)
         }
-    } catch (e) {
-        console.error('Failed to load data:', e)
-    }
     },
     // hasObjectChanged(obj1, obj2) {
     //     const keys1 = Object.keys(obj1)
@@ -82,34 +88,12 @@ export const store = reactive({
         this.isLoading = false
     },
     async sendEdit() {
-       return await axios.post(editURL, this.currentlyEditing)
+        return await axios.post(editURL, this.currentlyEditing)
     },
     async sendDelete(sk, pk) {
         await axios.delete(
             `${import.meta.env.VITE_API_ENDPOINT}/delete/${sk.split('#')[1]}/${pk.split('#')[1]}`
         )
         await store.sync()
-        
-    },
-    findObjectIdByUrl(url) {
-        for (let i = 0; i < this.data.length; i++) {
-            if (this.data[i].url === url) {
-                return this.data[i].id
-            }
-        }
-        return null
-    },
-    getUDate() {
-        const now = new Date()
-        const year = now.getUTCFullYear()
-        const month = String(now.getUTCMonth() + 1).padStart(2, '0')
-        const day = String(now.getUTCDate()).padStart(2, '0')
-
-        return `${year}-${month}-${day}`
-    },
-    getByCategory(category) {
-        const qcomm = this.data.filter((x) => x.category == category)
-        qcomm.sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))
-        return qcomm
     },
 })

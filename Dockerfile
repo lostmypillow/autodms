@@ -8,11 +8,11 @@ WORKDIR /app
 COPY package*.json tsconfig.json ./
 COPY frontend/package*.json ./frontend/
 COPY api/ ./api/
-COPY shared/ ./shared/
 ENV NODE_ENV=development
 RUN npm ci
 ARG FRONTEND_BUILD_MODE='.'
 RUN npm run build --workspace=api
+COPY api/src/routes/export/input.docx ./api/dist/
 
 COPY frontend/ ./frontend/
 RUN npm run build --workspace=frontend -- --mode ${FRONTEND_BUILD_MODE}

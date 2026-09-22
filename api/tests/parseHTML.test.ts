@@ -90,7 +90,7 @@ describe('Test scraping from HTML', () => {
 
     test('scrape techorange', async () => {
         const result = await dmsScrape(
-            'https://buzzorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/',
+            'https://techorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/',
             techrangeHtml
         )
         expect(result).toMatchObject(NewsArticleTestSchema)

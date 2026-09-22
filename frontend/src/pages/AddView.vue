@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { store } from '../store.js'
-import { ref } from 'vue'
+import { onMounted, ref, onUnmounted } from 'vue'
 import ui from 'beercss'
 
 const newArticle = ref({
@@ -62,11 +62,40 @@ const getClipboard = async () => {
         ).json()
     )?.result
     if (preScrapeResult) {
-        newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        if (typeof preScrapeResult !== 'string') {
+            newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        } else {
+            responseFromApi.value = preScrapeResult
+            ui('#snackbar')
+        }
     }
 
     // TODO: snackbar notifying pasted content is not link
 }
+const receivedData = ref(null)
+
+// Handler function for window postMessage
+const handleExtensionData = (event) => {
+  // Check the source identifier set in content.js
+  if (event.data && event.data.source === 'MY_EXTENSION_PORT') {
+    console.log('Vue received data:', event.data.payload)
+    
+    // Assign payload to Vue state
+      receivedData.value = event.data.payload
+      newArticle.value = { ...newArticle.value, ...event.data.payload.payload.result }
+    
+  }
+}
+
+onMounted(() => {
+  // Register listener on component mount
+  window.addEventListener('message', handleExtensionData)
+})
+
+onUnmounted(() => {
+  // Remove listener when component unmounts
+  window.removeEventListener('message', handleExtensionData)
+})
 </script>
 
 <template>

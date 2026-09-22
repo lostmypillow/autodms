@@ -5,8 +5,8 @@ import {
     FullArticleSchema,
     type NewsArticleAddition,
     UrlOnlySchema,
-} from 'shared/schemas'
-import { dmsScrape } from 'shared'
+} from '../../schemas/schemas.js'
+import { dmsScrape } from '../../lib/dmsScrape/index.js'
 import { v7 as uuidv7 } from 'uuid'
 import 'dotenv/config'
 import { Router } from 'express'

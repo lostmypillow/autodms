@@ -1,0 +1,44 @@
+{
+    "manifest_version": 3,
+    "name": "AutoDMS",
+    "description": "Extension for automating DMS duties",
+    "version": "2.1.0",
+    "browser_specific_settings": {
+        "gecko": {
+            "id": "dms@lostmypillow.com",
+            "data_collection_permissions": {
+                "required": ["none"]
+            }
+        }
+    },
+
+    "icons": {
+        "16": "icons/16.png",
+        "32": "icons/32.png",
+        "48": "icons/48.png",
+        "72": "icons/72.png",
+        "96": "icons/96.png",
+        "120": "icons/120.png"
+    },
+    "host_permissions": [
+        "https://*.digitimes.com.tw/*",
+        "https://*.ctee.com.tw/*",
+        "https://*.chinatimes.com/*",
+        "https://buzzorange.com/*",
+        "https://www.moneydj.com/*",
+        "https://www.wealth.com.tw/*",
+        "http://localhost:3000/*"
+    ],
+    "permissions": ["storage", "webNavigation", "scripting"],
+    "background": {
+        "service_worker": "src/listener.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        
+        {
+            "matches": ["http://localhost:5173/*"],
+            "js": ["src/keepAliveWorker.js"]
+        }
+    ]
+}

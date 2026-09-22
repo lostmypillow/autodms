@@ -1,13 +1,47 @@
 import { Router } from 'express'
-import { dmsScrape } from 'shared'
+import { dmsScrape } from '../../lib/dmsScrape/index.js'
+import {
+    ExtensionNeededError,
+    NotSupportedError,
+} from 'api/src/lib/dmsScrape/lib/customErrors.js'
+import { broadcast } from '../websocket.js'
 
 const router = Router()
 
 router.get('/:websiteUrl', async (req, res) => {
     const sourceUrl = decodeURIComponent(req.params.websiteUrl)
-    res.json({
-        result: await dmsScrape(sourceUrl),
-    })
-    return
+    try {
+        const result = await dmsScrape(sourceUrl)
+        return res.json({
+            result: result,
+        })
+    } catch (error) {
+        if (error instanceof ExtensionNeededError) {
+            broadcast({ event: 'REQUEST', data: sourceUrl })
+            return res
+                .status(400)
+                .json({
+                    result: 'Extension needed. Extension has been notified',
+                })
+        } else {
+            return res.status(400).json({ result: 'Not supported' })
+        }
+    }
+})
+
+router.post('/:websiteUrl', async (req, res) => {
+    const sourceUrl = decodeURIComponent(req.params.websiteUrl)
+
+    // req.body is already a JS object parsed by app.use(express.json())
+    const body = req.body.data
+
+    try {
+        const result = await dmsScrape(sourceUrl, body)
+        return res.json({
+            result: result,
+        })
+    } catch (error) {
+        return res.status(400).json({ result: 'Not supported' })
+    }
 })
 export default router

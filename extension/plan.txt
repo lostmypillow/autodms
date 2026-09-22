@@ -1,5 +1,0 @@
-LINE sends link to firebase function
-firebase fucntion processes
-writes to firestore
-
-extension option

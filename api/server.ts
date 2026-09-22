@@ -3,8 +3,9 @@ import debug from 'debug'
 debug('express:server')
 import http from 'http'
 import 'dotenv/config.js'
-import { initTable } from './src/lib/initTable.ts'
-
+import { initTable } from './src/lib/initTable.js'
+import { WebSocketServer } from 'ws'
+import { setupWebSocketRoutes } from './src/routes/websocket.js'
 /**
  * Get port from environment and store in Express.
  */
@@ -15,7 +16,8 @@ await initTable()
  * Create HTTP server.
  */
 const server = http.createServer(app)
-
+const wss = new WebSocketServer({ server })
+setupWebSocketRoutes(wss)
 /**
  * Listen on provided port, on all network interfaces.
  */
