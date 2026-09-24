@@ -21,7 +21,7 @@ services:
       args:
         FRONTEND_BUILD_MODE: prod
     env_file:
-      - .env.dev
+      - .env.prod
     depends_on:
       dms-db-prod:
         condition: service_healthy
