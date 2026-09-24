@@ -10,7 +10,7 @@ import axios from 'axios'
 const responseFromApi = ref()
 
 function onDragEnd(event: any) {
-        responseFromApi.value = ''
+    responseFromApi.value = ''
 
     console.log('[@dragEnd] Drag ended:', {
         event,
@@ -33,7 +33,9 @@ function onDragEnd(event: any) {
                 item.category === targetCategory &&
                 (item.id || item.PK) !== sourceId
         )
-        .sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))
+        .sort((a, b) =>
+            a.orderKey < b.orderKey ? -1 : a.orderKey > b.orderKey ? 1 : 0
+        )
 
     function getNewOrderKey(targetIndex: number) {
         if (targetItems.length === 0) {
@@ -44,37 +46,36 @@ function onDragEnd(event: any) {
             targetIndex < targetItems.length ? targetItems[targetIndex] : null
         const prevKey = prevItem ? prevItem.orderKey || null : null
         const nextKey = nextItem ? nextItem.orderKey || null : null
-        console.log(`Generating key between previous key of ${prevKey} and next key of ${nextKey}`)
+        console.log(
+            `Generating key between previous key of ${prevKey} and next key of ${nextKey}`
+        )
         return generateKeyBetween(prevKey, nextKey)
     }
 
     const destIndex =
         typeof target.index === 'number' ? target.index : targetItems.length
 
-    const movedItem = store.data.find(
-        (x: any) => (x.id || x.PK) === sourceId
-    )
+    const movedItem = store.data.find((x: any) => (x.id || x.PK) === sourceId)
     if (movedItem) {
         movedItem.orderKey = getNewOrderKey(destIndex)
         movedItem.category = targetCategory
         console.log('changedObject', movedItem)
-        axios.post(`${import.meta.env.VITE_API_ENDPOINT}/update`, movedItem).then((response) => {
+        axios
+            .post(`${import.meta.env.VITE_API_ENDPOINT}/update`, movedItem)
+            .then((response) => {
                 console.log(response.data)
-                 ui('#snackbar')
-            }).catch((e) => {
+                ui('#snackbar')
+            })
+            .catch((e) => {
                 console.error(e)
                 ui('#error-snackbar')
             })
     }
-
-  
-           
-  
 }
 </script>
 
 <template>
-     <div class="snackbar primary top" id="snackbar">
+    <div class="snackbar primary top" id="snackbar">
         <span>{{ responseFromApi }}</span>
     </div>
 
@@ -96,12 +97,20 @@ function onDragEnd(event: any) {
                 :category="x.value"
                 :key="x.value"
                 :id="x.value"
-                :count="store.data.filter((y: any) => y.category === x.value).length"
+                :count="
+                    store.data.filter((y: any) => y.category === x.value).length
+                "
             >
                 <OverviewCard
                     v-for="(item, index) in store.data
                         .filter((y: any) => y.category == x.value)
-                        .sort((a, b) => (a.orderKey  < b.orderKey ? -1 : a.orderKey  > b.orderKey  ? 1 : 0))"
+                        .sort((a, b) =>
+                            a.orderKey < b.orderKey
+                                ? -1
+                                : a.orderKey > b.orderKey
+                                  ? 1
+                                  : 0
+                        )"
                     :key="item.id || item.PK"
                     :id="item.id || item.PK"
                     :index="index"
@@ -112,17 +121,17 @@ function onDragEnd(event: any) {
             </CategoryDroppable>
         </div>
 
-            <DragOverlay  :drop-animation="null">
-        <template #default="{ source }">
-            <OverviewCard
-                v-if="source"
-                :data="store.data.find(x => (x.id || x.PK) === source.id)"
-                :id="source.id"
-                :index="-1"
-                :order-key="''"
-            />
-        </template>
-    </DragOverlay>
+        <DragOverlay :drop-animation="null">
+            <template #default="{ source }">
+                <OverviewCard
+                    v-if="source"
+                    :data="store.data.find((x) => (x.id || x.PK) === source.id)"
+                    :id="source.id"
+                    :index="-1"
+                    :order-key="''"
+                />
+            </template>
+        </DragOverlay>
     </DragDropProvider>
 </template>
 

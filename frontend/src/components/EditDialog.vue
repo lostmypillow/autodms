@@ -1,17 +1,17 @@
 <script setup lang="ts">
 import { store } from '../store.js'
-import { onUnmounted, ref } from 'vue'
+import { ref } from 'vue'
 // import ui from 'beercss'
 import { useDebounceFn } from '@vueuse/core'
 const isSaving = ref(false)
-const debouncedFn = useDebounceFn(async() => {
+const debouncedFn = useDebounceFn(async () => {
     isSaving.value = true
     console.log(store.currentlyEditing)
     const response = await store.sendEdit()
     store.setCurrentlyEditing(response.data.data.PK)
     await store.sync()
 
-  isSaving.value = false
+    isSaving.value = false
 }, 300)
 const responseFromApi = ref()
 async function sendData() {
@@ -19,11 +19,9 @@ async function sendData() {
     console.log(store.currentlyEditing)
     const response = await store.sendEdit()
     console.log(response.data)
-   await store.sync()
+    await store.sync()
     isSaving.value = false
-  store.isDialogOpen = !store.isDialogOpen
-
- 
+    store.isDialogOpen = !store.isDialogOpen
 }
 
 const getClipboard = async () => {
@@ -34,7 +32,7 @@ const getClipboard = async () => {
     const preScrapeResult = (
         await (
             await fetch(
-                `http://${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
+                `${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
             )
         ).json()
     )?.result
@@ -49,10 +47,7 @@ const getClipboard = async () => {
 </script>
 
 <template>
-    <dialog
-        :class="store.isDialogOpen ? 'active max' : 'max'"
-     
-    >
+    <dialog :class="store.isDialogOpen ? 'active max' : 'max'">
         <div class="snackbar primary top" id="snackbar">
             <span>{{ responseFromApi }}</span>
         </div>
@@ -71,13 +66,20 @@ const getClipboard = async () => {
             "
         >
             <h5>Edit</h5>
-           
-            <p>{{ isSaving? 'Saving...':  `Last Updated ${new Date(store.currentlyEditing.updatedAt).toLocaleString()}` }}</p>
-            <button style="min-width: 90px; justify-content: center;" @click="() =>  sendData()">
-           
-               <i>close</i>
-               Close
-               
+
+            <p>
+                {{
+                    isSaving
+                        ? 'Saving...'
+                        : `Last Updated ${new Date(store.currentlyEditing.updatedAt).toLocaleString()}`
+                }}
+            </p>
+            <button
+                style="min-width: 90px; justify-content: center"
+                @click="() => sendData()"
+            >
+                <i>close</i>
+                Close
             </button>
         </div>
         <!-- Top Bar End -->
@@ -94,7 +96,7 @@ const getClipboard = async () => {
             "
         >
             <div class="field label border" style="grid-column: span 3">
-                <input type="text" v-model="store.currentlyEditing.url"  />
+                <input type="text" v-model="store.currentlyEditing.url" />
                 <label>連結</label>
             </div>
             <button

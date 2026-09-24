@@ -10,9 +10,10 @@ export default defineConfig([
     plugins: { js },
     extends: ["js/recommended"],
     languageOptions: {
-      globals: { ...globals.browser, ...globals.node },
+      globals: { ...globals.browser, ...globals.node, ...globals.webextensions },
       parserOptions: {
         projectService: true,
+        allowDefaultProjectForFiles: ['eslint.config.mjs'],
         tsconfigRootDir: import.meta.dirname,
       },
     },

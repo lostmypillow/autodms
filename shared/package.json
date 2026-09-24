@@ -1,16 +1,16 @@
 {
     "name": "shared",
     "version": "1.0.0",
-    "private": true,
+    "description": "",
+    "license": "ISC",
+    "author": "",
     "type": "module",
-    "exports": {
-        ".": {
-            "types": "./index.ts",
-            "default": "./index.ts"
-        },
-        "./*": {
-            "types": "./*.ts",
-            "default": "./*.ts"
-        }
-    }
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "cheerio": "^1.0.0"
+    },
+    "devDependencies": {}
 }

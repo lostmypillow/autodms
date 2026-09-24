@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { store } from '../store.js'
-import { ref } from 'vue'
+import { onMounted, ref, onUnmounted, watch } from 'vue'
 import ui from 'beercss'
-
-const newArticle = ref({
+import { useStorage, useTimeout } from '@vueuse/core'
+const defaultArticle = {
     title: '',
     date: new Date().toISOString().split('T')[0],
     source: '',
@@ -15,8 +15,20 @@ const newArticle = ref({
     chineseSummaryTitle: '',
     englishSummaryContent: '',
     chineseSummaryContent: '',
+}
+const newArticle = useStorage('new-article', defaultArticle)
+const reset = () => (newArticle.value = defaultArticle)
+const modalRef = ref(null)
+const infoSnackbar = ref(false)
+const responseFromApi = ref('')
+
+watch(infoSnackbar, (val) => {
+    if (val) {
+        modalRef.value?.showModal()
+    } else {
+        modalRef.value?.close()
+    }
 })
-const responseFromApi = ref()
 async function sendData() {
     responseFromApi.value = ''
     try {
@@ -62,21 +74,58 @@ const getClipboard = async () => {
         ).json()
     )?.result
     if (preScrapeResult) {
-        newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        if (typeof preScrapeResult !== 'string') {
+            newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        } else {
+            responseFromApi.value = preScrapeResult
+            infoSnackbar.value = true
+        }
     }
 
     // TODO: snackbar notifying pasted content is not link
 }
+const receivedData = ref(null)
+
+// Handler function for window postMessage
+const handleExtensionData = (event) => {
+    // Check the source identifier set in content.js
+    if (event.data && event.data.source === 'MY_EXTENSION_PORT') {
+        console.log('Vue received data:', event.data.payload)
+
+        // Assign payload to Vue state
+        receivedData.value = event.data.payload
+        newArticle.value = {
+            ...newArticle.value,
+            ...event.data.payload.payload,
+        }
+    }
+    responseFromApi.value = 'Extension has completed scraping!'
+    infoSnackbar.value = !useTimeout(1000)
+}
+
+onMounted(() => {
+    // Register listener on component mount
+    window.addEventListener('message', handleExtensionData)
+})
+
+onUnmounted(() => {
+    // Remove listener when component unmounts
+    window.removeEventListener('message', handleExtensionData)
+})
 </script>
 
 <template>
-    <div class="snackbar primary top" id="snackbar">
-        <span>{{ responseFromApi }}</span>
-    </div>
+    <div
+        class="overlay"
+        :class="{ active: infoSnackbar }"
+        @click="infoSnackbar = false"
+    ></div>
 
-    <div id="error-snackbar" class="snackbar error top">
-        {{ responseFromApi }}
-    </div>
+    <dialog class="modal" :class="{ active: infoSnackbar }">
+        <h5>處理中</h5>
+        <div>{{ responseFromApi }}</div>
+    </dialog>
+
     <!-- Top Bar Start -->
     <div
         style="
@@ -88,7 +137,10 @@ const getClipboard = async () => {
         "
     >
         <h6>Manual Import</h6>
-        <button @click="sendData"><i>cloud_upload</i>上傳</button>
+        <div>
+            <button style="margin-right: 4px" @click="reset">重填</button>
+            <button @click="sendData"><i>cloud_upload</i>上傳</button>
+        </div>
     </div>
     <!-- Top Bar End -->
     <!-- Main Content Start -->
@@ -213,3 +265,11 @@ const getClipboard = async () => {
         </div>
     </div>
 </template>
+<style scoped lang="css">
+dialog.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.4) !important;
+    backdrop-filter: blur(
+        2px
+    ) !important; /* optional: gives a modern blur effect */
+}
+</style>

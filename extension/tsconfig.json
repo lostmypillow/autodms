@@ -1,10 +1,7 @@
 {
-  "extends": [
-    "../tsconfig.json",
-    "./.wxt/tsconfig.json"
-  ],
-  "compilerOptions": {
-    "jsx": "preserve",
-    "jsxImportSource": "vue"
-  }
+    "extends": ["../tsconfig.json"],
+    "compilerOptions": {
+      "types": ["chrome", "firefox-webext-browser"],
+        "allowJs": true
+    }
 }

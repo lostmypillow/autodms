@@ -2,7 +2,7 @@ name: CI & Production Deploy (Main)
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
   test:
@@ -15,9 +15,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # - name: Run CI Checks (Typecheck, Lint & Vitest)
-      #   run: npm run ci
-      # TODO: add CI
+#      - name: Run Type Checks
+#        run: npm run typecheck
+#
+#      - name: Linting
+#        run: npm run lint
 
   deploy-production:
     name: Deploy Production Stack
@@ -30,6 +32,6 @@ jobs:
       - name: Build & Deploy Self-Hosted Production Containers
         run: |
           echo "Deploying updated Docker containers to Production environment..."
-          docker compose -f compose.dev.yaml down autodms-dev
-          docker compose -f compose.prod.yaml down autodms-prod
-          docker compose -f compose.prod.yaml up -d --build autodms-prod
+          docker compose -f compose.dev.yaml down
+          docker compose -f compose.prod.yaml down dms-prod
+          docker compose -f compose.prod.yaml up -d --build

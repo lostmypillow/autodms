@@ -6,14 +6,14 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+web-ext-artifacts/*
 node_modules
 .output
 stats.html
 stats-*.json
 .wxt
 web-ext.config.ts
-
+dist
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
