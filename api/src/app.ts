@@ -1,4 +1,4 @@
-import express, { type Express, type Response } from 'express'
+import express, { type Response } from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import addRouter from './routes/add/router.js'

@@ -2,7 +2,7 @@ name: CI & Production Deploy (Main)
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
 
 jobs:
   test:
@@ -15,9 +15,11 @@ jobs:
       - name: Install Dependencies
         run: npm ci
 
-      # - name: Run CI Checks (Typecheck, Lint & Vitest)
-      #   run: npm run ci
-      # TODO: add CI
+      - name: Run Type Checks
+        run: npm run typecheck
+
+      - name: Linting
+        run: npm run lint
 
   deploy-production:
     name: Deploy Production Stack

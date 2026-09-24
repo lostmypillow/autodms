@@ -1,5 +1,5 @@
 {
-  "app": "npx tsx aws/entrypoint.ts",
+  "app": "npx tsx api/aws/entrypoint.ts",
   "watch": {
     "include": [
       "aws/**"

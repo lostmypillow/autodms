@@ -3,7 +3,7 @@ import type {
     Context,
     APIGatewayProxyEventV2 as LambdaFunctionUrlEvent,
 } from 'aws-lambda'
-import { handler } from '../src/update.js'
+import { handler } from '../update.js'
 
 describe('Updates News Article to DynamoDB Test', () => {
     it('updates new article and ensure it is present in database', async () => {

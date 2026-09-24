@@ -1,5 +1,6 @@
 services:
-  autodms:
+  dms:
+    container_name: dms
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,11 +15,11 @@ services:
       resources:
         limits:
           cpus: '0.5'
-          memory: 512M
+          memory: 128M
 
-  dynamodb:
+  dms-db:
     image: amazon/dynamodb-local:latest
-    container_name: dms-dynamodb
+    container_name: dms-db
     ports:
       - "8000:8000"
     env_file:

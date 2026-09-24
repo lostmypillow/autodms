@@ -3,7 +3,7 @@ import type {
     Context,
     APIGatewayProxyEventV2 as LambdaFunctionUrlEvent,
 } from 'aws-lambda'
-import { handler } from '../src/read.js'
+import { handler } from '../read.js'
 describe('Read News Article in DynamoDB Test', () => {
     it('executes read handler and reads item', async () => {
         const mockContext: Context = {

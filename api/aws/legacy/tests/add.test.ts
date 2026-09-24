@@ -3,9 +3,9 @@ import type {
     Context,
     APIGatewayProxyEventV2 as LambdaFunctionUrlEvent,
 } from 'aws-lambda'
-import { testDocClient } from '../setup-vitest.js'
+import { testDocClient } from '../../setup-vitest.js'
 import { ScanCommand } from '@aws-sdk/lib-dynamodb'
-import { handler } from '../src/add.js'
+import { handler } from '../add.js'
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = String(0)
 const TABLE_NAME = process.env['TABLE_NAME'] ?? 'TestTable'
 describe('Add News Article to DynamoDB Test', () => {

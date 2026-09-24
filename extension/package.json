@@ -3,20 +3,19 @@
     "version": "2.1.0-SNAPSHOT",
     "private": true,
     "description": "Extension for automating DMS duties",
+    "license": "ISC",
+    "author": "",
     "type": "module",
     "main": "worker.js",
     "scripts": {
-        "dev": "wxt",
-        "dev:firefox": "wxt -b firefox",
-        "build": "wxt build",
-        "build:firefox": "wxt build -b firefox",
-        "zip": "wxt zip",
-        "zip:firefox": "wxt zip -b firefox",
-        "compile": "vue-tsc --noEmit",
-        "postinstall": "wxt prepare"
+        "dev": "npx web-ext run --target=chromium",
+        "lint": "npx web-ext lint",
+        "sign": "npx web-ext sign",
+        "build": "npx web-ext build"
     },
     "dependencies": {
         "axios": "^1.20.0",
         "socket.io-client": "^4.8.3"
-    }
+    },
+    "devDependencies": {}
 }
