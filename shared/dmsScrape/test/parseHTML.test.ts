@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
-import { dmsScrape } from '../src/lib/dmsScrape/index.js'
-import { NewsArticleTestSchema } from '../src/schemas/NewsArticleTestSchema.js'
+import { dmsScrape } from 'shared/dmsScrape'
+import { NewsArticleTestSchema } from '../../../api/src/schemas/NewsArticleTestSchema'
 import compotechHtml from './assets/compotech.html?raw'
 import bcnextHtml from './assets/bnext.html?raw'
 import chinatestHtml from './assets/chinatest.html?raw'

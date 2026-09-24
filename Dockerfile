@@ -8,6 +8,7 @@ WORKDIR /app
 COPY package*.json tsconfig.json ./
 COPY frontend/package*.json ./frontend/
 COPY api/ ./api/
+COPY shared/ ./shared/
 ENV NODE_ENV=development
 RUN npm ci
 ARG FRONTEND_BUILD_MODE='.'

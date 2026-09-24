@@ -4,7 +4,8 @@
     "workspaces": [
         "api",
         "frontend",
-        "extension"
+        "extension",
+        "shared"
     ],
     "overrides": {
         "uuid": "^14.0.2"
@@ -15,6 +16,7 @@
         "lint:eslint": "eslint ."
     },
     "devDependencies": {
+        "@crxjs/vite-plugin": "^2.7.1",
         "@eslint/js": "^10.0.1",
         "@types/aws-lambda": "^8.10.162",
         "@types/cheerio": "^1.0.0",
@@ -43,7 +45,7 @@
         "tsx": "^4.23.0",
         "typescript": "^6.0.2",
         "typescript-eslint": "^8.70.1",
-        "vite": "^8.0.1",
+        "vite": "^8.3.0",
         "vitest": "^4.1.0",
         "web-ext": "^10.7.0"
     }

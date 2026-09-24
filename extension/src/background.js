@@ -1,6 +1,6 @@
 const WS_URL = 'ws://localhost:3000'
 let socket = null
-
+import scraperScript from './scraper.js?script'
 function connectWebSocket() {
     socket = new WebSocket(WS_URL)
 
@@ -35,7 +35,7 @@ function connectWebSocket() {
 
                                 browser.scripting.executeScript({
                                     target: { tabId: newTab.id },
-                                    files: ['src/scraper.js'],
+                                    files: [scraperScript],
                                 })
                             }
                         }
@@ -84,27 +84,16 @@ browser.runtime.onConnect.addListener((port) => {
 
 browser.runtime.onMessage.addListener(async (request, sender) => {
     if (request.action === 'sendHTMLFromContent') {
-        console.log('Received HTML:', request.html)
-        browser.tabs.remove(sender.tab.id)
-        const endpointUrl = `http://localhost:3000/scrape/${encodeURIComponent(request.url)}`
+        console.log(request)
+        await browser.tabs.remove(sender.tab.id)
         try {
-            const response = await fetch(endpointUrl, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({"data": request.html}),
-        })
-
-            const responseData = await response.json()
             activePort.postMessage({
                 action: 'DATA_FROM_BACKGROUND',
-                payload: responseData,
+                payload: request.scrape,
             })
 
         // Output of responseData:
         // { success: true, message: "Data received successfully!", receivedId: 1042 }
-        console.log('Server response:', responseData)
     } catch (error) {
         // Output of error (if server is down): TypeError: Failed to fetch
         console.error('Error posting data:', error)

@@ -1,7 +1,7 @@
-import { processHTML } from './lib/processHTML.js'
-import { checkLinkSupportStatus } from './lib/checkLinkSupportStatus.js'
+import { processHTML } from './lib/processHTML'
+import { checkLinkSupportStatus } from './lib/checkLinkSupportStatus'
 import type { LinkSupportStatus } from './interfaces.ts'
-import { NotSupportedError, ExtensionNeededError } from './lib/customErrors.js'
+import { NotSupportedError, ExtensionNeededError } from './lib/customErrors'
 
 export async function dmsScrape(link: string, html: string | null = null) {
     if (html) {

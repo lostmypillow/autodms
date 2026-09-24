@@ -13,24 +13,42 @@ onMounted(() => {
 })
 </script>
 <template>
-    <!-- 2. DESKTOP / TABLET SIDEBAR (m l)-->
 
-    <header>
-        <nav id="sidebar">
-            <h6 class="max" style="font-weight: bolder">DMS</h6>
-            <button :class="route.fullPath == '/' ? '' : 'transparent'"  @click="() => router.push('/')">
+    <header
+        class="no-wrap"
+        style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding-inline: 8px;
+        "
+    >
+        <h4 class="no-margin" style="font-weight: bolder">AutoDMS</h4>
+
+        <nav id="sidebar" class="tabbed" style="width: auto; margin-left: auto">
+            <a
+                :class="route.fullPath == '/' ? 'active' : ''"
+                @click="() => router.push('/')"
+            >
                 <i>home</i>
                 <span>主頁</span>
-            </button>
-            <button :class="route.fullPath == '/add' ? '' : 'transparent'"  @click="() => router.push('/add')">
+            </a>
+            <a
+                :class="route.fullPath == '/add' ? 'active' : ''"
+                @click="() => router.push('/add')"
+            >
                 <i>add</i>
                 <span>新增</span>
-            </button>
+            </a>
 
-            <button :class="route.fullPath == '/export' ? '' : 'transparent'"  @click="() => router.push('/export')">
+            <a
+                :class="route.fullPath == '/export' ? 'active' : ''"
+                @click="() => router.push('/export')"
+            >
                 <i>file_export</i>
                 <span>輸出</span>
-            </button>
+            </a>
         </nav>
     </header>
     <!-- 3. MOBILE BOTTOM BAR (s) -->

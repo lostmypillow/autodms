@@ -8,10 +8,9 @@
     "type": "module",
     "main": "worker.js",
     "scripts": {
-        "dev": "npx web-ext run --target=chromium",
-        "lint": "npx web-ext lint",
-        "sign": "npx web-ext sign",
-        "build": "npx web-ext build"
+        "dev": "vite",
+        "build": "vite build",
+        "start": "web-ext run --source-dir ./dist"
     },
     "dependencies": {
         "axios": "^1.20.0",

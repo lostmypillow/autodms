@@ -27,17 +27,18 @@
         "https://buzzorange.com/*",
         "https://www.moneydj.com/*",
         "https://www.wealth.com.tw/*",
-        "http://localhost:3000/*"
+        "http://localhost:3000/*",
+        "http://localhost:5173/*"
     ],
     "permissions": ["storage", "webNavigation", "scripting"],
     "background": {
-        "service_worker": "src/listener.js",
+        "service_worker": "src/background.js",
         "type": "module"
     },
     "content_scripts": [
 
         {
-            "matches": ["http://localhost:3000/*"],
+            "matches": ["http://localhost:3000/*", "http://localhost:5173/*"],
             "js": ["src/keepAliveWorker.js"]
         }
     ]

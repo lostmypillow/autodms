@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { dmsScrape } from '../../lib/dmsScrape/index.js'
+import { dmsScrape } from 'shared/dmsScrape/index.js'
 import {
     ExtensionNeededError
-} from 'api/src/lib/dmsScrape/lib/customErrors.js'
+} from 'shared/dmsScrape/lib/customErrors.js'
 import { broadcast } from '../websocket.js'
 
 const router = Router()
@@ -40,6 +40,7 @@ router.post('/:websiteUrl', async (req, res) => {
             result: result,
         })
     } catch (error) {
+        console.error(error)
         return res.status(400).json({ result: 'Not supported' })
     }
 })
