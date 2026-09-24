@@ -6,7 +6,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
-
+web-ext-artifacts/*
 node_modules
 .output
 stats.html

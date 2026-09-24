@@ -1,5 +1,5 @@
 {
-    "name": "dms-api",
+    "name": "api",
     "version": "2.1.0-SNAPSHOT",
     "private": true,
     "description": "Must have ```credentials [test] aws_access_key_id = fake aws_secret_access_key = fake aws_session_token = fake region = us-east-1 ```  in .aws/credentials for development",
@@ -9,7 +9,7 @@
     "main": "src/app.js",
     "scripts": {
         "test": "vitest run",
-        "build": "esbuild server.ts --bundle --minify --platform=node --target=node24 --format=esm \"--banner:js=delete process.env.AWS_PROFILE; import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" --outfile=dist/index.js",
+        "build": "esbuild server.ts --bundle --minify --platform=node --target=node24 --format=esm \"--banner:js=delete process.env.AWS_PROFILE; import { createRequire } from 'module'; const require = createRequire(import.meta.url);\" --outfile=dist/index.js --alias:api=.",
         "dev": "node dist/index.js"
     },
     "dependencies": {

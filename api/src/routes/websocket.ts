@@ -9,12 +9,8 @@ export function setupWebSocketRoutes(wss) {
         console.log('Client connected')
 
         ws.on('message', (data) => {
-            if (data.type == 'HTML') {
-                
-            } 
             const message = data.toString()
             console.log('Received:', message)
-
             // Broadcast to all connected clients
             broadcast(message)
         })

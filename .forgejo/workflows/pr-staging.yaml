@@ -18,8 +18,12 @@ jobs:
       - name: Run Type Checks
         run: npm run typecheck
 
-      - name: Linting
-        run: npm run lint
+      - name: Linting (Oxlint)
+        run: npm run lint:oxlint
+
+      - name: Linting (ESLint)
+        run: npm run lint:eslint
+
 
   deploy-staging:
     name: Deploy Staging Stack

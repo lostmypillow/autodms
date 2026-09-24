@@ -13,6 +13,7 @@ export default defineConfig([
       globals: { ...globals.browser, ...globals.node, ...globals.webextensions },
       parserOptions: {
         projectService: true,
+        allowDefaultProjectForFiles: ['eslint.config.mjs'],
         tsconfigRootDir: import.meta.dirname,
       },
     },

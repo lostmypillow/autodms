@@ -2,7 +2,7 @@ export function TAISOUNDS($) {
   const data = $.extract({
     date: {
       selector: "div.publish",
-      value: (el, key) => {
+      value: (el, _key) => {
         const eachValue = $(el).text().trim();
         if (eachValue !== "") {
           return eachValue.slice(0, 10);

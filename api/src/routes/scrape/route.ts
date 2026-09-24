@@ -1,8 +1,7 @@
 import { Router } from 'express'
 import { dmsScrape } from '../../lib/dmsScrape/index.js'
 import {
-    ExtensionNeededError,
-    NotSupportedError,
+    ExtensionNeededError
 } from 'api/src/lib/dmsScrape/lib/customErrors.js'
 import { broadcast } from '../websocket.js'
 

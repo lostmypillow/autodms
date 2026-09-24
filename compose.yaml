@@ -5,11 +5,11 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - .env.dev
+      - .env.local
     ports:
       - "3000:3000"
     depends_on:
-      dynamodb:
+      dms-db:
         condition: service_healthy
     deploy:
       resources:

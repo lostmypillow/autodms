@@ -11,7 +11,6 @@ import 'dotenv/config'
 import { DynamoDBDocumentClient, PutCommand } from '@aws-sdk/lib-dynamodb'
 import { generateKeyBetween } from 'fractional-indexing'
 
-console.log(`${JSON.stringify(process.env)}`)
 const rawClient = new DynamoDBClient({
     endpoint: (
         process.env['DYNAMODB_ENDPOINT'] || 'http://localhost:8000'
@@ -27,14 +26,14 @@ const rawClient = new DynamoDBClient({
 export const docClient: DynamoDBDocumentClient =
     DynamoDBDocumentClient.from(rawClient)
 export async function initTable() {
-    console.log(`[Init] Checking table ${process.env.TABLE_NAME}...`)
+    console.log(`[INIT] Checking table ${process.env.TABLE_NAME}...`)
 
     try {
         await rawClient.send(
             new DeleteTableCommand({ TableName: process.env['TABLE_NAME'] })
         )
         console.log(
-            `[Init] Deleting existing table ${process.env['TABLE_NAME']}...`
+            `[INIT] Deleting existing table ${process.env['TABLE_NAME']}...`
         )
 
         await waitUntilTableNotExists(
@@ -118,7 +117,7 @@ export async function initTable() {
         )
 
         console.log(
-            `[Init] Table ${process.env['TABLE_NAME']} is active and ready.`
+            `[INIT] Table ${process.env['TABLE_NAME']} is active and ready.`
         )
     } catch (error) {
         if (!(error instanceof ResourceInUseException)) throw error

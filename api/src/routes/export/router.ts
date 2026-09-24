@@ -172,16 +172,6 @@ router.get('/:targetDate', async (req: Request, res: Response) => {
             docUint8Array.byteOffset,
             docUint8Array.byteLength
         )
-        console.log('--- RES DEBUG ---')
-        console.log('Type of res:', typeof res)
-        console.log(
-            'Is Express Res?:',
-            typeof res?.setHeader === 'function' &&
-                typeof res?.send === 'function'
-        )
-        console.log('Available keys on res:', Object.keys(res || {}))
-        console.log('Res prototype:', Object.getPrototypeOf(res || {}))
-        console.log('-----------------')
 
         res.setHeader('Access-Control-Expose-Headers', 'Content-Disposition')
 

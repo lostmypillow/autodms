@@ -63,12 +63,6 @@ function connectWebSocket() {
 // Initialize connection
 connectWebSocket()
 
-// Function to send messages from extension code
-function sendExtensionMessage(payload) {
-    if (socket && socket.readyState === WebSocket.OPEN) {
-        socket.send(JSON.stringify(payload))
-    }
-}
 let activePort = null
 // Listen for connections from content.js on target pages
 browser.runtime.onConnect.addListener((port) => {
@@ -117,4 +111,3 @@ browser.runtime.onMessage.addListener(async (request, sender) => {
     }
     }
 })
-
