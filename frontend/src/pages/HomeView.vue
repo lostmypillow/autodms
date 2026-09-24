@@ -67,10 +67,13 @@ onMounted(async () => await store.sync())
             align-items: start;
         "
     >
-        <button v-for="x in store.compoundCategories" :value="x.value">
+        <button
+            class="border"
+            v-for="x in store.compoundCategories"
+            :value="x.value"
+        >
             {{ x.title }}
-        </button>     
-        
+        </button>
 
         <CategoryColumns />
     </div>

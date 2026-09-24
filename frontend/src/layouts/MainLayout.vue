@@ -14,60 +14,27 @@ onMounted(() => {
 </script>
 <template>
     <!-- 2. DESKTOP / TABLET SIDEBAR (m l)-->
-    <nav id="sidebar" class="left m l scroll">
-        <header>
+
+    <header>
+        <nav id="sidebar">
             <h6 class="max" style="font-weight: bolder">DMS</h6>
-            <button
-                type="button"
-                class="extend square round"
-                @click="() => router.push('/add')"
-            >
+            <button :class="route.fullPath == '/' ? '' : 'transparent'"  @click="() => router.push('/')">
+                <i>home</i>
+                <span>主頁</span>
+            </button>
+            <button :class="route.fullPath == '/add' ? '' : 'transparent'"  @click="() => router.push('/add')">
                 <i>add</i>
                 <span>新增</span>
             </button>
-        </header>
 
-        <a
-            @click="() => router.push('/')"
-            :class="route.fullPath == '/' ? 'active' : ''"
-        >
-            <i>dashboard</i>
-            <span>Overview</span>
-        </a>
-        <a
-            :class="route.fullPath == '/export' ? 'active' : ''"
-            @click="() => router.push('/export')"
-        >
-            <i>file_export</i>
-            <span>Export</span>
-        </a>
-    </nav>
-
+            <button :class="route.fullPath == '/export' ? '' : 'transparent'"  @click="() => router.push('/export')">
+                <i>file_export</i>
+                <span>輸出</span>
+            </button>
+        </nav>
+    </header>
     <!-- 3. MOBILE BOTTOM BAR (s) -->
-    <nav class="bottom s">
-        <a
-            @click="() => router.push('/')"
-            :class="route.fullPath == '/' ? 'active' : ''"
-        >
-            <i>dashboard</i>
-            <span>Overview</span>
-        </a>
-        <button
-            type="button"
-            class="extend square round"
-            @click="() => router.push('/add')"
-        >
-            <i>add</i>
-            <span>新增</span>
-        </button>
-        <a
-            :class="route.fullPath == '/export' ? 'active' : ''"
-            @click="() => router.push('/export')"
-        >
-            <i>file_export</i>
-            <span>Export</span>
-        </a>
-    </nav>
+
     <main style="padding: 8px; width: 100%">
         <EditDialog />
         <slot></slot>
