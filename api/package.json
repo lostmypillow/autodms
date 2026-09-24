@@ -1,6 +1,6 @@
 {
     "name": "api",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "private": true,
     "description": "Must have ```credentials [test] aws_access_key_id = fake aws_secret_access_key = fake aws_session_token = fake region = us-east-1 ```  in .aws/credentials for development",
     "license": "ISC",
