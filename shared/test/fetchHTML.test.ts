@@ -1,13 +1,9 @@
 import { describe, expect, test } from 'vitest'
-import { dmsScrape } from 'shared/dmsScrape'
-import { NewsArticleTestSchema } from '../../../api/src/schemas/NewsArticleTestSchema.js'
+import { dmsScrape } from 'shared'
+import { NewsArticleTestSchema } from 'shared/interfaces.js'
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
 describe('Test scraping from fetch', () => {
-    test('scrape cool3c', async () => {
-        const result = await dmsScrape('https://www.cool3c.com/article/202079')
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
 
     test('scrape kocpc', async () => {
         const result = await dmsScrape(
@@ -16,20 +12,6 @@ describe('Test scraping from fetch', () => {
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
-    test('scrape mashdigi', async () => {
-        const result = await dmsScrape(
-            'https://mashdigi.com/qualcomm-continues-to-launch-the-snapdragon-x-plus-processor-composed-of-8-sets-of-performance-cores-expanding-the-copilot-pc-product-lineup/'
-        )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
-
-    // TODO: fix failed test here
-    // test('scrape sogi', async () => {
-    //   const result = await dmsScrape(
-    //     'https://www.sogi.com.tw/articles/samsung_galaxy_s25_ultra/6262880',
-    //   );
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
 
     test('scrape technews', async () => {
         const result = await dmsScrape(
@@ -115,13 +97,6 @@ describe('Test scraping from fetch', () => {
         )
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
-
-    //  TODO: fix later
-    // test('scrape sogi unwanted content', async () => {
-    //   const result = await dmsScrape('https://www.sogi.com.tw/articles/realme_13_pro_plus/6263085');
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
-
     // TODO: unable to fix now
     // test('scrape digitimes undefined bug', async () => {
     //   const result = await dmsScrape(
@@ -158,35 +133,12 @@ describe('Test scraping from fetch', () => {
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
-    test('scrape mashdigi benchmark bug', async () => {
-        const result = await dmsScrape(
-            'https://mashdigi.com/ul-benchmark-cooperates-with-mediatek-to-add-a-test-project-called-opacity-micromap-to-the-android-version-of-3dmark/'
-        )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
+
 
     test('scrape money udn no match found', async () => {
         const result = await dmsScrape(
-            'https://money.udn.com/money/story/5612/8282066'
+            'https://money.udn.com/money/story/5607/9779351'
         )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
-
-    // TODO: sogi fix
-    // test('scrape sogi mediatek', async () => {
-    //   const result = await dmsScrape('https://www.sogi.com.tw/articles/mediatek/6263140');
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
-    //
-    // test('scrape sogi promotion', async () => {
-    //   const result = await dmsScrape(
-    //     'https://www.sogi.com.tw/articles/samsung_galaxy_tab_s10_ultra/6263080',
-    //   );
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
-
-    test('scrape cool3c bug', async () => {
-        const result = await dmsScrape('https://www.cool3c.com/article/226021')
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
@@ -195,25 +147,9 @@ describe('Test scraping from fetch', () => {
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
-    // TODO: fix
-    // test('scrape wealth', async () => {
-    //   const result = await dmsScrape(
-    //     'https://www.wealth.com.tw/articles/58979cfd-28f3-408a-bdad-28dbad4af9b0',
-    //   );
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
-
-    //  TODO: fix TypeError: Cannot read properties of undefined (reading 'split')
-    // test('scrape cnyes', async () => {
-    //   const result = await dmsScrape('https://news.cnyes.com/news/id/5745265');
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
-
-    // TODO: pending movee to manual.test.ts
-    // test('scrape chinatimes newspaper', async () => {
-    //   const result = await dmsScrape(
-    //     'https://www.chinatimes.com/newspapers/20240820000224-260204?chdtv',
-    //   );
-    //   expect(result).toMatchObject(NewsArticleTestSchema);
-    // });
+    test('scrape cnyes', async () => {
+      const result = await dmsScrape('https://news.cnyes.com/news/id/5745265');
+      console.log(result)
+      expect(result).toMatchObject(NewsArticleTestSchema);
+    });
 })

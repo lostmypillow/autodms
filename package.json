@@ -34,7 +34,6 @@
         "eslint": "^10.9.0",
         "eslint-config-prettier": "^10.1.8",
         "globals": "^17.11.0",
-        "jest": "^30",
         "jiti": "^2.6.1",
         "nodemon": "^3.1.14",
         "oxlint": "^1.85.0",

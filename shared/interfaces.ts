@@ -1,4 +1,6 @@
 // src/core/interfaces.ts
+import {expect} from "vitest";
+
 export interface Item {
   id: string;
   content: string;
@@ -23,4 +25,15 @@ export interface NewsArticleAddition extends NewsArticle {
 export interface LinkSupportStatus {
   isSupported: boolean;
   needsExt: boolean;
+}
+
+const nonEmptyString = expect.stringMatching(/.+/)
+export const NewsArticleTestSchema = {
+    title: nonEmptyString,
+    date: nonEmptyString,
+    author: nonEmptyString,
+    content: nonEmptyString,
+    source: nonEmptyString,
+    category: nonEmptyString,
+    url: nonEmptyString,
 }
