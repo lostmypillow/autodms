@@ -2,7 +2,7 @@
 import { store } from '../store.js'
 import { onMounted, ref, onUnmounted, watch } from 'vue'
 import ui from 'beercss'
-import { useStorage, useTimeout } from '@vueuse/core'
+import { useStorage } from '@vueuse/core'
 const defaultArticle = {
     title: '',
     date: new Date().toISOString().split('T')[0],
@@ -74,8 +74,22 @@ const getClipboard = async () => {
         ).json()
     )?.result
     if (preScrapeResult) {
+        console.log(preScrapeResult)
+        console.log(typeof preScrapeResult)
         if (typeof preScrapeResult !== 'string') {
             newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        } else if (
+            preScrapeResult ===
+            'Extension needed. Extension has been notified'
+        ) {
+            window.postMessage(
+                {
+                    source: 'VUE_APP',
+                    action: 'SCRAPE',
+                    url: text,
+                },
+                '*'
+            )
         } else {
             responseFromApi.value = preScrapeResult
             infoSnackbar.value = true
@@ -84,32 +98,34 @@ const getClipboard = async () => {
 
     // TODO: snackbar notifying pasted content is not link
 }
-const receivedData = ref(null)
-
-// Handler function for window postMessage
 const handleExtensionData = (event) => {
-    // Check the source identifier set in content.js
-    if (event.data && event.data.source === 'MY_EXTENSION_PORT') {
-        console.log('Vue received data:', event.data.payload)
+    if (event.source !== window || event.data?.source !== 'EXTENSION_BRIDGE')
+        return
 
-        // Assign payload to Vue state
-        receivedData.value = event.data.payload
-        newArticle.value = {
-            ...newArticle.value,
-            ...event.data.payload.payload,
-        }
+    if (event.data.action === 'SCRAPE_COMPLETE') {
+        console.log('Vue received data:', event.data.payload)
+        responseFromApi.value = 'Website scraped and added to DMS!'
+        newArticle.value.url = ''
+        infoSnackbar.value = true
     }
-    responseFromApi.value = 'Extension has completed scraping!'
-    infoSnackbar.value = !useTimeout(1000)
+}
+
+function pingExtension() {
+    window.postMessage(
+        {
+            source: 'VUE_APP',
+            action: 'PING',
+        },
+        '*'
+    )
 }
 
 onMounted(() => {
-    // Register listener on component mount
     window.addEventListener('message', handleExtensionData)
+    pingExtension()
 })
 
 onUnmounted(() => {
-    // Remove listener when component unmounts
     window.removeEventListener('message', handleExtensionData)
 })
 </script>

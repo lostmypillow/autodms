@@ -25,6 +25,9 @@ region = us-east-1
 in .aws/credentials
 
 
+## Ways to add link
+1. Frontend, paste link, dmsScrape first, if fetchable, fetch. If needs extension, send to extension, extension to API, notify frontend when done
+2. Extension adds a context menu item, right click, if fetchable, fetch
 ## Currently supported sources
 ### T1
 - [x] 電子時報 HTML ONLY

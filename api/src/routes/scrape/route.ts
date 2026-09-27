@@ -1,8 +1,8 @@
 import { Router } from 'express'
-import { dmsScrape } from 'shared/dmsScrape/index.js'
+import { dmsScrape } from 'shared/index.js'
 import {
     ExtensionNeededError
-} from 'shared/dmsScrape/lib/customErrors.js'
+} from 'shared/lib/customErrors.js'
 import { broadcast } from '../websocket.js'
 
 const router = Router()

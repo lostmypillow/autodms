@@ -19,10 +19,10 @@ export function checkLinkSupportStatus(link: string): LinkSupportStatus {
         'https://buzzorange.com/techorange',
         'https://www.bnext.com.tw',
         'https://www.wealth.com.tw',
-        'https://www.cool3c.com/article/252265',
+        'cool3c',
     ]
     for (const l of linksNeedText) {
-        if (link.startsWith(l)) {
+        if (link.startsWith(l) || link.includes(l)) {
             needsExt = true
             break
         } else {
