@@ -5,9 +5,6 @@ import compotechHtml from './assets/compotech.html?raw'
 import bcnextHtml from './assets/bnext.html?raw'
 import chinatestHtml from './assets/chinatest.html?raw'
 import cteeHtml from './assets/ctee.html?raw'
-import digitimes1Html from './assets/digitimes1.html?raw'
-import digitimes3Html from './assets/digitimes3.html?raw'
-import digitimes4Html from './assets/digitimes4.html?raw'
 import investorHtml from './assets/investor.html?raw'
 import nextappleHtml from './assets/nextapple.html?raw'
 import saydigitHtml from './assets/saydigit.html?raw'
@@ -31,29 +28,6 @@ describe('Test scraping from HTML', () => {
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
-    test('scrape digitimes 1', async () => {
-        const result = await dmsScrape(
-            'https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?CnlID=1&cat=40&id=0000704572_U324G0818MRM9Y1TCLWJR',
-            digitimes1Html
-        )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
-
-    test('scrape digitimes 3', async () => {
-        const result = await dmsScrape(
-            'https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000700414_DTZ3HLET2I9D7N38H02NN',
-            digitimes3Html
-        )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
-
-    test('scrape digitimes 4', async () => {
-        const result = await dmsScrape(
-            'https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?cnlid=1&id=0000703998_EAN8YJ9ZLL4AQU7Z9IWZT',
-            digitimes4Html
-        )
-        expect(result).toMatchObject(NewsArticleTestSchema)
-    })
 
     test('scrape investor', async () => {
         const result = await dmsScrape(

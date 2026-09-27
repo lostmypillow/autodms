@@ -17,9 +17,9 @@ const corsOptions = {
         'https://dms-dev.lostmypillow.com',
         'https://dms-prod.lostmypillow.com',
         'https://dms.lostmypillow.com',
-        'chrome-extension://akchigfdkjdgpnbidccfpkofdilkbpoa'
+        'chrome-extension://akchigfdkjdgpnbidccfpkofdilkbpoa',
     ],
-    methods: ['GET', 'POST', 'DELETE','OPTIONS'],
+    methods: ['GET', 'POST', 'DELETE', 'OPTIONS'],
     credentials: true,
 }
 app.use(logger('dev'))

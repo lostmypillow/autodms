@@ -19,6 +19,7 @@ export function checkLinkSupportStatus(link: string): LinkSupportStatus {
         'https://buzzorange.com/techorange',
         'https://www.bnext.com.tw',
         'https://www.wealth.com.tw',
+        'https://www.cool3c.com/article/252265',
     ]
     for (const l of linksNeedText) {
         if (link.startsWith(l)) {

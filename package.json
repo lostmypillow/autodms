@@ -13,7 +13,8 @@
     "scripts": {
         "typecheck": "tsc --noEmit",
         "lint:oxlint": "oxlint",
-        "lint:eslint": "eslint ."
+        "lint:eslint": "eslint .",
+        "test": "vitest run"
     },
     "devDependencies": {
         "@crxjs/vite-plugin": "^2.7.1",
