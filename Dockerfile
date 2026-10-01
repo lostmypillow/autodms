@@ -10,7 +10,8 @@ COPY frontend/package*.json ./frontend/
 COPY api/ ./api/
 COPY shared/ ./shared/
 ENV NODE_ENV=development
-RUN npm ci
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci --prefer-offline --no-audit --no-fund
 ARG FRONTEND_BUILD_MODE='.'
 RUN npm run build --workspace=api
 COPY api/src/routes/export/input.docx ./api/dist/
