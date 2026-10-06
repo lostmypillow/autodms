@@ -6,7 +6,7 @@ export function UDN($) {
       value: (el) => $(el).text().replaceAll('/', '-').slice(0, 10),
     },
 
-    author: "a[href^='/news/reporter/']",
+    author: "a[href^='/news/reporter/'], span.article-content__author",
     content: [
       {
         selector: 'section.article-content__editor  p',

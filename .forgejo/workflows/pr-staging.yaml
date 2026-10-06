@@ -1,45 +1,92 @@
 name: CI & Staging Deploy (PR)
 
 on:
-    pull_request:
-        branches: [main]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-    test:
-        name: Run Unit & Integration Tests
-        runs-on: ubuntu-latest
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
+  test:
+    name: Run Unit & Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: '24'
-                  cache: 'npm'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 11
 
-            - name: Install dependencies
-              run: npm ci --prefer-offline --no-audit --no-fund
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
 
-    #      - name: Run Type Checks
-    #        run: npm run typecheck
-    #
-    #      - name: Linting (Oxlint)
-    #        run: npm run lint:oxlint
-    #
-    #      - name: Linting (ESLint)
-    #        run: npm run lint:eslint
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
-    deploy-staging:
-        name: Deploy Staging Stack
-        needs: test
-        runs-on: host
-        steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
+      - name: Run CI Checks (Typecheck, Lint & Vitest)
+        run: pnpm run ci
 
-            - name: Build & Deploy Self-Hosted Dev Containers
-              run: |
-                  echo "Deploying updated Docker containers to Dev environment..."
-                  docker compose -f compose.dev.yaml down
-                  docker compose -f compose.dev.yaml up -d --build
+      - name: Deploy website
+        run: pnpm -F frontend run deploy:dev
+
+
+  deploy-api:
+    name: Deploy dev API to Docker
+    needs: [test]
+    runs-on: host
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build & Deploy Self-Hosted dev Containers
+        env:
+          DOCKER_BUILDKIT: 1
+          COMPOSE_DOCKER_CLI_BUILD: 1
+        run: |
+          echo "Deploying updated Docker containers to dev environment..."
+          docker compose -f compose.dev.yaml down
+          docker compose -f compose.dev.yaml up -d --build
+
+  e2e:
+    name: E2E test
+    needs: [deploy-api]
+    runs-on: host
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 11
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: 'pnpm'
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Cache Playwright Binaries
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+
+      - name: Install Playwright Browsers (if missing)
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: pnpm exec playwright install chromium
+
+      - name: Run Playwright against Dev Deployment
+        env:
+          CI: true
+          E2E_URL: "https://dms-dev.lostmypillow.com"
+        run: pnpm run e2e:ci

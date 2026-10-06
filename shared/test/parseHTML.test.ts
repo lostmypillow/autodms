@@ -1,16 +1,16 @@
-import { describe, expect, test } from 'vitest'
-import { dmsScrape } from 'shared'
-import { NewsArticleTestSchema } from 'shared/interfaces.js'
-import compotechHtml from './assets/compotech.html?raw'
-import bcnextHtml from './assets/bnext.html?raw'
-import chinatestHtml from './assets/chinatest.html?raw'
-import cteeHtml from './assets/ctee.html?raw'
-import investorHtml from './assets/investor.html?raw'
-import nextappleHtml from './assets/nextapple.html?raw'
-import saydigitHtml from './assets/saydigit.html?raw'
-import setnHtml from './assets/setn.html?raw'
-import techrangeHtml from './assets/techrange.html?raw'
-import wealthHtml from './assets/wealth.html?raw'
+import { describe, expect, it, test } from 'vitest'
+import { dmsScrape } from '../index.js'
+import { NewsArticle, NewsArticleTestSchema } from '../interfaces.js'
+import compotechHtml from '../assets/compotech.html?raw'
+import bcnextHtml from '../assets/bnext.html?raw'
+import chinatestHtml from '../assets/chinatest.html?raw'
+import cteeHtml from '../assets/ctee.html?raw'
+import investorHtml from '../assets/investor.html?raw'
+import nextappleHtml from '../assets/nextapple.html?raw'
+import saydigitHtml from '../assets/saydigit.html?raw'
+import setnHtml from '../assets/setn.html?raw'
+import techrangeHtml from '../assets/techrange.html?raw'
+import wealthHtml from '../assets/wealth.html?raw'
 describe('Test scraping from HTML', () => {
     test('scrape chinatimes', async () => {
         const result = await dmsScrape(
@@ -58,7 +58,7 @@ describe('Test scraping from HTML', () => {
             'https://www.setn.com/News.aspx?NewsID=1526574',
             setnHtml
         )
-        console.log(result)
+        
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
@@ -92,6 +92,15 @@ describe('Test scraping from HTML', () => {
             bcnextHtml
         )
 
+        expect(result).toMatchObject(NewsArticleTestSchema)
+    })
+
+    it('should successfully parse techorange HTML', async (): Promise<void> => {
+        const asset: string = (await import('../assets/techorange.html?raw')).default
+        expect(typeof asset).eq('string')
+        const result: undefined | NewsArticle = await dmsScrape(
+            'https://buzzorange.com/techorange/2024/10/03/eu-plans-to-hit-china-based-ev-makers-with-additional-tariffs/', asset
+        )
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 })

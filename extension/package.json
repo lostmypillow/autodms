@@ -3,8 +3,8 @@
     "version": "2.1.3",
     "private": true,
     "description": "Extension for automating DMS duties",
-    "license": "ISC",
-    "author": "",
+    "license": "GNU AGPLv3",
+    "author": "lostmypillow",
     "type": "module",
     "main": "worker.js",
     "scripts": {

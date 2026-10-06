@@ -3,7 +3,7 @@ export function LTNEC($) {
     title: "div.whitecon.boxTitle.boxText h1",
     date: {
       selector: "span.time:nth-of-type(1)",
-      value: (el, key) => {
+      value: (el) => {
         const data = $(el).text().split(" ").slice(0)[0].replace(/\//g, "-");
         if (data != "") {
           return data;

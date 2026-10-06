@@ -3,7 +3,7 @@ import { store } from '../store.js'
 import { onMounted, ref, onUnmounted, watch } from 'vue'
 import ui from 'beercss'
 import { useStorage } from '@vueuse/core'
-const defaultArticle = {
+const getDefaultArticle = () => ({
     title: '',
     date: new Date().toISOString().split('T')[0],
     source: '',
@@ -15,9 +15,9 @@ const defaultArticle = {
     chineseSummaryTitle: '',
     englishSummaryContent: '',
     chineseSummaryContent: '',
-}
-const newArticle = useStorage('new-article', defaultArticle)
-const reset = () => (newArticle.value = defaultArticle)
+})
+const newArticle = useStorage('new-article', getDefaultArticle())
+const reset = () => (newArticle.value = getDefaultArticle())
 const modalRef = ref(null)
 const infoSnackbar = ref(false)
 const responseFromApi = ref('')
@@ -79,8 +79,7 @@ const getClipboard = async () => {
         if (typeof preScrapeResult !== 'string') {
             newArticle.value = { ...newArticle.value, ...preScrapeResult }
         } else if (
-            preScrapeResult ===
-            'Extension needed. Extension has been notified'
+            preScrapeResult === 'Extension needed. Extension has been notified'
         ) {
             window.postMessage(
                 {
@@ -260,7 +259,7 @@ onUnmounted(() => {
             class="field label border"
             style="margin-top: 16px; grid-column: span 4"
         >
-            <input type="text" v-model="newArticle.chineseSummaryTitle" /><label
+            <input type="text" v-model="newArticle.englishSummaryTitle" /><label
                 >英文摘要 Title</label
             >
         </div>

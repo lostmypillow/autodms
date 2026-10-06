@@ -1,11 +1,13 @@
 import * as cheerio from 'cheerio'
 
-import { filterContent } from './filterContent.ts'
-import { determineCategory } from './determineCategory.mjs'
-import { sources } from '../sources'
-import { NotSupportedError } from './customErrors.ts'
+import { filterContent } from './filterContent.js'
+import { determineCategory } from './determineCategory.js'
+import { sources } from '../sources/index.js'
+import { NotSupportedError } from './customErrors.js'
+import { CheerioAPI } from 'cheerio'
+import { NewsArticle } from '../interfaces.js'
 
-function determineSource(link: string): () => Record<string, any> {
+function determineSource(link: string): ($: CheerioAPI) => NewsArticle {
     for (const [key, value] of Object.entries(sources)) {
         if (link.includes(key)) {
             return value
@@ -26,7 +28,7 @@ function determineSource(link: string): () => Record<string, any> {
 //   console.log(tempDiv.innerHTML);
 // }
 
-const convertArray = (inputArray) =>
+const convertArray = (inputArray: string) =>
     Array.isArray(inputArray) ? inputArray.toString().replace : inputArray
 
 export async function processHTML(link: string, html: string | null = null) {
@@ -56,38 +58,13 @@ export async function processHTML(link: string, html: string | null = null) {
         return
     }
 
-    const handlerFunction = determineSource(link)
-    let scrapedContent
-    if (handlerFunction != 'unsupported') {
-        scrapedContent = handlerFunction(cheerio.load(sourceHTML))
-
-        scrapedContent['content'] = scrapedContent['content']
+    const handlerFunction: ($: CheerioAPI) => NewsArticle = determineSource(link)
+    const scrapedContent: NewsArticle = handlerFunction(cheerio.load(sourceHTML))
+    scrapedContent['content'] = Array.isArray(scrapedContent['content'])
             ? filterContent(scrapedContent['content']).join('\n\n')
             : []
-        // scrapedContent["content"] = scrapedContent["content"].join("\n\n");
-
-        scrapedContent['author'] = scrapedContent['author']
-            ? convertArray(scrapedContent['author'])
-            : ''
-
-        scrapedContent['date'] = scrapedContent['date']
-            ? convertArray(scrapedContent['date'])
-            : ''
-
-        scrapedContent['title'] = scrapedContent['title']
-            ? convertArray(scrapedContent['title'])
-                  .replace(/《[^》]*》/g, '')
-                  .trim()
-            : ''
-
+        scrapedContent['title'] = scrapedContent['title'].replace(/《[^》]*》/g, '').trim()
         scrapedContent['category'] = determineCategory(scrapedContent['title'])
         scrapedContent['url'] = link
-    } else {
-        scrapedContent = {
-            error: handlerFunction,
-            url: link,
-        }
-    }
-
     return scrapedContent
 }

@@ -1,23 +1,25 @@
-# ==========================================
-# STAGE 1: Build & Bundle with esbuild
-# ==========================================
-FROM node:24-trixie AS builder
+FROM node:24-slim AS base
+
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN corepack enable
+
+FROM base AS builder
 
 WORKDIR /app
 
-COPY package*.json tsconfig.json ./
+COPY package*.json pnpm-*.yaml tsconfig.json ./
 COPY frontend/package*.json ./frontend/
-COPY api/ ./api/
-COPY shared/ ./shared/
-ENV NODE_ENV=development
-RUN --mount=type=cache,target=/root/.npm \
-    npm ci --prefer-offline --no-audit --no-fund
-ARG FRONTEND_BUILD_MODE='.'
-RUN npm run build --workspace=api
+COPY api/package*.json ./api/
+COPY shared/package*.json ./shared/
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
+COPY . .
+RUN --mount=type=cache,id=corepack,target=/root/.cache/corepack \
+    pnpm -F backend build
+
 COPY api/src/routes/export/input.docx ./api/dist/
 
-COPY frontend/ ./frontend/
-RUN npm run build --workspace=frontend -- --mode ${FRONTEND_BUILD_MODE}
 FROM gcr.io/distroless/nodejs24-debian13 AS runner
 
 WORKDIR /app

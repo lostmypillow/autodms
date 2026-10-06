@@ -1,5 +1,5 @@
-import { sources } from '../sources'
-import type { LinkSupportStatus } from '../interfaces'
+import { sources } from '../sources/index.js'
+import type { LinkSupportStatus } from '../interfaces.js'
 
 export function checkLinkSupportStatus(link: string): LinkSupportStatus {
     let isSupported: boolean = false

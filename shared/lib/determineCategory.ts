@@ -1,7 +1,7 @@
-export function determineCategory(title) {
+export function determineCategory(title: string): string {
   if (!title) return 'E';
 
-  const keywordGroups = [
+  const keywordGroups: (string[] | string)[][] = [
     // Qualcomm-related keywords
     [['高通', 'Snapdragon', '驍龍', 'Qualcomm', 'Adreno', 'Hexagon', 'Spectra'], 'A'],
 
@@ -124,17 +124,10 @@ export function determineCategory(title) {
   ];
 
   for (const [keywords, category] of keywordGroups) {
-    if (keywords.some((keyword) => title.includes(keyword))) {
-      return category;
+    if (typeof keywords !== 'string' && keywords?.some((keyword: string): boolean => title.includes(keyword))) {
+        return <string>category
     }
   }
 
   return 'E';
 }
-export const categoryKeyReference = {
-  A: 'Qualcomm相關新聞',
-  B: 'MediaTek相關新聞',
-  C: '無線通訊市場',
-  D: '智慧型手機/消費性電子產品',
-  E: '其他業界重要訊息',
-};

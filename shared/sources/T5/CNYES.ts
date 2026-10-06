@@ -1,15 +1,15 @@
 import type { CheerioAPI } from 'cheerio'
-import type { NewsArticle } from 'shared/dmsScrape/interfaces.js'
+import type { NewsArticle } from '../../interfaces.js'
 
 export function CNYES($: CheerioAPI): NewsArticle {
-    const data = $.extract({
+    return <NewsArticle>$.extract({
         title: {
             selector: 'title',
             value: (el) => $(el).text().split('|')[0].trim(),
         },
         date: {
             selector: 'meta[property="article:published_time"]',
-            value: (el) => $(el).attr('content').split('T')[0],
+            value: (el) => $(el).attr('content')?.split('T')[0],
         },
 
         author: {
@@ -29,7 +29,7 @@ export function CNYES($: CheerioAPI): NewsArticle {
                 value: (el) => $(el).text().trim(),
             },
         ],
+        source: '鉅亨網'
     })
-    data['source'] = '鉅亨網'
-    return data
+
 }

@@ -28,7 +28,7 @@ router.delete('/:key/:hash', async (req, res) => {
             message: 'Document deletion complete',
         })
         return
-    } catch (error: any) {
+    } catch (error) {
         if (error.name === 'ConditionalCheckFailedException') {
             res.json({
                 message: 'Update failed: condition z = 5 was not met.',

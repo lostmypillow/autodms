@@ -1,13 +1,12 @@
-import { describe, expect, it, test } from 'vitest'
-import { dmsScrape } from 'shared/index.js'
-import { NewsArticleTestSchema } from 'shared/interfaces.js'
+import { describe, expect, it } from 'vitest'
+import { dmsScrape } from '../index.js'
+import { NewsArticleTestSchema } from '../interfaces.js'
 
 describe('Test scraping cool3c articles', ()=> {
     it('should successfully parse an old article (20279)', async () => {
         const asset = (await import('../assets/cool3c/20279.html?raw')).default
         expect(typeof asset).eq('string')
         const result = await dmsScrape('https://www.cool3c.com/article/202079', asset )
-        console.log(result)
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
@@ -18,7 +17,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 
@@ -29,7 +28,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 開箱評測', async () => {
@@ -40,7 +39,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 新奇搞笑', async () => {
@@ -50,7 +49,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 蘋果新聞', async () => {
@@ -60,7 +59,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category App', async () => {
@@ -70,7 +69,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 新品資訊', async () => {
@@ -80,7 +79,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 人物專訪', async () => {
@@ -90,7 +89,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 科學新知', async () => {
@@ -100,7 +99,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 產業消息', async () => {
@@ -111,7 +110,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 科技應用', async () => {
@@ -122,7 +121,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 雲端服務', async () => {
@@ -133,7 +132,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 遊戲天堂', async () => {
@@ -144,7 +143,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 文化創意', async () => {
@@ -155,7 +154,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 專家觀點', async () => {
@@ -166,7 +165,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 在地生活', async () => {
@@ -177,7 +176,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 快訊', async () => {
@@ -188,7 +187,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 電影劇線上看', async () => {
@@ -199,7 +198,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
     it('should successfully parse an article from category 汽車未來', async () => {
@@ -210,7 +209,7 @@ describe('Test scraping cool3c articles', ()=> {
             'https://www.cool3c.com/article/252265',
             asset
         )
-        console.log(result)
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 })

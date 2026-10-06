@@ -12,7 +12,7 @@ export function DIGITIMES($) {
     content: [
       {
         selector: "div#newsText.Article.clearfix.txt-20 > p",
-        value: (el, key) => {
+        value: (el) => {
           // const sampleKey = this.findIndex(item  => item.includes("延伸閱讀"))
           if ($(el).text().trim().replace(/\t/g, "") != "") {
             return $(el).text().trim().replace(/\t/g, "").trim();

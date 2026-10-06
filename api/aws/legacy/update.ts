@@ -55,14 +55,12 @@ export const handler = async (
         const urlHash = `URL#${pathSegments[1]}`
         const changeList = JSON.parse(event.body)
         const attributeNames: Record<string, string> = {}
-        const attributeValues: Record<string, any> = {}
+        const attributeValues: Record<string, never> = {}
         const updateExpressionsArray: string[] = []
         for (const [key, value] of Object.entries(changeList)) {
-            // Attribute Names start with '#'
             const nameKey = `#n_${crypto.randomUUID().slice(0, 4)}`
             attributeNames[nameKey] = key
 
-            // Attribute Values MUST start with ':'
             const valueKey = `:v_${crypto.randomUUID().slice(0, 4)}`
             attributeValues[valueKey] = value
 
