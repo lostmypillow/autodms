@@ -8,7 +8,7 @@ import { UpdateParamsSchema } from './schemas.js'
 
 const tableName: string = process.env['TABLE_NAME'] || ''
 
-const router = Router()
+const router: Router = Router()
 
 router.post('/', async (req, res) => {
     try {
@@ -37,7 +37,7 @@ router.post('/', async (req, res) => {
         const changeList =
             typeof req.body === 'string' ? JSON.parse(req.body) : req.body
         const attributeNames: Record<string, string> = {}
-        const attributeValues: Record<string, any> = {}
+        const attributeValues: Record<string, unknown> = {}
         const updateExpressionsArray: string[] = []
 
         let dateKey: string | undefined
@@ -89,8 +89,8 @@ router.post('/', async (req, res) => {
             data: result.Attributes,
         })
         return
-    } catch (error: any) {
-        if (error.name === 'ConditionalCheckFailedException') {
+    } catch (error: unknown) {
+        if ((error as { name?: string }).name === 'ConditionalCheckFailedException') {
             res.status(400)
             res.json({
                 message: 'Update failed: condition z = 5 was not met.',

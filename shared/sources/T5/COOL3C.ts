@@ -24,7 +24,7 @@ export function COOL3C($: CheerioAPI): NewsArticle {
 
     $('div.row.content div p').each(function () {
         const text = $(this).html()?.trim()
-        if (!text?.startsWith('<img') && !text?.startsWith('▲')) {
+        if (!text?.startsWith('<img') && !text?.startsWith('▲') && Array.isArray(data['content'])) {
             data.content.push(text?.replace('undefined', '').trim() ?? '')
         }
     })

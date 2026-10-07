@@ -9,7 +9,7 @@ export function INVESTOR($) {
       selector: "div.boxTitle > p:first",
       value: (el) => {
         function extractAuthor(text) {
-            const match = text.match(/【財訊快報\／(.+?)】/);
+            const match = text.match(/【財訊快報／(.+?)】/);
             return match ? match[1] : null;
           }
 

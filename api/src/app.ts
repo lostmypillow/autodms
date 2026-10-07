@@ -1,4 +1,4 @@
-import express, { type Response } from 'express'
+import express, { type Response, type Express } from 'express'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
 import addRouter from './routes/add/router.js'
@@ -9,7 +9,7 @@ import scrapeRouter from './routes/scrape/route.js'
 import exportRouter from './routes/export/router.js'
 import cors from 'cors'
 import path from 'path'
-const app = express()
+const app: Express = express()
 const corsOptions = {
     origin: [
         'http://localhost:3000',

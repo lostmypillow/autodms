@@ -26,8 +26,8 @@ beforeAll(async () => {
     // Reset Table Schema once before all files run
     try {
         await rawClient.send(new DeleteTableCommand({ TableName: TABLE_NAME }))
-    } catch (e: any) {
-        if (e.name !== 'ResourceNotFoundException') throw e
+    } catch (e: unknown) {
+        if ((e as { name?: string }).name !== 'ResourceNotFoundException') throw e
     }
 
     try {
@@ -82,7 +82,7 @@ beforeAll(async () => {
                 },
             })
         )
-    } catch (e: any) {
-        if (e.name !== 'ResourceInUseException') throw e
+    } catch (e: unknown) {
+        if ((e as { name?: string }).name !== 'ResourceInUseException') throw e
     }
 })

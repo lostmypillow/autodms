@@ -15,10 +15,10 @@ import { docClient } from '../../lib/initTable.js'
 import { generateKeyBetween } from 'fractional-indexing'
 const tableName: string = process.env['TABLE_NAME'] || ''
 // TODO: compotech returns 404 page
-const router = Router()
+const router: Router = Router()
 
 router.post('/', async (req, res) => {
-    let processedDocument
+    let processedDocument: Record<string, unknown>
     const eventBody = req.body
     console.log(req.body)
     try {

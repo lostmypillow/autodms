@@ -3,7 +3,6 @@
 import { LTN3C } from './T2/LTN3C.mjs'
 import { LTNEC } from './T2/LTNEC.mjs'
 import { UDN } from './T2/UDN.mjs'
-import { UDNMoney } from './T1/UDNMoney.mjs'
 import { ETDAY } from './T4/ETDAY.mjs'
 import { EPRICE } from './T5/EPRICE.mjs'
 import { COOL3C } from './T5/COOL3C.js'
@@ -48,7 +47,6 @@ import { BSWEEKLY } from './T2/BSWEEKLY.mjs'
 export const sources = {
     '3c.ltn': LTN3C,
     'ec.ltn': LTNEC,
-    'money.udn': UDNMoney,
     'tech.udn': TECHUDN,
     udn: UDN,
     ettoday: ETDAY,

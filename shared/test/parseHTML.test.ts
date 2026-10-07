@@ -58,7 +58,8 @@ describe('Test scraping from HTML', () => {
             'https://www.setn.com/News.aspx?NewsID=1526574',
             setnHtml
         )
-        
+
+
         expect(result).toMatchObject(NewsArticleTestSchema)
     })
 

@@ -18,7 +18,7 @@ const getDefaultArticle = () => ({
 })
 const newArticle = useStorage('new-article', getDefaultArticle())
 const reset = () => (newArticle.value = getDefaultArticle())
-const modalRef = ref(null)
+const modalRef = ref<HTMLDialogElement | null>(null)
 const infoSnackbar = ref(false)
 const responseFromApi = ref('')
 
@@ -49,7 +49,7 @@ async function sendData() {
             englishSummaryContent: '',
             chineseSummaryContent: '',
         }
-    } catch (e) {
+    } catch (e: any) {
         if (e.response) {
             console.log('Data:', e.response.data)
         }
@@ -69,7 +69,7 @@ const getClipboard = async () => {
     const preScrapeResult = (
         await (
             await fetch(
-                `${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
+                `/api/scrape/${encodeURIComponent(text)}`
             )
         ).json()
     )?.result
@@ -97,7 +97,7 @@ const getClipboard = async () => {
 
     // TODO: snackbar notifying pasted content is not link
 }
-const handleExtensionData = (event) => {
+const handleExtensionData = (event: MessageEvent) => {
     if (event.source !== window || event.data?.source !== 'EXTENSION_BRIDGE')
         return
 

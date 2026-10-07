@@ -46,3 +46,5 @@ jobs:
           echo "Deploying updated Docker containers to dev environment..."
           docker compose -f compose.prod.yaml down
           docker compose -f compose.prod.yaml up -d --build
+          docker network connect nginx-dms-prod-net nginx-proxy-manager || true
+

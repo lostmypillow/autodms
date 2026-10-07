@@ -25,7 +25,12 @@ export function MASHDIGI($: CheerioAPI): NewsArticle {
             !textContent.startsWith('▲') &&
             textContent !== ''
         ) {
-            data['content'].push(textContent.replace('undefined', '').trim())
+            if (Array.isArray(data['content'])) {
+                data['content'].push(
+                    textContent.replace('undefined', '').trim()
+                )
+            }
+
         }
     })
     data['source'] = 'Mashdigi'

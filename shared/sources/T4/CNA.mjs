@@ -4,14 +4,14 @@ export function CNA($) {
     content: [
       {
         selector: "div.paragraph > p",
-        value: (el, _key) => {
+        value: (el) => {
           return $(el).text();
         },
       },
     ],
     author: {
       selector: "div.paragraph > p",
-      value: (el, _key) => {
+      value: (el) => {
         if ($(el).text().includes("（中央社")) {
           let index = $(el).text().indexOf("記者");
 

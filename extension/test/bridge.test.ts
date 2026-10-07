@@ -1,20 +1,29 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 
+interface MockMessageEvent {
+    source?: unknown
+    data?: {
+        source?: string
+        action?: string
+        url?: string
+    }
+}
+
 describe('Extension Bridge Unit Tests', () => {
-    let listeners: Record<string, ((event: any) => void)[]> = {}
+    let listeners: Record<string, ((event: MockMessageEvent) => void)[]> = {}
     const mockSendMessage = vi.fn()
 
     const mockWindow = {
-        addEventListener: (event: string, listener: (event: any) => void) => {
+        addEventListener: (event: string, listener: (event: MockMessageEvent) => void) => {
             if (!listeners[event]) listeners[event] = []
             listeners[event].push(listener)
         },
         postMessage: vi.fn(),
     }
 
-    const triggerWindowMessage = (data: any, source: any = mockWindow) => {
+    const triggerWindowMessage = (data: unknown, source: unknown = mockWindow) => {
         const messageEvent = { source, data }
-        listeners['message']?.forEach((fn) => fn(messageEvent))
+        listeners['message']?.forEach((fn) => fn(messageEvent as MockMessageEvent))
     }
 
     beforeEach(() => {

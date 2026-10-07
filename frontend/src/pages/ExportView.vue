@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { saveAs } from 'file-saver'
 import { store } from '../store.js'
-let count = 0
-const tolist: string[] = []
-const selectedList = store.data.filter(
-    (x) => x.chineseSummaryContent !== undefined
-)
 const processList = (category: 'A' | 'B' | 'C' | 'D' | 'E') => {
     const list = store.data
         .filter((x) => x.category == category)
@@ -19,7 +14,7 @@ const processList = (category: 'A' | 'B' | 'C' | 'D' | 'E') => {
         list.length > 0
             ? list.map((x) => {
                   const splitContent = x.content.split('\n\n')
-                  const mappedContent = splitContent.map((it) => ({
+                  const mappedContent = splitContent.map((it: string) => ({
                       para: it,
                   }))
                   return {
@@ -43,7 +38,7 @@ const { toc: otherTOCs, data: otherList } = processList('E')
 async function exportDocx() {
     try {
         const getDoc = await fetch(
-            `${import.meta.env.VITE_API_ENDPOINT}/export/${new Date().toISOString().split('T')[0]}`
+            `/api/export/${new Date().toISOString().split('T')[0]}`
         )
         saveAs(
             await getDoc.blob(),

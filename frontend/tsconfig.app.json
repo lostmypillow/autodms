@@ -14,5 +14,7 @@
         "src/**/*.tsx",
         "src/**/*.vue",
         "../shared/**/*"
-, "src/store.js"    ]
+,
+      "src/store"
+    ]
 }

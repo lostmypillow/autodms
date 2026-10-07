@@ -18,27 +18,15 @@ function determineSource(link: string): ($: CheerioAPI) => NewsArticle {
         link
     )
 }
-// function filterHTML(fullHTML) {
-//   var tempDiv = document.createElement('div');
-//   tempDiv.innerHTML = fullHTML;
-//   var scriptsAndStyles = tempDiv.querySelectorAll(
-//     'script, style, link, g, noscript, svg, img, symbol, figure, figcaption, ins',
-//   );
-//   scriptsAndStyles.forEach((tag) => tag.remove());
-//   console.log(tempDiv.innerHTML);
-// }
-
-const convertArray = (inputArray: string) =>
-    Array.isArray(inputArray) ? inputArray.toString().replace : inputArray
 
 export async function processHTML(link: string, html: string | null = null) {
-    let sourceHTML = html
+    let sourceHTML: string | null = html
     if (link && !html) {
         if (link.includes('lpcomment') && link.includes('/amp/')) {
             link = link.replace('amp/', '')
         }
 
-        const rawText = await (
+        const rawText: string = await (
             await fetch(link, {
                 headers: {
                     'User-Agent':
@@ -47,8 +35,8 @@ export async function processHTML(link: string, html: string | null = null) {
                 },
             })
         ).text()
-        const sanitizedText = rawText.replace(/\$\{/g, '')
-        const $ = cheerio.load(sanitizedText)
+        const sanitizedText: string = rawText.replace(/\$\{/g, '')
+        const $: CheerioAPI = cheerio.load(sanitizedText)
         $(
             'script, style, link, g, noscript, svg, img, symbol, figure, figcaption, ins'
         ).remove()

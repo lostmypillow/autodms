@@ -3,7 +3,7 @@ import ui from 'beercss' // Import the default function export
 import 'material-dynamic-colors'
 import './style.css'
 import App from './App.vue'
-import { router } from './router.ts'
+import { router } from './router.js'
 // Make ui accessible across components and window
 window.ui = ui
 

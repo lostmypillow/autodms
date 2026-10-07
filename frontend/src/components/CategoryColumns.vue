@@ -61,7 +61,7 @@ function onDragEnd(event: any) {
         movedItem.category = targetCategory
         console.log('changedObject', movedItem)
         axios
-            .post(`${import.meta.env.VITE_API_ENDPOINT}/update`, movedItem)
+            .post('/api/update', movedItem)
             .then((response) => {
                 console.log(response.data)
                 ui('#snackbar')
@@ -124,8 +124,8 @@ function onDragEnd(event: any) {
         <DragOverlay :drop-animation="null">
             <template #default="{ source }">
                 <OverviewCard
-                    v-if="source"
-                    :data="store.data.find((x) => (x.id || x.PK) === source.id)"
+                    v-if="source && store.data.find((x) => (x.id || x.PK) === source.id)"
+                    :data="store.data.find((x) => (x.id || x.PK) === source.id)!"
                     :id="source.id"
                     :index="-1"
                     :order-key="''"

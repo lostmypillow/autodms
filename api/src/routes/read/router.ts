@@ -5,7 +5,7 @@ import { Router } from 'express'
 import { v7 as uuidv7 } from 'uuid'
 import 'dotenv/config'
 import { docClient } from '../../lib/initTable.js'
-const router = Router()
+const router: Router = Router()
 
 router.get('/:targetDate', async (req, res) => {
     try {

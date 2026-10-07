@@ -39,7 +39,7 @@ describe('Extension Background Service Worker Logic', () => {
     beforeEach(() => {
         vi.clearAllMocks()
 
-        ;(globalThis as any).chrome = mockChrome
+        ;(globalThis as unknown as { chrome: unknown }).chrome = mockChrome
 
         mockChrome.runtime.onMessage.addListener(
             (request: MockRequest, _sender: MessageSender | object, sendResponse: (response?: unknown) => void) => {

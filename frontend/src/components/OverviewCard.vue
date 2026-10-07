@@ -40,7 +40,8 @@ const { isDragging, isDropTarget } = useSortable({
     group: () => props.group,
     element,
 })
-const handleDelete = async (sk, pk) => await store.sendDelete(sk, pk)
+const handleDelete = async (sk: string, pk: string) =>
+    await store.sendDelete(sk, pk)
 </script>
 <template>
     <article

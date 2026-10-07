@@ -1,14 +1,14 @@
-import { WebSocket } from 'ws'
+import { WebSocket, type WebSocketServer, type RawData } from 'ws'
 
-let wssInstance = null
+let wssInstance: WebSocketServer | null = null
 
-export function setupWebSocketRoutes(wss) {
+export function setupWebSocketRoutes(wss: WebSocketServer) {
     wssInstance = wss
 
-    wss.on('connection', (ws) => {
+    wss.on('connection', (ws: WebSocket) => {
         console.log('Client connected')
 
-        ws.on('message', (data) => {
+        ws.on('message', (data: RawData) => {
             const message = data.toString()
             console.log('Received:', message)
             // Broadcast to all connected clients
@@ -18,11 +18,11 @@ export function setupWebSocketRoutes(wss) {
 }
 
 // Helper to broadcast to all connected clients
-export function broadcast(data) {
+export function broadcast(data: unknown) {
     if (!wssInstance) return
     const payload = typeof data === 'string' ? data : JSON.stringify(data)
 
-    wssInstance.clients.forEach((client) => {
+    wssInstance.clients.forEach((client: WebSocket) => {
         if (client.readyState === WebSocket.OPEN) {
             client.send(payload)
         }

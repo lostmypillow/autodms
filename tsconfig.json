@@ -7,5 +7,6 @@
             "shared": ["./shared/index.ts"],
             "shared/*": ["./shared/*"]
         }
-    }
+    },
+    "include": ["**/*", "**/*.json"]
 }

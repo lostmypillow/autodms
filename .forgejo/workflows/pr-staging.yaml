@@ -49,6 +49,7 @@ jobs:
           echo "Deploying updated Docker containers to dev environment..."
           docker compose -f compose.dev.yaml down
           docker compose -f compose.dev.yaml up -d --build
+          docker network connect nginx-dms-dev-net nginx-proxy-manager || true
 
   e2e:
     name: E2E test

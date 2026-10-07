@@ -5,7 +5,7 @@ import {
 } from 'shared/lib/customErrors.js'
 import { broadcast } from '../websocket.js'
 
-const router = Router()
+const router: Router = Router()
 
 router.get('/:websiteUrl', async (req, res) => {
     const sourceUrl = decodeURIComponent(req.params.websiteUrl)
