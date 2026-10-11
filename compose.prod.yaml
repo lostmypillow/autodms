@@ -10,7 +10,7 @@ services:
       test:
         [
           'CMD-SHELL',
-          "bash -c 'cat < /prod/null > /prod/tcp/127.0.0.1/8000'",
+          "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'",
         ]
       interval: 1s
       timeout: 2s
