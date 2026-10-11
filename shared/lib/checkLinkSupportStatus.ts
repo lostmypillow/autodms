@@ -1,0 +1,37 @@
+import { sources } from '../sources/index.js'
+import type { LinkSupportStatus } from '../interfaces.js'
+
+export function checkLinkSupportStatus(link: string): LinkSupportStatus {
+    let isSupported: boolean = false
+    let needsExt: boolean = false
+    for (const [key] of Object.entries(sources)) {
+        if (link.includes(key)) {
+            isSupported = true
+            break
+        } else {
+            isSupported = false
+        }
+    }
+    const linksNeedText = [
+        'https://www.digitimes',
+        'https://www.ctee',
+        'https://www.chinatimes',
+        'https://buzzorange.com/techorange',
+        'https://www.bnext.com.tw',
+        'https://www.wealth.com.tw',
+        'cool3c',
+    ]
+    for (const l of linksNeedText) {
+        if (link.startsWith(l) || link.includes(l)) {
+            needsExt = true
+            break
+        } else {
+            needsExt = false
+        }
+    }
+
+    return {
+        isSupported: isSupported,
+        needsExt: needsExt,
+    }
+}

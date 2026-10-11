@@ -27,18 +27,18 @@ async function sendData() {
 const getClipboard = async () => {
     const text = await navigator.clipboard.readText()
     if (new URLPattern().test(text)) {
-        store.currentlyEditing.value.url = text
+        store.currentlyEditing.url = text
     }
     const preScrapeResult = (
         await (
             await fetch(
-                `${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
+                `/api/scrape/${encodeURIComponent(text)}`
             )
         ).json()
     )?.result
     if (preScrapeResult) {
-        store.currentlyEditing.value = {
-            ...store.currentlyEditing.value,
+        store.currentlyEditing = {
+            ...store.currentlyEditing,
             ...preScrapeResult,
         }
     }

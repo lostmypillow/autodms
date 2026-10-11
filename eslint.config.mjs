@@ -6,6 +6,16 @@ import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
   {
+    ignores: [
+      "coverage/**",
+      "test-results/**",
+      "dist/**",
+      "**/coverage/**",
+      "**/test-results/**",
+      "**/dist/**",
+    ],
+  },
+  {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts}"],
     plugins: { js },
     extends: ["js/recommended"],

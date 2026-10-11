@@ -7,7 +7,7 @@ import { docClient } from '../../lib/initTable.js'
 
 const tableName: string = process.env['TABLE_NAME'] || ''
 
-const router = Router()
+const router: Router = Router()
 
 router.delete('/:key/:hash', async (req, res) => {
     try {
@@ -28,8 +28,8 @@ router.delete('/:key/:hash', async (req, res) => {
             message: 'Document deletion complete',
         })
         return
-    } catch (error: any) {
-        if (error.name === 'ConditionalCheckFailedException') {
+    } catch (error: unknown) {
+        if ((error as { name?: string }).name === 'ConditionalCheckFailedException') {
             res.json({
                 message: 'Update failed: condition z = 5 was not met.',
             })

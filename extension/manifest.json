@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "AutoDMS",
     "description": "Extension for automating DMS duties",
-    "version": "2.1.0",
+    "version": "2.1.3",
     "browser_specific_settings": {
         "gecko": {
             "id": "dms@lostmypillow.com",
@@ -28,18 +28,24 @@
         "https://www.moneydj.com/*",
         "https://www.wealth.com.tw/*",
         "http://localhost:3000/*",
-        "http://localhost:5173/*"
+        "http://localhost:5173/*",
+        "https://www.cool3c.com/*"
     ],
-    "permissions": ["storage", "webNavigation", "scripting"],
+    "externally_connectable": {
+        "matches": [
+            "http://localhost:5173/*",
+            "https://yourproductiondomain.com/*"
+        ]
+    },
+    "permissions": ["notifications", "contextMenus", "tabs", "scripting", "webNavigation"],
     "background": {
         "service_worker": "src/background.js",
         "type": "module"
     },
     "content_scripts": [
-
         {
             "matches": ["http://localhost:3000/*", "http://localhost:5173/*"],
-            "js": ["src/keepAliveWorker.js"]
+            "js": ["src/bridge.js"]
         }
     ]
 }

@@ -1,102 +1,82 @@
-const WS_URL = 'ws://localhost:3000'
-let socket = null
+const ext = globalThis.browser || globalThis.chrome
+
+const API_URL = 'http://localhost:3000/add'
 import scraperScript from './scraper.js?script'
-function connectWebSocket() {
-    socket = new WebSocket(WS_URL)
 
-    socket.onopen = () => {
-        console.log('[Extension] Connected to WebSocket')
-        // Send a message upon connecting
-        socket.send(
-            JSON.stringify({ type: 'EXTENSION_INIT', id: chrome.runtime.id })
-        )
-    }
+function createTabAndScrape(url) {
+    ext.tabs.create({ url: url, active: false })
+        .then((newTab) => {
+        function onTabLoaded(details) {
+            // Ensure the event matches our tab and the main frame
+            if (details.tabId === newTab.id && details.frameId === 0) {
+                browser.webNavigation.onCompleted.removeListener(onTabLoaded)
 
-    // Listen for messages from Express or other clients
-    socket.onmessage = (event) => {
-        console.log('[Extension] Received:', event.data)
-
-        try {
-            const parsed = JSON.parse(event.data)
-            // Handle specific event types
-            if (parsed.event === 'REQUEST') {
-                browser.tabs
-                    .create({ url: parsed.data, active: false })
-                    .then((newTab) => {
-                        function onTabLoaded(details) {
-                            // Ensure the event matches our tab and the main frame
-                            if (
-                                details.tabId === newTab.id &&
-                                details.frameId === 0
-                            ) {
-                                browser.webNavigation.onCompleted.removeListener(
-                                    onTabLoaded
-                                )
-
-                                browser.scripting.executeScript({
-                                    target: { tabId: newTab.id },
-                                    files: [scraperScript],
-                                })
-                            }
-                        }
-
-                        browser.webNavigation.onCompleted.addListener(
-                            onTabLoaded
-                        )
-                    })
+                browser.scripting.executeScript({
+                    target: { tabId: newTab.id },
+                    files: [scraperScript],
+                })
             }
-        } catch (e) {
-            // Handle raw text/string messages
         }
-    }
 
-    socket.onclose = () => {
-        console.log('[Extension] Disconnected. Reconnecting in 5s...')
-        setTimeout(connectWebSocket, 5000)
-    }
+        ext.webNavigation.onCompleted.addListener(onTabLoaded)
+    })
+}
 
-    socket.onerror = (error) => {
-        console.error('[Extension] WebSocket error:', error)
+async function postData(data = {}) {
+    try {
+        const response = await fetch(API_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+        })
+        return await response.json()
+    } catch (error) {
+        console.error('Request failed:', error)
     }
 }
 
-// Initialize connection
-connectWebSocket()
+// Handle context menu
+ext.runtime.onInstalled.addListener(() => {
+    ext.contextMenus.create({
+        id: 'log-link-url',
+        title: 'Send to DMS',
+        contexts: ['link'],
+    })
+})
 
-let activePort = null
-// Listen for connections from content.js on target pages
-browser.runtime.onConnect.addListener((port) => {
-    if (port.name === 'keep-alive-worker') {
-        activePort = port
-        port.onMessage.addListener((msg) => {
-            if (msg.type === 'PING') {
-                // Receiving this message automatically resets Chrome's SW idle timer
-                console.log(
-                    '[SW] Ping received from target page - keeping alive'
-                )
-            }
-        })
-        port.onDisconnect.addListener(() => {
-            activePort = null
-        })
+ext.contextMenus.onClicked.addListener((info) => {
+    if (info.menuItemId === 'log-link-url') {
+        console.log(info.linkUrl)
+        createTabAndScrape(info.linkUrl)
     }
 })
 
-browser.runtime.onMessage.addListener(async (request, sender) => {
-    if (request.action === 'sendHTMLFromContent') {
-        console.log(request)
-        await browser.tabs.remove(sender.tab.id)
-        try {
-            activePort.postMessage({
-                action: 'DATA_FROM_BACKGROUND',
-                payload: request.scrape,
-            })
-
-        // Output of responseData:
-        // { success: true, message: "Data received successfully!", receivedId: 1042 }
-    } catch (error) {
-        // Output of error (if server is down): TypeError: Failed to fetch
-        console.error('Error posting data:', error)
+// Handle scraping complete and notify Vue tab
+ext.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'PING') {
+        sendResponse({ status: 'pong', timestamp: Date.now() })
+        return
     }
+
+    if (request.action === 'SCRAPE') {
+        createTabAndScrape(request.url)
+    }
+
+    if (request.action === 'sendHTMLFromContent') {
+        (async () => {
+            if (sender.tab?.id) {
+                await ext.tabs.remove(sender.tab.id)
+            }
+            await postData(request.scrape)
+
+            await ext.notifications.create({
+                type: 'basic',
+                iconUrl: ext.runtime.getURL('icons/48.png'),
+                title: 'Scrape Complete',
+                message: `Added to DMS: ${request.url}`,
+            })
+        })()
+
+        return true
     }
 })

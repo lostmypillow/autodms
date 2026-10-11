@@ -1,38 +1,65 @@
 services:
-  dms-db-prod:
-    image: amazon/dynamodb-local:latest
+  db:
+    image: amazon/dynamodb-local:3.3.1
     container_name: dms-db-prod
     env_file:
       - .env
+    networks:
+      - dms-internal-prod-net
     healthcheck:
-      test: [ "CMD-SHELL", "bash -c 'cat < /dev/null > /dev/tcp/127.0.0.1/8000'" ]
+      test:
+        [
+          'CMD-SHELL',
+          "bash -c 'cat < /prod/null > /prod/tcp/127.0.0.1/8000'",
+        ]
       interval: 1s
       timeout: 2s
       retries: 10
       start_period: 2s
-    networks:
-      proxy-net:
-
-  dms-prod:
-    container_name: dms-prod
+  api:
+    container_name: dms-api-prod
     build:
       context: .
-      dockerfile: Dockerfile
-      args:
-        FRONTEND_BUILD_MODE: prod
+      dockerfile: ./api/Dockerfile
     env_file:
-      - .env.prod
+      - .env
+    networks:
+      - dms-internal-prod-net
     depends_on:
-      dms-db-prod:
+      db:
         condition: service_healthy
     deploy:
       resources:
         limits:
           cpus: '0.5'
           memory: 256M
+  frontend:
+    container_name: dms-frontend-prod
+    build:
+      context: .
+      dockerfile: ./frontend/Dockerfile
+      args:
+        BUILD_SCRIPT: build:prod
     networks:
-      proxy-net:
+      - dms-internal-prod-net
+      - nginx-dms-prod-net
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 256M
+    depends_on:
+      api:
+        condition: service_started
 
 networks:
-  proxy-net:
-    external: true
+  dms-internal-prod-net:
+    driver: bridge
+    name: dms-internal-prod-net
+    internal: true
+  nginx-dms-prod-net:
+    driver: bridge
+    name: nginx-dms-prod-net
+    internal: true

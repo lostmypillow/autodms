@@ -2,8 +2,8 @@
 import { store } from '../store.js'
 import { onMounted, ref, onUnmounted, watch } from 'vue'
 import ui from 'beercss'
-import { useStorage, useTimeout } from '@vueuse/core'
-const defaultArticle = {
+import { useStorage } from '@vueuse/core'
+const getDefaultArticle = () => ({
     title: '',
     date: new Date().toISOString().split('T')[0],
     source: '',
@@ -15,10 +15,10 @@ const defaultArticle = {
     chineseSummaryTitle: '',
     englishSummaryContent: '',
     chineseSummaryContent: '',
-}
-const newArticle = useStorage('new-article', defaultArticle)
-const reset = () => (newArticle.value = defaultArticle)
-const modalRef = ref(null)
+})
+const newArticle = useStorage('new-article', getDefaultArticle())
+const reset = () => (newArticle.value = getDefaultArticle())
+const modalRef = ref<HTMLDialogElement | null>(null)
 const infoSnackbar = ref(false)
 const responseFromApi = ref('')
 
@@ -49,7 +49,7 @@ async function sendData() {
             englishSummaryContent: '',
             chineseSummaryContent: '',
         }
-    } catch (e) {
+    } catch (e: any) {
         if (e.response) {
             console.log('Data:', e.response.data)
         }
@@ -69,13 +69,26 @@ const getClipboard = async () => {
     const preScrapeResult = (
         await (
             await fetch(
-                `${import.meta.env.VITE_API_ENDPOINT}/scrape/${encodeURIComponent(text)}`
+                `/api/scrape/${encodeURIComponent(text)}`
             )
         ).json()
     )?.result
     if (preScrapeResult) {
+        console.log(preScrapeResult)
+        console.log(typeof preScrapeResult)
         if (typeof preScrapeResult !== 'string') {
             newArticle.value = { ...newArticle.value, ...preScrapeResult }
+        } else if (
+            preScrapeResult === 'Extension needed. Extension has been notified'
+        ) {
+            window.postMessage(
+                {
+                    source: 'VUE_APP',
+                    action: 'SCRAPE',
+                    url: text,
+                },
+                '*'
+            )
         } else {
             responseFromApi.value = preScrapeResult
             infoSnackbar.value = true
@@ -84,32 +97,34 @@ const getClipboard = async () => {
 
     // TODO: snackbar notifying pasted content is not link
 }
-const receivedData = ref(null)
+const handleExtensionData = (event: MessageEvent) => {
+    if (event.source !== window || event.data?.source !== 'EXTENSION_BRIDGE')
+        return
 
-// Handler function for window postMessage
-const handleExtensionData = (event) => {
-    // Check the source identifier set in content.js
-    if (event.data && event.data.source === 'MY_EXTENSION_PORT') {
+    if (event.data.action === 'SCRAPE_COMPLETE') {
         console.log('Vue received data:', event.data.payload)
-
-        // Assign payload to Vue state
-        receivedData.value = event.data.payload
-        newArticle.value = {
-            ...newArticle.value,
-            ...event.data.payload.payload,
-        }
+        responseFromApi.value = 'Website scraped and added to DMS!'
+        newArticle.value.url = ''
+        infoSnackbar.value = true
     }
-    responseFromApi.value = 'Extension has completed scraping!'
-    infoSnackbar.value = !useTimeout(1000)
+}
+
+function pingExtension() {
+    window.postMessage(
+        {
+            source: 'VUE_APP',
+            action: 'PING',
+        },
+        '*'
+    )
 }
 
 onMounted(() => {
-    // Register listener on component mount
     window.addEventListener('message', handleExtensionData)
+    pingExtension()
 })
 
 onUnmounted(() => {
-    // Remove listener when component unmounts
     window.removeEventListener('message', handleExtensionData)
 })
 </script>
@@ -244,7 +259,7 @@ onUnmounted(() => {
             class="field label border"
             style="margin-top: 16px; grid-column: span 4"
         >
-            <input type="text" v-model="newArticle.chineseSummaryTitle" /><label
+            <input type="text" v-model="newArticle.englishSummaryTitle" /><label
                 >英文摘要 Title</label
             >
         </div>

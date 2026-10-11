@@ -19,7 +19,7 @@ const tableName: string = process.env['TABLE_NAME'] || ''
 
 // Returns a Node.js Buffer
 
-const router = Router()
+const router: Router = Router()
 router.get('/:targetDate', async (req: Request, res: Response) => {
     try {
         const params = req.params
