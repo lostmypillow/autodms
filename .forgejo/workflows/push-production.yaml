@@ -5,33 +5,9 @@ on:
     branches: [ main ]
 
 jobs:
-  test:
-    name: Run Unit & Integration Tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v3
-        with:
-          version: 11
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 24
-          cache: 'pnpm'
-
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
-
-      - name: Deploy website
-        run: pnpm -F frontend run deploy:dev
-
 
   deploy-api:
-    name: Deploy dev API to Docker
+    name: Deploy prod API to Docker
     needs: [test]
     runs-on: host
     steps:
