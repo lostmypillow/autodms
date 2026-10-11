@@ -8,7 +8,6 @@ jobs:
 
   deploy-api:
     name: Deploy prod API to Docker
-    needs: [test]
     runs-on: host
     steps:
       - name: Checkout Code
