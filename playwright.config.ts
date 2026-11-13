@@ -15,7 +15,13 @@ export default defineConfig({
     projects: [
         {
             name: 'chromium',
-            use: { ...devices['Desktop Chrome'] },
+            use: { ...devices['Desktop Chrome'],
+                launchOptions: {
+                    args: [
+                        '--host-resolver-rules=MAP dms-dev.lostmypillow.com 192.168.50.2',
+                    ],
+                },},
+
         },
     ],
 })
