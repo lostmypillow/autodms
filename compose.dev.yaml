@@ -59,4 +59,3 @@ networks:
   dms-internal-dev-net:
     driver: bridge
     name: dms-internal-dev-net
-    internal: true

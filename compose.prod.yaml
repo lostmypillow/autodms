@@ -60,5 +60,3 @@ networks:
   dms-internal-prod-net:
     driver: bridge
     name: dms-internal-prod-net
-    internal: true
-
