@@ -151,7 +151,7 @@ importers:
         version: 9.8.1
       docxtemplater:
         specifier: ^3.50.0
-        version: 3.71.0
+        version: 3.71.1
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
@@ -224,7 +224,7 @@ importers:
         version: 8.6.0
       docxtemplater:
         specifier: ^3.50.0
-        version: 3.71.0
+        version: 3.71.1
       file-saver:
         specifier: ^2.0.5
         version: 2.0.5
@@ -2566,8 +2566,8 @@ packages:
     resolution: {integrity: sha512-bv4yDxgiV9aRyh327HG+V36wG0f23wk32SDhXGQpUhnykVtIPaR1K4ISi8E+DYJ7OcRQRkR8Y70QYlSS08V1cA==}
     engines: {node: '>=10'}
 
-  docxtemplater@3.71.0:
-    resolution: {integrity: sha512-4SyQzPVDrhsPb9vHNstxJpJWMLJvrbKEcXDRNBlb5Bnbjqm1T51PVt5r+iLVe1yAkmIvakk8M3KywO5m5LsUSA==}
+  docxtemplater@3.71.1:
+    resolution: {integrity: sha512-lXX1FNYwwe/md6WYmNE/1MRjbGN3h0SFdVxKQ3fiIRFvKp0TqgJinylu144iWwPJeALa36jmgGKxk54bGx7bSA==}
     engines: {node: '>=0.10'}
 
   dom-serializer@2.0.0:
@@ -7363,7 +7363,7 @@ snapshots:
       xml: 1.0.1
       xml-js: 1.6.11
 
-  docxtemplater@3.71.0:
+  docxtemplater@3.71.1:
     dependencies:
       '@xmldom/xmldom': 0.9.12
 
