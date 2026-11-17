@@ -24,7 +24,7 @@ jobs:
           docker compose -f compose.prod.yaml up -d --build
 
   release:
-    needs: deploy-prod
+    needs: deploy-api
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository

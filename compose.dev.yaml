@@ -40,9 +40,10 @@ services:
       dockerfile: ./frontend/Dockerfile
       args:
         BUILD_SCRIPT: build:dev
+    ports:
+      - "127.0.0.1:8003:80"
     networks:
       - dms-internal-dev-net
-      - nginx-dms-dev-net
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     deploy:
@@ -58,8 +59,3 @@ networks:
   dms-internal-dev-net:
     driver: bridge
     name: dms-internal-dev-net
-    internal: true
-  nginx-dms-dev-net:
-    driver: bridge
-    name: nginx-dms-dev-net
-    internal: true
