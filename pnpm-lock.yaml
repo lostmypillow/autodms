@@ -118,7 +118,7 @@ importers:
         version: 3.3.12(@typescript/typescript6@6.0.2)
       web-ext:
         specifier: ^10.7.0
-        version: 10.8.0(express@5.2.1(supports-color@5.5.0))(jiti@2.7.0)(supports-color@5.5.0)
+        version: 10.8.0(jiti@2.7.0)(supports-color@5.5.0)
 
   api:
     dependencies:
@@ -157,7 +157,7 @@ importers:
         version: 17.4.2
       express:
         specifier: ^5.2.1
-        version: 5.2.1(supports-color@7.2.0)
+        version: 5.3.0(supports-color@7.2.0)
       fractional-indexing:
         specifier: ^4.0.0
         version: 4.0.0
@@ -2433,8 +2433,8 @@ packages:
     resolution: {integrity: sha512-FveZTNuGw04cxlAiWbzi6zTAL/lhehaWbTtgluJh4/E95DqMwTmha3KZN1aAWA8cFIhHzMZUvLevkw5Rqk+tSQ==}
     engines: {node: '>= 0.6'}
 
-  content-disposition@1.1.0:
-    resolution: {integrity: sha512-5jRCH9Z/+DRP7rkvY83B+yGIGX96OYdJmzngqnw2SBSxqCFPd0w2km3s5iawpGX8krnwSGmF0FW5Nhr0Hfai3g==}
+  content-disposition@2.0.1:
+    resolution: {integrity: sha512-e+H0ZXHSWYrENhQzw1LPuP4oF5MzVKmDU6d3hxlvaPEYLLg62MxtQNPRx4SYSuYJSBUgnQIG4HIN2tEtNv7Dog==}
     engines: {node: '>=18'}
 
   content-type@1.0.5:
@@ -2824,8 +2824,8 @@ packages:
     resolution: {integrity: sha512-Bdcs4+3qlpVlx2NRn6fgX2Ue2/gGRaPeawebgclM0ERSCqDpA+owF1fdPwjJUTAJWMTuAaxjDf+hzb0/4eKvvw==}
     engines: {node: '>= 0.10.0'}
 
-  express@5.2.1:
-    resolution: {integrity: sha512-hIS4idWWai69NezIdRt2xFVofaF4j+6INOpJlVOLDO8zXGpUVEVzIYk12UUi2JzjEzWL3IOAxcTubgz9Po0yXw==}
+  express@5.3.0:
+    resolution: {integrity: sha512-qCqy1xSoaugxOD4IVHb1ZWdkvCF2W3aE2okKouWj8VwJ+ztskSiXoBnCSJqfKT+cVPJhuJqe9YLbY425+Zh00g==}
     engines: {node: '>= 18'}
 
   exsolve@1.1.3:
@@ -6769,13 +6769,13 @@ snapshots:
 
   acorn@8.18.0: {}
 
-  addons-linter@10.14.0(express@5.2.1(supports-color@5.5.0))(jiti@2.7.0)(supports-color@5.5.0):
+  addons-linter@10.14.0(jiti@2.7.0)(supports-color@5.5.0):
     dependencies:
       '@fluent/syntax': 0.19.0
       '@fregante/relaxed-json': 2.0.0
       '@mdn/browser-compat-data': 8.1.4
       addons-moz-compare: 1.4.0
-      addons-scanner-utils: 16.0.0(express@5.2.1(supports-color@5.5.0))
+      addons-scanner-utils: 16.0.0
       ajv: 8.20.0
       cheerio: 1.2.0
       columnify: 1.6.0
@@ -6804,7 +6804,7 @@ snapshots:
 
   addons-moz-compare@1.4.0: {}
 
-  addons-scanner-utils@16.0.0(express@5.2.1(supports-color@5.5.0)):
+  addons-scanner-utils@16.0.0:
     dependencies:
       common-tags: 1.8.2
       first-chunk-stream: 3.0.0
@@ -6812,8 +6812,6 @@ snapshots:
       strip-bom-stream: 4.0.0
       upath: 3.0.8
       yauzl: 3.4.0
-    optionalDependencies:
-      express: 5.2.1(supports-color@5.5.0)
 
   adm-zip@0.6.1: {}
 
@@ -6997,21 +6995,6 @@ snapshots:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
-
-  body-parser@2.3.0(supports-color@5.5.0):
-    dependencies:
-      bytes: 3.1.2
-      content-type: 2.1.0
-      debug: 4.4.3(supports-color@5.5.0)
-      http-errors: 2.0.1
-      iconv-lite: 0.7.3
-      on-finished: 2.4.1
-      qs: 6.16.0
-      raw-body: 3.0.2
-      type-is: 2.1.0
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
 
   body-parser@2.3.0(supports-color@7.2.0):
     dependencies:
@@ -7213,7 +7196,7 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  content-disposition@1.1.0: {}
+  content-disposition@2.0.1: {}
 
   content-type@1.0.5: {}
 
@@ -7684,46 +7667,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  express@5.2.1(supports-color@5.5.0):
-    dependencies:
-      accepts: 2.0.0
-      body-parser: 2.3.0(supports-color@5.5.0)
-      content-disposition: 1.1.0
-      content-type: 1.0.5
-      cookie: 0.7.2
-      cookie-signature: 1.2.2
-      debug: 4.4.3(supports-color@5.5.0)
-      depd: 2.0.0
-      encodeurl: 2.0.0
-      escape-html: 1.0.3
-      etag: 1.8.1
-      finalhandler: 2.1.1(supports-color@5.5.0)
-      fresh: 2.0.0
-      http-errors: 2.0.1
-      merge-descriptors: 2.0.0
-      mime-types: 3.0.2
-      on-finished: 2.4.1
-      once: 1.4.0
-      parseurl: 1.3.3
-      proxy-addr: 2.0.8
-      qs: 6.16.0
-      range-parser: 1.3.0
-      router: 2.2.0(supports-color@5.5.0)
-      send: 1.2.1(supports-color@5.5.0)
-      serve-static: 2.2.1(supports-color@5.5.0)
-      statuses: 2.0.2
-      type-is: 2.1.0
-      vary: 1.1.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
-  express@5.2.1(supports-color@7.2.0):
+  express@5.3.0(supports-color@7.2.0):
     dependencies:
       accepts: 2.0.0
       body-parser: 2.3.0(supports-color@7.2.0)
-      content-disposition: 1.1.0
-      content-type: 1.0.5
+      content-disposition: 2.0.1
+      content-type: 2.1.0
       cookie: 0.7.2
       cookie-signature: 1.2.2
       debug: 4.4.3(supports-color@7.2.0)
@@ -7829,18 +7778,6 @@ snapshots:
       unpipe: 1.0.0
     transitivePeerDependencies:
       - supports-color
-
-  finalhandler@2.1.1(supports-color@5.5.0):
-    dependencies:
-      debug: 4.4.3(supports-color@5.5.0)
-      encodeurl: 2.0.0
-      escape-html: 1.0.3
-      on-finished: 2.4.1
-      parseurl: 1.3.3
-      statuses: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
 
   finalhandler@2.1.1(supports-color@7.2.0):
     dependencies:
@@ -9116,17 +9053,6 @@ snapshots:
     optionalDependencies:
       fsevents: 2.3.3
 
-  router@2.2.0(supports-color@5.5.0):
-    dependencies:
-      debug: 4.4.3(supports-color@5.5.0)
-      depd: 2.0.0
-      is-promise: 4.0.0
-      parseurl: 1.3.3
-      path-to-regexp: 8.4.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
   router@2.2.0(supports-color@7.2.0):
     dependencies:
       debug: 4.4.3(supports-color@7.2.0)
@@ -9179,23 +9105,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  send@1.2.1(supports-color@5.5.0):
-    dependencies:
-      debug: 4.4.3(supports-color@5.5.0)
-      encodeurl: 2.0.0
-      escape-html: 1.0.3
-      etag: 1.8.1
-      fresh: 2.0.0
-      http-errors: 2.0.1
-      mime-types: 3.0.2
-      ms: 2.1.3
-      on-finished: 2.4.1
-      range-parser: 1.3.0
-      statuses: 2.0.2
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
-
   send@1.2.1(supports-color@7.2.0):
     dependencies:
       debug: 4.4.3(supports-color@7.2.0)
@@ -9220,16 +9129,6 @@ snapshots:
       send: 0.19.2(supports-color@7.2.0)
     transitivePeerDependencies:
       - supports-color
-
-  serve-static@2.2.1(supports-color@5.5.0):
-    dependencies:
-      encodeurl: 2.0.0
-      escape-html: 1.0.3
-      parseurl: 1.3.3
-      send: 1.2.1(supports-color@5.5.0)
-    transitivePeerDependencies:
-      - supports-color
-    optional: true
 
   serve-static@2.2.1(supports-color@7.2.0):
     dependencies:
@@ -9810,11 +9709,11 @@ snapshots:
     dependencies:
       defaults: 1.0.4
 
-  web-ext@10.8.0(express@5.2.1(supports-color@5.5.0))(jiti@2.7.0)(supports-color@5.5.0):
+  web-ext@10.8.0(jiti@2.7.0)(supports-color@5.5.0):
     dependencies:
       '@babel/runtime': 8.0.7
       '@devicefarmer/adbkit': 3.3.9(supports-color@5.5.0)
-      addons-linter: 10.14.0(express@5.2.1(supports-color@5.5.0))(jiti@2.7.0)(supports-color@5.5.0)
+      addons-linter: 10.14.0(jiti@2.7.0)(supports-color@5.5.0)
       camelcase: 8.0.0
       chrome-launcher: 1.2.0(supports-color@5.5.0)
       debounce: 1.2.1
