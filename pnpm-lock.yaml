@@ -202,8 +202,8 @@ importers:
         specifier: ^0.5.0
         version: 0.5.3(vue@3.5.45(typescript@6.0.3))
       '@formkit/auto-animate':
-        specifier: ^0.8.2
-        version: 0.8.4
+        specifier: ^0.10.0
+        version: 0.10.2
       '@mdi/font':
         specifier: ^7.4.47
         version: 7.4.47
@@ -981,8 +981,8 @@ packages:
     resolution: {integrity: sha512-5D2qVpZrgpjtqU4eNOcWGp1gnUCgjfM+vKGE2y03kKN6z5EBhtx0qdRFbg8QuNNj8wXNoX93KJoYb+NqoxswmQ==}
     engines: {node: '>=14.0.0', npm: '>=7.0.0'}
 
-  '@formkit/auto-animate@0.8.4':
-    resolution: {integrity: sha512-DHHC01EJ1p70Q0z/ZFRBIY8NDnmfKccQoyoM84Tgb6omLMat6jivCdf272Y8k3nf4Lzdin/Y4R9q8uFtU0GbnA==}
+  '@formkit/auto-animate@0.10.2':
+    resolution: {integrity: sha512-t2Z3y8b/zB3wPWwgpc6JDVm4q0ezb5vfe2mqfUrQJ7XziZY8iYuhocQ7eJdTzowRePihrNbZ/DNJoFa6Yi5blg==}
 
   '@fregante/relaxed-json@2.0.0':
     resolution: {integrity: sha512-PyUXQWB42s4jBli435TDiYuVsadwRHnMc27YaLouINktvTWsL3FcKrRMGawTayFk46X+n5bE23RjUTWQwrukWw==}
@@ -5740,7 +5740,7 @@ snapshots:
 
   '@fluent/syntax@0.19.0': {}
 
-  '@formkit/auto-animate@0.8.4': {}
+  '@formkit/auto-animate@0.10.2': {}
 
   '@fregante/relaxed-json@2.0.0': {}
 
