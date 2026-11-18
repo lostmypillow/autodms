@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install Dependencies
         run: pnpm install --frozen-lockfile
@@ -26,7 +26,7 @@ jobs:
     runs-on: host
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Build & Deploy Self-Hosted dev Containers
         env:
@@ -43,7 +43,7 @@ jobs:
     runs-on: host
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Install pnpm
         uses: pnpm/action-setup@v3
